@@ -1,12 +1,24 @@
-# Sanity Blogging Content Studio
+# Dagpenger cms - sanity studio
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
+[Sanity-studio](https://www.sanity.io/studio) / cms-frontend for dagpengerelatert informasjon.
 
-Now you can do the following things:
+## Starte appen lokalt
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- Check out the example frontend: [React/Next.js](https://github.com/sanity-io/tutorial-sanity-blog-react-next)
-- [Read the blog post about this template](https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+```
+npm i
+npm start
+```
 
+Du må logge deg inn i appen med feks github-bruker, du må få tilgang av en administrator for å redigere innhold.
+
+## Kontakt
+
+Spørsmål tilknyttet koden kan rettes mot:
+
+- Daniel Winsvold, daniel.winsvold@nav.no
+- Knut Magne Riise, knut.magne.riise@nav.no
+- Synneva Aasbrenn, synneva.aasbrenn@nav.no
+
+### Internt
+
+Slack: #team-dagpenger, #team-dagpenger-dev

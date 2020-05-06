@@ -1,4 +1,4 @@
-import LinkIcon from 'react-icons/lib/fa/paperclip';
+import LinkIcon from 'react-icons/lib/fa/external-link';
 
 export default {
   name: 'link',
@@ -14,7 +14,6 @@ export default {
     {
       title: 'Open in new tab',
       name: 'blank',
-      description: 'Read https://css-tricks.com/use-target_blank/',
       type: 'boolean',
     },
   ],

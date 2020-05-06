@@ -1,4 +1,4 @@
-import LinkIcon from 'react-icons/lib/fa/paperclip';
+import LinkIcon from 'react-icons/lib/md/link';
 
 export default {
   name: 'internalLink',
@@ -10,7 +10,7 @@ export default {
       name: 'reference',
       type: 'reference',
       title: 'Reference',
-      to: [{ type: 'side' }],
+      to: [{ type: 'faktaSide' }],
     },
   ],
 };

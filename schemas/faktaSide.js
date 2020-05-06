@@ -1,10 +1,10 @@
-import GoBrowser from 'react-icons/lib/go/browser';
+import Web from 'react-icons/lib/md/web';
 
 export default {
   name: 'faktaSide',
   type: 'document',
   title: 'Faktaside',
-  icon: GoBrowser,
+  icon: Web,
   fields: [
     {
       name: 'title',
@@ -25,7 +25,7 @@ export default {
       name: 'description',
       type: 'localeText',
       title: 'Description',
-      description: 'Beskrivelse av siden som brukes av google og seo. Beskriv kort hva siden inneholder.',
+      description: 'Kort beskrivelse av siden for søkemotorer og sosiale medier.',
     },
     {
       name: 'body',

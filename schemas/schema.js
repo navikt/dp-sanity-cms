@@ -5,6 +5,7 @@ import richText from './richText';
 import faktaSide from './faktaSide';
 import localize from './utils/localize';
 import customComponent from './customComponent';
+import GtoNOK from './GtoNOK';
 
 export default createSchema({
   name: 'dagpenger-info',
@@ -13,6 +14,7 @@ export default createSchema({
     richText,
     faktaSide,
     customComponent,
+    GtoNOK,
     localize('richText'),
     localize('string'),
     localize('text'),

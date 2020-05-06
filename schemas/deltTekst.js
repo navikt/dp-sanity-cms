@@ -1,11 +1,11 @@
 import React from 'react';
-import Book from 'react-icons/lib/go/book';
+import ShortText from 'react-icons/lib/md/short-text';
 
 export default {
   type: 'document',
   name: 'deltTekst',
   title: 'Delt tekst',
-  icon: Book,
+  icon: ShortText,
   fields: [
     {
       name: 'title',
@@ -25,7 +25,7 @@ export default {
     prepare(selection) {
       return {
         title: selection.title,
-        media: Book,
+        media: ShortText,
       };
     },
   },

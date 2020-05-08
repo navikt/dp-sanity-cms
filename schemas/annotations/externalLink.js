@@ -14,6 +14,7 @@ export default {
     {
       title: 'Åpne i nytt vindu',
       name: 'blank',
+      description: 'Helst ikke bruk dette',
       type: 'boolean',
     },
     {

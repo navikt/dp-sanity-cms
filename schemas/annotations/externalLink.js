@@ -12,8 +12,13 @@ export default {
       title: 'URL',
     },
     {
-      title: 'Open in new tab',
+      title: 'Åpne i nytt vindu',
       name: 'blank',
+      type: 'boolean',
+    },
+    {
+      title: 'Vis som knapp',
+      name: 'knapp',
       type: 'boolean',
     },
   ],

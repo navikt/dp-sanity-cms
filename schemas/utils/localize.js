@@ -6,7 +6,7 @@ export default (type) => ({
   type: 'object',
   fieldsets: [
     {
-      title: 'Translations',
+      title: 'Oversettelser',
       name: 'translations',
       options: { collapsible: true },
     },

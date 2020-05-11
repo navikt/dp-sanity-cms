@@ -13,12 +13,21 @@ const descriptionAfter = (description: string) => css`
   }
 `;
 
-export const BolkHeader = styled.span`
+export const H2Header = styled.span`
   font-size: 2.2rem;
-  ${descriptionAfter('bolk')}
+  ${descriptionAfter('H2')}
 `;
 
-export const AvsnittHeader = styled.span`
+export const H2NoBackround = styled.span`
+  font-size: 2.2rem;
+  ${descriptionAfter('H2 uten bakgrunn')}
+`;
+
+export const H3Header = styled.span`
   font-size: 1.5rem;
-  ${descriptionAfter('avsnitt')}
+  ${descriptionAfter('H3')}
+`;
+
+export const Lenke = styled.span`
+  color: blue;
 `;

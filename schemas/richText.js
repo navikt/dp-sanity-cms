@@ -1,7 +1,7 @@
 import React from 'react';
 import externalLink from './annotations/externalLink';
 import internalLink from './annotations/internalLink';
-import { BolkHeader, AvsnittHeader } from '../components/styledComponents';
+import { H2Header, H3Header, H2NoBackround } from '../components/styledComponents';
 
 export default {
   title: 'Rich Text',
@@ -18,8 +18,9 @@ export default {
       ],
       styles: [
         { title: 'Normal', value: 'normal' },
-        { title: 'H2 - Bolk', value: 'h2', blockEditor: { render: BolkHeader } },
-        { title: 'H3 - Avsnitt', value: 'h3', blockEditor: { render: AvsnittHeader } },
+        { title: 'H2', value: 'h2', blockEditor: { render: H2Header } },
+        { title: 'H2 - uten bakgrunn', value: 'h2-no-background', blockEditor: { render: H2NoBackround } },
+        { title: 'H3', value: 'h3', blockEditor: { render: H3Header } },
         { title: 'H4', value: 'h4' },
       ],
       marks: {

@@ -9,7 +9,7 @@ export default {
     {
       name: 'title',
       type: 'localeString',
-      title: 'Title',
+      title: 'Tittel',
     },
     {
       name: 'slug',
@@ -24,13 +24,13 @@ export default {
     {
       name: 'description',
       type: 'localeText',
-      title: 'Description',
+      title: 'Beskrivelse',
       description: 'Kort beskrivelse av siden for søkemotorer og sosiale medier.',
     },
     {
       name: 'body',
       type: 'localeRichText',
-      title: 'Body',
+      title: 'Innhold',
     },
   ],
   preview: {

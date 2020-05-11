@@ -20,7 +20,7 @@ export default {
   icon: Boks,
   fields: [
     {
-      name: 'velg',
+      name: 'startSlutt',
       title: 'Velg start/slutt på grå boks',
       type: 'string',
       validation: (Rule) => Rule.required(),
@@ -31,8 +31,10 @@ export default {
   ],
   preview: {
     select: {
-      valg: 'velg',
+      startSlutt: 'startSlutt',
     },
-    component: (props) => <Style>{props.value.valg === 'Start' ? '<Start grå boks>' : '</Slutt grå boks>'}</Style>,
+    component: (props) => (
+      <Style>{props.value.startSlutt === 'Start' ? '<Start grå boks>' : '</Slutt grå boks>'}</Style>
+    ),
   },
 };

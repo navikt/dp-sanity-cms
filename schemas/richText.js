@@ -27,7 +27,6 @@ export default {
         decorators: [
           { title: 'Strong', value: 'strong' },
           { title: 'Emphasis', value: 'em' },
-          { title: 'Grå boks', value: 'graaboks' },
         ],
         annotations: [externalLink, internalLink],
       },

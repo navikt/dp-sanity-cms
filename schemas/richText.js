@@ -37,5 +37,8 @@ export default {
       type: 'reference',
       to: [{ type: 'deltTekst' }],
     },
+    {
+      type: 'video',
+    },
   ],
 };

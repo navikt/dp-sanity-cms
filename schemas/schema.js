@@ -6,6 +6,7 @@ import faktaSide from './faktaSide';
 import localize from './utils/localize';
 import customComponent from './customComponent';
 import GtoNOK from './GtoNOK';
+import video from './video';
 
 export default createSchema({
   name: 'dagpenger-info',
@@ -15,6 +16,7 @@ export default createSchema({
     faktaSide,
     customComponent,
     GtoNOK,
+    video,
     localize('richText'),
     localize('string'),
     localize('text'),

@@ -6,14 +6,19 @@ const descriptionAfter = (description: string) => css`
       opacity: .5;
       font-size: .7em;
     }
+  &::before {
+    content: '';
+    display: block;
+    height: 1em;
+  }
 `;
 
 export const BolkHeader = styled.span`
-  font-size: 2rem;
+  font-size: 2.2rem;
   ${descriptionAfter('bolk')}
 `;
 
 export const AvsnittHeader = styled.span`
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   ${descriptionAfter('avsnitt')}
 `;

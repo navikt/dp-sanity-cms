@@ -10,6 +10,7 @@ export default {
       name: 'title',
       type: 'localeString',
       title: 'Tittel',
+      description: 'Det vil bli generert språkversjoner for alle språk som har en oversatt tittel',
     },
     {
       name: 'slug',

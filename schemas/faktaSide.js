@@ -17,6 +17,7 @@ export default {
       type: 'slug',
       title: 'Slug',
       description: 'url til siden',
+      validation: (Rule) => Rule.required(),
       options: {
         source: 'title.no',
         maxLength: 96,

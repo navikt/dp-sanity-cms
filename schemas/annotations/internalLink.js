@@ -3,7 +3,7 @@ import LinkIcon from 'react-icons/lib/md/link';
 export default {
   name: 'internalLink',
   type: 'object',
-  title: 'Internal link',
+  title: 'Intern lenke',
   icon: LinkIcon,
   fields: [
     {

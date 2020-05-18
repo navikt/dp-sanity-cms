@@ -4,7 +4,7 @@ import { Lenke } from '../../components/styledComponents';
 export default {
   name: 'link',
   type: 'object',
-  title: 'External link',
+  title: 'Ekstern lenke',
   icon: LinkIcon,
   blockEditor: {
     render: Lenke,

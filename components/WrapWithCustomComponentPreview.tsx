@@ -19,8 +19,8 @@ const Label = styled.div`
 const WrapWithCustomComponentPreview = (props) => {
   return (
     <Style>
-      <Label>Wrap with: "{props.value.component}"</Label>
-      <BlockContent blocks={props.value.tekst} />
+      <Label>Wrap with: "{props.value.komponent}"</Label>
+      <BlockContent blocks={props.value.innhold} />
     </Style>
   );
 };

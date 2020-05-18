@@ -5,13 +5,13 @@ const availableComponents = ['DagpengeKalkulator - normal'];
 
 export default {
   name: 'customComponent',
-  title: 'Custom Component',
+  title: 'Komponent',
   type: 'object',
   icon: Gift,
   fields: [
     {
-      title: 'Component',
-      name: 'component',
+      title: 'Velg komponent',
+      name: 'komponent',
       type: 'string',
       options: {
         list: availableComponents,
@@ -20,12 +20,12 @@ export default {
   ],
   preview: {
     select: {
-      title: 'component',
+      title: 'komponent',
     },
     prepare(props) {
       return {
         title: props.title,
-        subtitle: 'Custom React-komponent',
+        subtitle: 'React-komponent',
       };
     },
   },

@@ -11,27 +11,27 @@ export default {
   icon: WrapIcon,
   fields: [
     {
-      title: 'Component',
-      name: 'component',
+      title: 'Komponent',
+      name: 'komponent',
       type: 'string',
       options: {
         list: availableWrappers,
       },
     },
     {
-      name: 'tekst',
-      title: 'Tekst',
+      name: 'innhold',
+      title: 'Innhold',
       type: 'richText',
     },
   ],
   preview: {
     select: {
-      component: 'component',
-      tekst: 'tekst',
+      komponent: 'komponent',
+      innhold: 'innhold',
     },
     prepare(selection) {
       return {
-        component: selection.component,
+        komponent: selection.komponent,
         tekst: selection.tekst,
       };
     },

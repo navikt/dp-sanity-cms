@@ -4,7 +4,7 @@ import deltTekst from './deltTekst';
 import richText from './richText';
 import faktaSide from './faktaSide';
 import localize from './utils/localize';
-import customComponent from './customComponent';
+import customComponent from './komponent';
 import GtoNOK from './GtoNOK';
 import video from './video';
 import wrapWithCustomComponent from './wrapWithCustomComponent';

@@ -23,13 +23,13 @@ export default {
       },
     },
     {
-      name: 'description',
+      name: 'ingress',
       type: 'localeText',
-      title: 'Beskrivelse',
-      description: 'Kort beskrivelse av siden for søkemotorer og sosiale medier.',
+      title: 'Ingress',
+      description: 'Kort beskrivelse av siden for ingress, landingsside, søkemotorer og sosiale medier.',
     },
     {
-      name: 'body',
+      name: 'innhold',
       type: 'localeRichText',
       title: 'Innhold',
     },

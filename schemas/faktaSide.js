@@ -18,7 +18,7 @@ export default {
       title: 'Slug',
       description: 'url til siden',
       options: {
-        source: 'title.nb',
+        source: 'title.no',
         maxLength: 96,
       },
     },
@@ -36,8 +36,8 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title.nb',
-      subtitle: 'description.nb',
+      title: 'title.no',
+      subtitle: 'description.no',
     },
   },
 };

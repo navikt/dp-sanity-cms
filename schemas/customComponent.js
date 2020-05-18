@@ -1,6 +1,8 @@
 import React from 'react';
 import Gift from 'react-icons/lib/go/gift';
 
+const availableComponents = ['DagpengeKalkulator - normal'];
+
 export default {
   name: 'customComponent',
   title: 'Custom Component',
@@ -11,6 +13,9 @@ export default {
       title: 'Component',
       name: 'component',
       type: 'string',
+      options: {
+        list: availableComponents,
+      },
     },
   ],
   preview: {

@@ -2,6 +2,8 @@ import React from 'react';
 import WrapIcon from 'react-icons/lib/md/move-to-inbox';
 import WrapWithCustomComponentPreview from '../components/WrapWithCustomComponentPreview';
 
+const availableWrappers = ['Grå boks'];
+
 export default {
   type: 'object',
   name: 'wrapWithCustomComponent',
@@ -12,6 +14,9 @@ export default {
       title: 'Component',
       name: 'component',
       type: 'string',
+      options: {
+        list: availableWrappers,
+      },
     },
     {
       name: 'tekst',

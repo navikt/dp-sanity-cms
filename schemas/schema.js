@@ -7,18 +7,18 @@ import localize from './utils/localize';
 import customComponent from './customComponent';
 import GtoNOK from './GtoNOK';
 import video from './video';
-import graaBoks from './graaBoks';
+import wrapWithCustomComponent from './wrapWithCustomComponent';
 
 export default createSchema({
   name: 'dagpenger-info',
   types: schemaTypes.concat([
     deltTekst,
     richText,
-    graaBoks,
     faktaSide,
     customComponent,
     GtoNOK,
     video,
+    wrapWithCustomComponent,
     localize('richText'),
     localize('string'),
     localize('text'),

@@ -42,6 +42,6 @@ export default {
     {
       type: 'video',
     },
-    { type: 'graaBoks' },
+    { type: 'wrapWithCustomComponent' },
   ],
 };

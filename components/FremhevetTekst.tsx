@@ -8,21 +8,12 @@ const Style = styled.div`
   border: solid #8888 0.2rem;
 `;
 
-const Label = styled.div`
-  position: absolute;
-  right: 0;
-  top: 0;
-  background: #ff88;
-  padding: 0.3rem;
-`;
-
-const WrapWithCustomComponentPreview = (props) => {
+const FremhevetTekst = (props) => {
   return (
     <Style>
-      <Label>Wrap with: "{props.value.komponent}"</Label>
       <BlockContent blocks={props.value.innhold} />
     </Style>
   );
 };
 
-export default WrapWithCustomComponentPreview;
+export default FremhevetTekst;

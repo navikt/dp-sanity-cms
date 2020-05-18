@@ -7,7 +7,7 @@ import localize from './utils/localize';
 import customComponent from './komponent';
 import GtoNOK from './GtoNOK';
 import video from './video';
-import wrapWithCustomComponent from './wrapWithCustomComponent';
+import fremhevetTekst from './fremhevetTekst';
 
 export default createSchema({
   name: 'dagpenger-info',
@@ -18,7 +18,7 @@ export default createSchema({
     customComponent,
     GtoNOK,
     video,
-    wrapWithCustomComponent,
+    fremhevetTekst,
     localize('richText'),
     localize('string'),
     localize('text'),

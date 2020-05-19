@@ -13,7 +13,7 @@ export default {
       type: 'block',
       of: [
         {
-          type: 'GtoNOK',
+          type: 'GtilNOK',
         },
       ],
       styles: [
@@ -36,10 +36,6 @@ export default {
       type: 'customComponent',
     },
     { type: 'fremhevetTekst' },
-    {
-      type: 'reference',
-      to: [{ type: 'deltTekst' }],
-    },
     {
       type: 'video',
     },

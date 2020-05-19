@@ -1,4 +1,5 @@
 import Web from 'react-icons/lib/md/web';
+import { supportedLanguages } from './utils/languages';
 
 export default {
   name: 'faktaSide',
@@ -7,15 +8,23 @@ export default {
   icon: Web,
   fields: [
     {
+      name: 'publiser',
+      type: 'object',
+      fields: supportedLanguages.map((lang) => ({
+        title: lang.title,
+        name: lang.id,
+        type: 'boolean',
+      })),
+    },
+    {
       name: 'title',
       type: 'localeString',
       title: 'Tittel',
-      description: 'Det vil bli generert språkversjoner for alle språk som har en oversatt tittel',
     },
     {
       name: 'slug',
       type: 'slug',
-      title: 'Url (slug)',
+      title: 'URL (slug)',
       validation: (Rule) => Rule.required(),
       options: {
         source: 'title.no',

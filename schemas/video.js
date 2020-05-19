@@ -10,12 +10,14 @@ export default {
     {
       name: 'title',
       title: 'Beskrivelse',
-      subtitle: 'Kort beskrivelse så innholdsforvalter vet hva videoen inneholder, vises ikke for bruker',
+      description: 'Vises for skjermleser',
       type: 'string',
     },
     {
       name: 'url',
       title: 'URL',
+      description:
+        'Ikke lenk til youtube eller andre tjenester som kan finne på å spore brukerne våre. qbrick.com regnes som trygt. (https://video.qbrick.com/play2/embed/player?accountId=763...)',
       type: 'string',
     },
   ],

@@ -7,8 +7,9 @@ export default {
   icon: Web,
   fields: [
     {
-      name: 'publiser',
-      type: 'publiser',
+      name: 'publisert',
+      type: 'publisert',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'title',

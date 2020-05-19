@@ -15,8 +15,7 @@ export default {
     {
       name: 'slug',
       type: 'slug',
-      title: 'Slug',
-      description: 'url til siden',
+      title: 'Url (slug)',
       validation: (Rule) => Rule.required(),
       options: {
         source: 'title.no',
@@ -27,7 +26,7 @@ export default {
       name: 'ingress',
       type: 'localeText',
       title: 'Ingress',
-      description: 'Kort beskrivelse av siden for ingress, landingsside, søkemotorer og sosiale medier.',
+      description: 'Kort beskrivelse av innholdet for ingress, landingsside, søkemotorer og sosiale medier',
     },
     {
       name: 'innhold',

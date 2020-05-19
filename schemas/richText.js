@@ -18,11 +18,11 @@ export default {
       ],
       styles: [
         { title: 'Normal', value: 'normal' },
-        { title: 'H2', value: 'h2', blockEditor: { render: H2Header } },
-        { title: 'H2 - m/meny', value: 'h2-m-meny', blockEditor: { render: H2HeaderMMeny } },
-        { title: 'H2 - u/bakgrunn', value: 'h2-no-background', blockEditor: { render: H2NoBackround } },
-        { title: 'H3', value: 'h3', blockEditor: { render: H3Header } },
-        { title: 'H4', value: 'h4', blockEditor: { render: H4Header } },
+        { title: 'Overskrift', value: 'h2', blockEditor: { render: H2Header } },
+        { title: 'Overskrift - m/meny', value: 'h2-m-meny', blockEditor: { render: H2HeaderMMeny } },
+        { title: 'Overskrift - u/bakgrunn', value: 'h2-no-background', blockEditor: { render: H2NoBackround } },
+        { title: 'Mellomtittel', value: 'h3', blockEditor: { render: H3Header } },
+        { title: 'Liten mellomtittel', value: 'h4', blockEditor: { render: H4Header } },
       ],
       marks: {
         decorators: [

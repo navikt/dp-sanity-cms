@@ -15,27 +15,27 @@ const headerMixin = (description: string) => css`
 
 export const H2Header = styled.span`
   font-size: 2.2rem;
-  ${headerMixin('H2')}
+  ${headerMixin('Overskrift')}
 `;
 
 export const H2HeaderMMeny = styled.span`
   font-size: 2.2rem;
-  ${headerMixin('H2 m/meny')}
+  ${headerMixin('Overskrift m/meny')}
 `;
 
 export const H2NoBackround = styled.span`
   font-size: 2.2rem;
-  ${headerMixin('H2 uten bakgrunn')}
+  ${headerMixin('Overskrift uten bakgrunn')}
 `;
 
 export const H3Header = styled.span`
   font-size: 1.5rem;
-  ${headerMixin('H3')}
+  ${headerMixin('Mellomtittel')}
 `;
 
 export const H4Header = styled.span`
   font-size: 1.3rem;
-  ${headerMixin('H4')}
+  ${headerMixin('Liten mellomtittel')}
 `;
 
 export const Lenke = styled.span`

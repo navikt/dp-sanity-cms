@@ -9,6 +9,7 @@
   "scripts": {
     "start": "sanity start",
     "test": "sanity check",
+    "deployStudio": "sanity deploy",
     "deploySchema": "sanity graphql deploy"
   },
   "dependencies": {

@@ -1,5 +1,4 @@
 import Web from 'react-icons/lib/md/web';
-import { supportedLanguages } from './utils/languages';
 
 export default {
   name: 'faktaSide',
@@ -9,12 +8,7 @@ export default {
   fields: [
     {
       name: 'publiser',
-      type: 'object',
-      fields: supportedLanguages.map((lang) => ({
-        title: lang.title,
-        name: lang.id,
-        type: 'boolean',
-      })),
+      type: 'publiser',
     },
     {
       name: 'title',

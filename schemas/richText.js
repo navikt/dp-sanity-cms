@@ -2,6 +2,7 @@ import React from 'react';
 import externalLink from './annotations/externalLink';
 import internalLink from './annotations/internalLink';
 import { H2Header, H3Header, H2NoBackround, H2HeaderMMeny, H4Header } from '../components/styledComponents';
+import { InlineUtkastIkon, InlineUtkastStyle } from '../components/Utkast';
 
 export const styles = {
   normal: { title: 'Normal', value: 'normal' },
@@ -21,7 +22,7 @@ export const blocks = {
 };
 
 export const decorators = {
-  utkast: { title: 'Utkast', value: 'utkast', blockEditor: { icon: () => 'U' } },
+  utkast: { title: 'Utkast', value: 'utkast', blockEditor: { icon: InlineUtkastIkon, render: InlineUtkastStyle } },
   strong: { title: 'Strong', value: 'strong' },
   em: { title: 'Emphasis', value: 'em' },
 };
@@ -37,7 +38,7 @@ export default {
       of: [blocks.gTilNok],
       styles: [styles.normal, styles.h2, styles.h2_M_Meny, styles.h2_no_background, styles.h3, styles.h4],
       marks: {
-        decorators: [decorators.utkast, decorators.strong, decorators.em],
+        decorators: [decorators.strong, decorators.em, decorators.utkast],
         annotations: [externalLink, internalLink],
       },
     },

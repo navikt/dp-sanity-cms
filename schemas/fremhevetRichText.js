@@ -14,7 +14,7 @@ export default {
       of: [blocks.gTilNok],
       styles: [styles.normal, styles.h3, styles.h4],
       marks: {
-        decorators: [decorators.utkast, decorators.strong, decorators.em],
+        decorators: [decorators.strong, decorators.em, decorators.utkast],
         annotations: [externalLink, internalLink],
       },
     },

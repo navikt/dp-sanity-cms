@@ -1,12 +1,11 @@
 import React from 'react';
-import WrapIcon from 'react-icons/lib/md/move-to-inbox';
-import FremhevetTekst from '../components/FremhevetTekst';
+import FremhevetTekst, { FremhevetTekstIkon } from '../components/FremhevetTekst';
 
 export default {
   type: 'object',
   name: 'fremhevetTekst',
   title: 'Fremhevet tekst',
-  icon: WrapIcon,
+  icon: FremhevetTekstIkon,
   fields: [
     {
       name: 'innhold',

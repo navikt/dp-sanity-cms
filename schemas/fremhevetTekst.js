@@ -11,7 +11,7 @@ export default {
     {
       name: 'innhold',
       title: 'Innhold',
-      type: 'richText',
+      type: 'fremhevetRichText',
     },
   ],
   preview: {

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import BlockContent from '@sanity/block-content-to-react';
 import styled from 'styled-components';
+import BlockContent from './BlockContent';
 
 export const FremhevetTekstIkon = () => <>❤️</>;
 

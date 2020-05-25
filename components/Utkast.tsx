@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import BlockContent from '@sanity/block-content-to-react';
+import BlockContent from './BlockContent';
 
 const InlineUtkastIkonStyle = styled.span`
   font-size: 0.8rem;

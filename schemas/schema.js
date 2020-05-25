@@ -9,6 +9,7 @@ import video from './video';
 import fremhevetTekst from './fremhevetTekst';
 import publiser from './publiser';
 import fremhevetRichText from './fremhevetRichText';
+import utkast from './utkast';
 
 export default createSchema({
   name: 'dagpenger-info',
@@ -21,6 +22,7 @@ export default createSchema({
     fremhevetRichText,
     fremhevetTekst,
     publiser,
+    utkast,
     localize('richText'),
     localize('string'),
     localize('text'),

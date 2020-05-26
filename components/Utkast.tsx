@@ -1,19 +1,23 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import BlockContent from './BlockContent';
+import BlockContentPreview from './BlockContentPreview';
 
-const InlineUtkastIkonStyle = styled.span`
+const yellow = '#ff0a';
+
+export const InlineUtkastIkon = styled.span`
   font-size: 0.8rem;
   padding: 0.1rem 0.2rem;
   font-weight: 600;
-  background-color: yellow;
+  background-color: ${yellow};
   color: black !important;
+  &::after {
+    content: 'U';
+  }
 `;
 
-export const InlineUtkastIkon = () => <InlineUtkastIkonStyle>U</InlineUtkastIkonStyle>;
-
 export const InlineUtkast = styled.span`
-  background-color: yellow;
+  box-shadow: 0 0 0 0.2rem ${yellow};
+  background-color: #ff02;
   &::after {
     content: ' (utkast)';
     opacity: 0.6;
@@ -21,36 +25,19 @@ export const InlineUtkast = styled.span`
   }
 `;
 
-const UtkastIkonStyle = styled(InlineUtkastIkonStyle)`
+export const UtkastIkon = styled(InlineUtkastIkon)`
   border: 0.1rem black solid;
   border-radius: 0.2rem;
 `;
 
-export const UtkastIkon = () => <UtkastIkonStyle>U</UtkastIkonStyle>;
-
-export const UtkastStyle = styled.div`
-  background-color: #ff02;
-  border: 0.2rem yellow solid;
-  padding: 1rem;
-`;
-
-const Label = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: lightblue;
-  padding: 0.4rem 0.8rem;
-  font-weight: bold;
-  opacity: 0.8;
-`;
-
-export const Utkast = (props) => {
-  return (
-    <UtkastStyle>
-      <Label>
+export const Utkast = (props) => (
+  <BlockContentPreview
+    color={yellow}
+    label={
+      <>
         <UtkastIkon /> Utkast
-      </Label>
-      <BlockContent blocks={props.value.innhold} />
-    </UtkastStyle>
-  );
-};
+      </>
+    }
+    blocks={props.value.innhold}
+  />
+);

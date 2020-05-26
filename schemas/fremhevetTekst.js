@@ -17,11 +17,7 @@ export default {
     select: {
       innhold: 'innhold',
     },
-    prepare(selection) {
-      return {
-        innhold: selection.innhold,
-      };
-    },
+    prepare: (selection) => selection,
     component: FremhevetTekst,
   },
 };

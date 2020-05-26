@@ -1,12 +1,17 @@
 import React from 'react';
-import { UtkastIkon, Utkast } from '../components/Utkast';
+import { VisForIkon, VisForPreview } from '../components/VisForPreview';
 
 export default {
   type: 'object',
-  name: 'utkast',
-  title: 'Utkast',
-  icon: UtkastIkon,
+  name: 'visForBlokk',
+  title: 'Vis for',
+  icon: VisForIkon,
   fields: [
+    {
+      name: 'visFor',
+      type: 'visFor',
+      title: 'Vis for',
+    },
     {
       name: 'innhold',
       title: 'Innhold',
@@ -16,8 +21,9 @@ export default {
   preview: {
     select: {
       innhold: 'innhold',
+      visFor: 'visFor',
     },
     prepare: (selection) => selection,
-    component: Utkast,
+    component: VisForPreview,
   },
 };

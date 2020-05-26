@@ -10,6 +10,8 @@ import fremhevetTekst from './fremhevetTekst';
 import publiser from './publiser';
 import fremhevetRichText from './fremhevetRichText';
 import utkast from './utkast';
+import visFor from './visFor';
+import visForBlokk from './visForBlokk';
 
 export default createSchema({
   name: 'dagpenger-info',
@@ -23,6 +25,8 @@ export default createSchema({
     fremhevetTekst,
     publiser,
     utkast,
+    visFor,
+    visForBlokk,
     localize('richText'),
     localize('string'),
     localize('text'),

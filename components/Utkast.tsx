@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import BlockContentPreview from './BlockContentPreview';
+import InlinePreview from './InlinePreview';
 
 const yellow = '#ff0a';
 
@@ -15,15 +16,7 @@ export const InlineUtkastIkon = styled.span`
   }
 `;
 
-export const InlineUtkast = styled.span`
-  box-shadow: 0 0 0 0.2rem ${yellow};
-  background-color: #ff02;
-  &::after {
-    content: ' (utkast)';
-    opacity: 0.6;
-    font-size: 0.8rem;
-  }
-`;
+export const InlineUtkast = (props) => <InlinePreview {...props} label="utkast" color={yellow} />;
 
 export const UtkastIkon = styled(InlineUtkastIkon)`
   border: 0.1rem black solid;

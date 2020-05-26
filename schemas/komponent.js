@@ -24,9 +24,9 @@ export default {
     select: {
       title: 'komponent',
     },
-    prepare(props) {
+    prepare(selection) {
       return {
-        title: props.title,
+        ...selection,
         subtitle: 'React-komponent',
       };
     },

@@ -28,8 +28,7 @@ export default {
     },
     prepare(selection) {
       return {
-        title: selection.title,
-        subtitle: selection.url,
+        ...selection,
         media: Video,
       };
     },

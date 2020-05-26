@@ -3,6 +3,7 @@ import externalLink from './annotations/externalLink';
 import internalLink from './annotations/internalLink';
 import { H2Header, H3Header, H2NoBackround, H2HeaderMMeny, H4Header } from '../components/styledComponents';
 import { InlineUtkastIkon, InlineUtkast } from '../components/Utkast';
+import visForAnnotation from './annotations/visForAnnotation';
 
 export const styles = {
   normal: { title: 'Normal', value: 'normal' },
@@ -39,12 +40,13 @@ export default {
       styles: [styles.normal, styles.h2, styles.h2_M_Meny, styles.h2_no_background, styles.h3, styles.h4],
       marks: {
         decorators: [decorators.strong, decorators.em, decorators.utkast],
-        annotations: [externalLink, internalLink],
+        annotations: [externalLink, internalLink, visForAnnotation],
       },
     },
     { type: 'customComponent' },
     { type: 'fremhevetTekst' },
     { type: 'video' },
     { type: 'utkast' },
+    { type: 'visForBlokk' },
   ],
 };

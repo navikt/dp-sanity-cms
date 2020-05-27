@@ -12,6 +12,7 @@ import fremhevetRichText from './fremhevetRichText';
 import utkast from './utkast';
 import visFor from './visFor';
 import visForBlokk from './visForBlokk';
+import relatertInformasjonRichText from './relatertInformasjonRichText';
 
 export default createSchema({
   name: 'dagpenger-info',
@@ -27,8 +28,10 @@ export default createSchema({
     utkast,
     visFor,
     visForBlokk,
+    relatertInformasjonRichText,
     localize('richText'),
     localize('string'),
     localize('text'),
+    localize('relatertInformasjonRichText'),
   ]),
 });

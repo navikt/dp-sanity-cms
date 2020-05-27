@@ -1,1 +1,1 @@
-export const filtreringsValg = ['Permittert', 'Student', 'Synneva'];
+export const filtreringsValg = ['Permittert', 'Student', 'Arbeidsledig'].sort();

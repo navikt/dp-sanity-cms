@@ -46,7 +46,6 @@ export default {
     { type: 'customComponent' },
     { type: 'fremhevetTekst' },
     { type: 'video' },
-    { type: 'utkast' },
     { type: 'visForBlokk' },
   ],
 };

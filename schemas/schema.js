@@ -9,7 +9,6 @@ import video from './video';
 import fremhevetTekst from './fremhevetTekst';
 import publiser from './publiser';
 import fremhevetRichText from './fremhevetRichText';
-import utkast from './utkast';
 import visFor from './visFor';
 import visForBlokk from './visForBlokk';
 import relatertInformasjonRichText from './relatertInformasjonRichText';
@@ -25,7 +24,6 @@ export default createSchema({
     fremhevetRichText,
     fremhevetTekst,
     publiser,
-    utkast,
     visFor,
     visForBlokk,
     relatertInformasjonRichText,

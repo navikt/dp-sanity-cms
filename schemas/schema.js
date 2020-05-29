@@ -7,7 +7,7 @@ import customComponent from './komponent';
 import GtoNOK from './GtoNOK';
 import video from './video';
 import fremhevetTekst from './fremhevetTekst';
-import publiser from './publiser';
+import visSprakversjon from './visSprakversjon';
 import fremhevetRichText from './fremhevetRichText';
 import visFor from './visFor';
 import visForBlokk from './visForBlokk';
@@ -23,7 +23,7 @@ export default createSchema({
     video,
     fremhevetRichText,
     fremhevetTekst,
-    publiser,
+    visSprakversjon,
     visFor,
     visForBlokk,
     relatertInformasjonRichText,

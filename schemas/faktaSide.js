@@ -7,8 +7,9 @@ export default {
   icon: Web,
   fields: [
     {
-      name: 'publisert',
-      type: 'publisert',
+      name: 'visSprakversjon',
+      type: 'visSprakversjon',
+      title: 'Vis språkversjon',
       validation: (Rule) => Rule.required(),
     },
     {

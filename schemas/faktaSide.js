@@ -22,6 +22,7 @@ export default {
       type: 'slug',
       title: 'URL (slug)',
       validation: (Rule) => Rule.required(),
+      description: 'Velg en god url. Hvis den må endres i ettertid vil dette knekke lenker som går til denne siden',
       options: {
         source: 'title.no',
         maxLength: 96,

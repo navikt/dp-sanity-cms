@@ -1,6 +1,5 @@
 import React from 'react';
-import externalLink from './annotations/externalLink';
-import internalLink from './annotations/internalLink';
+import link from './annotations/link';
 import { decorators, styles } from './richText';
 import visForAnnotation from './annotations/visForAnnotation';
 
@@ -16,7 +15,7 @@ export default {
       lists: [{ title: 'Bullet', value: 'bullet' }],
       marks: {
         decorators: [decorators.utkast],
-        annotations: [externalLink, internalLink, visForAnnotation],
+        annotations: [link, visForAnnotation],
       },
     },
   ],

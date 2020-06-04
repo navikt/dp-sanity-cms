@@ -1,10 +1,10 @@
-import LinkIcon from 'react-icons/lib/fa/external-link';
+import LinkIcon from 'react-icons/lib/md/link';
 import { Lenke } from '../../components/styledComponents';
 
 export default {
   name: 'link',
   type: 'object',
-  title: 'Ekstern lenke',
+  title: 'Lenke',
   icon: LinkIcon,
   blockEditor: {
     render: Lenke,

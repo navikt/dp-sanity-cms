@@ -1,6 +1,5 @@
 import React from 'react';
-import externalLink from './annotations/externalLink';
-import internalLink from './annotations/internalLink';
+import link from './annotations/link';
 import { H2Header, H3Header, H2NoBackround, H2HeaderMMeny, H4Header } from '../components/styledComponents';
 import { InlineUtkastIkon, InlineUtkast } from '../components/Utkast';
 import visForAnnotation from './annotations/visForAnnotation';
@@ -40,7 +39,7 @@ export default {
       styles: [styles.normal, styles.h2, styles.h2_M_Meny, styles.h2_no_background, styles.h3, styles.h4],
       marks: {
         decorators: [decorators.strong, decorators.em, decorators.utkast],
-        annotations: [externalLink, internalLink, visForAnnotation],
+        annotations: [link, visForAnnotation],
       },
     },
     { type: 'customComponent' },

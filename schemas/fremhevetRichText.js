@@ -1,6 +1,5 @@
 import React from 'react';
-import externalLink from './annotations/externalLink';
-import internalLink from './annotations/internalLink';
+import link from './annotations/link';
 import { blocks, decorators, styles } from './richText';
 import visForAnnotation from './annotations/visForAnnotation';
 
@@ -16,7 +15,7 @@ export default {
       styles: [styles.normal, styles.h3, styles.h4],
       marks: {
         decorators: [decorators.strong, decorators.em, decorators.utkast],
-        annotations: [externalLink, internalLink, visForAnnotation],
+        annotations: [link, visForAnnotation],
       },
     },
     { type: 'customComponent' },

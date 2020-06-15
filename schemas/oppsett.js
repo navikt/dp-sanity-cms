@@ -1,6 +1,7 @@
 export default {
   name: 'oppsett',
   type: 'document',
+  __experimental_actions: ['update', 'publish'],
   fields: [
     {
       name: 'title',

@@ -11,6 +11,10 @@ npm start
 
 Du må logge deg inn i appen med feks github-bruker, du må få tilgang av en administrator for å redigere innhold.
 
+## Publisere innhold
+
+Først må innholdet publiseres i Sanity. Innholdet blir dessverre ikke publisert på nav.no automatisk etter dette, men det jobber vi med. I mellomtiden kan man trigge et manuelt bygg av [faktasider-frontend](https://github.com/navikt/dp-faktasider-frontend) ved å pushe en tom commit `git commit -m "Trigger bygg" --allow-empty` (ikke i dette repoet, men i faktasider-frontend).
+
 ## Konsumenter
 
 Innholdet brukes av:

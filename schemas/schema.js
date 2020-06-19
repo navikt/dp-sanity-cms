@@ -10,7 +10,6 @@ import fremhevetTekst from './fremhevetTekst';
 import visSprakversjon from './visSprakversjon';
 import fremhevetRichText from './fremhevetRichText';
 import visFor from './visFor';
-import visForBlokk from './visForBlokk';
 import relatertInformasjonRichText from './relatertInformasjonRichText';
 import oppsett from './oppsett';
 
@@ -26,7 +25,6 @@ export default createSchema({
     fremhevetTekst,
     visSprakversjon,
     visFor,
-    visForBlokk,
     relatertInformasjonRichText,
     oppsett,
     localize('richText'),

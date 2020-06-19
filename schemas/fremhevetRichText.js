@@ -20,6 +20,5 @@ export default {
     },
     { type: 'customComponent' },
     { type: 'video' },
-    { type: 'visForBlokk' },
   ],
 };

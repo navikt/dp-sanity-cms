@@ -1,7 +1,7 @@
 import React from 'react';
 import Gift from 'react-icons/lib/go/gift';
 
-const tilgjengeligeKomponenter = ['DagpengeKalkulator - normal'];
+const tilgjengeligeKomponenter = ['DagpengeKalkulator - normal', 'DagpengeKalkulator - lærling'];
 
 export default {
   name: 'customComponent',

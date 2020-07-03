@@ -13,8 +13,8 @@ export default {
       type: 'string',
     },
     {
-      name: 'tekst',
-      title: 'Tekst',
+      name: 'innhold',
+      title: 'Innhold',
       type: 'localeRichText',
     },
   ],

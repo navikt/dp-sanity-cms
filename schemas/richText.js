@@ -45,5 +45,9 @@ export default {
     { type: 'customComponent' },
     { type: 'fremhevetTekst' },
     { type: 'video' },
+    {
+      type: 'reference',
+      to: { type: 'deltTekst' },
+    },
   ],
 };

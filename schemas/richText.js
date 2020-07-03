@@ -36,7 +36,7 @@ export default {
       title: 'Block',
       type: 'block',
       of: [blocks.gTilNok],
-      styles: [styles.normal, styles.h2, styles.h2_M_Meny, styles.h2_no_background, styles.h3, styles.h4],
+      styles: [styles.h2, styles.h2_M_Meny, styles.h2_no_background, styles.h3, styles.h4, styles.normal],
       marks: {
         decorators: [decorators.strong, decorators.em, decorators.utkast],
         annotations: [link, visForAnnotation],

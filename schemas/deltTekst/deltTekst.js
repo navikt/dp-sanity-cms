@@ -11,11 +11,13 @@ export default {
       name: 'title',
       title: 'Beskrivelse',
       type: 'string',
+      description:
+        'Kun for intern bruk i sanity. Dette er tittelen du bruker for å trekke inn en delt tekst i innholdet på en faktaside. Vises ikke for bruker',
     },
     {
       name: 'innhold',
       title: 'Innhold',
-      type: 'localeRichText',
+      type: 'localeDeltRichText',
     },
   ],
   preview: {

@@ -12,7 +12,8 @@ import fremhevetRichText from './fremhevetRichText';
 import visFor from './visFor';
 import relatertInformasjonRichText from './relatertInformasjonRichText';
 import oppsett from './oppsett';
-import deltTekst from './deltTekst';
+import deltTekst from './deltTekst/deltTekst';
+import deltRichText from './deltTekst/deltRichText';
 
 export default createSchema({
   name: 'dagpenger-info',
@@ -29,7 +30,9 @@ export default createSchema({
     relatertInformasjonRichText,
     oppsett,
     deltTekst,
+    deltRichText,
     localize('richText'),
+    localize('deltRichText'),
     localize('string'),
     localize('text'),
     localize('relatertInformasjonRichText'),

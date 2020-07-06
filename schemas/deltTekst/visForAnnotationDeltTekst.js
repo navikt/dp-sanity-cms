@@ -15,6 +15,7 @@ export default {
       of: [
         {
           type: 'reference',
+          description: 'Faktasiden må være "Published" for å dukke opp i denne lista',
           to: { type: 'faktaSide' },
         },
       ],

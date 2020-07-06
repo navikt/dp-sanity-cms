@@ -18,7 +18,7 @@ function getVisForLabel(visFor): string {
 }
 
 export function InlineVisForPreview(props) {
-  const visForSide = props.visPaaSide?.length ? 'Vises på utvalgte sider. ' : '';
+  const visForSide = props.visPaaSider?.length ? 'Vises på utvalgte sider. ' : '';
   const label = getVisForLabel(props.visFor);
   return (
     <InlinePreview label={visForSide + label} color={color}>

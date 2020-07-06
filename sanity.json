@@ -6,7 +6,7 @@
   "__experimental_spaces": [
     {
       "name": "production",
-      "title": "Production",
+      "title": "Produksjon",
       "default": true,
       "api": {
         "projectId": "rt6o382n",
@@ -15,7 +15,7 @@
     },
     {
       "name": "development",
-      "title": "Development",
+      "title": "Test",
       "api": {
         "projectId": "rt6o382n",
         "dataset": "development"

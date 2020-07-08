@@ -12,7 +12,8 @@
     "deploy": "npm run deploySchema && npm run deployDevSchema && npm run deployStudio",
     "deployStudio": "sanity deploy",
     "deploySchema": "sanity graphql deploy --no-playground",
-    "deployDevSchema": "sanity graphql deploy --no-playground --dataset development"
+    "deployDevSchema": "sanity graphql deploy --no-playground --dataset development",
+    "backup": "curl https://rt6o382n.api.sanity.io/v1/data/export/production/ > backup.ndjson"
   },
   "dependencies": {
     "@sanity/base": "^1.149.16",

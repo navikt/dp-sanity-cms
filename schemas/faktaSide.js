@@ -35,12 +35,6 @@ export default {
       description: 'Kort beskrivelse av innholdet for ingress, landingsside, søkemotorer og sosiale medier',
     },
     {
-      name: 'sistOppdatert',
-      type: 'localeString',
-      title: 'Sist oppdatert',
-      description: 'feks. "Denne siden blir fortløpende oppdatert, sist oppdatert 20.05.2020 15:30"',
-    },
-    {
       name: 'innhold',
       type: 'localeRichText',
       title: 'Innhold',

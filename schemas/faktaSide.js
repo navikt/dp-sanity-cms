@@ -10,7 +10,8 @@ export default {
       name: 'visSprakversjon',
       type: 'visSprakversjon',
       title: 'Vis språkversjon',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) =>
+        Rule.custom((sprak) => sprak?.no || sprak?.en || 'Siden må være tilgjengelig på minst et språk'),
     },
     {
       name: 'title',

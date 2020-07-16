@@ -45,6 +45,7 @@ export default {
     { type: 'customComponent' },
     { type: 'fremhevetTekst' },
     { type: 'video' },
+    { type: 'tileggsInformasjon' },
     {
       type: 'reference',
       description: 'Den delte teksten må være "Published" for å dukke opp i denne lista',

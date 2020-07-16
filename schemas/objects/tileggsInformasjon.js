@@ -1,0 +1,28 @@
+import React from 'react';
+import TillegsInfo, { TillegsInfoIkon } from '../../components/TillegsInfo';
+
+export default {
+  type: 'object',
+  name: 'tileggsInformasjon',
+  title: 'Tillegsinnformasjon',
+  icon: TillegsInfoIkon,
+  fields: [
+    {
+      name: 'title',
+      title: 'Tittel',
+      type: 'string',
+    },
+    {
+      name: 'innhold',
+      type: 'tilleggsInfoRichText',
+    },
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      innhold: 'innhold',
+    },
+    prepare: (selection) => selection,
+    component: TillegsInfo,
+  },
+};

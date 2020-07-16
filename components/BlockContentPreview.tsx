@@ -6,6 +6,7 @@ import BlockContent from './BlockContent';
 interface Props {
   color: string;
   label: ReactNode;
+  before?: ReactNode;
   blocks: any;
 }
 
@@ -30,6 +31,7 @@ function BlockContentPreview(props: Props) {
   return (
     <Style color={props.color}>
       <Label color={props.color}>{props.label}</Label>
+      {props.before}
       <BlockContent blocks={props.blocks} />
     </Style>
   );

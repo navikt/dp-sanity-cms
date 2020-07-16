@@ -1,5 +1,5 @@
 import React from 'react';
-import FremhevetTekst, { FremhevetTekstIkon } from '../components/FremhevetTekst';
+import FremhevetTekst, { FremhevetTekstIkon } from '../../components/FremhevetTekst';
 
 export default {
   type: 'object',

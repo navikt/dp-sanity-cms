@@ -1,7 +1,7 @@
 import React from 'react';
-import link from './annotations/link';
+import link from '../annotations/link';
 import { blocks, decorators, styles } from './richText';
-import visForAnnotation from './annotations/visForAnnotation';
+import visForAnnotation from '../annotations/visForAnnotation';
 
 export default {
   title: 'Fremhevet Rich Text',

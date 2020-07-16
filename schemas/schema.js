@@ -1,19 +1,19 @@
 import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
-import richText from './richText';
-import faktaSide from './faktaSide';
+import richText from './objects/richText';
+import faktaSide from './documents/faktaSide';
 import localize from './utils/localize';
-import customComponent from './komponent';
-import GtoNOK from './GtoNOK';
-import video from './video';
-import fremhevetTekst from './fremhevetTekst';
-import visSprakversjon from './visSprakversjon';
-import fremhevetRichText from './fremhevetRichText';
-import visFor from './visFor';
-import relatertInformasjonRichText from './relatertInformasjonRichText';
-import oppsett from './oppsett';
-import deltTekst from './deltTekst/deltTekst';
-import deltRichText from './deltTekst/deltRichText';
+import customComponent from './objects/komponent';
+import GtoNOK from './objects/GtoNOK';
+import video from './objects/video';
+import fremhevetTekst from './objects/fremhevetTekst';
+import visSprakversjon from './objects/visSprakversjon';
+import fremhevetRichText from './objects/fremhevetRichText';
+import visFor from './objects/visFor';
+import relatertInformasjonRichText from './objects/relatertInformasjonRichText';
+import oppsett from './documents/oppsett';
+import deltTekst from './documents/deltTekst/deltTekst';
+import deltRichText from './documents/deltTekst/deltRichText';
 
 export default createSchema({
   name: 'dagpenger-info',

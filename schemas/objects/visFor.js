@@ -1,5 +1,5 @@
 import React from 'react';
-import { filtreringsValg } from './utils/filtreringsValg';
+import { filtreringsValg } from '../utils/filtreringsValg';
 
 export default {
   name: 'visFor',

@@ -1,8 +1,8 @@
 import React from 'react';
-import link from './annotations/link';
-import { H2Header, H3Header, H2NoBackround, H2HeaderMMeny, H4Header } from '../components/styledComponents';
-import { InlineUtkastIkon, InlineUtkast } from '../components/Utkast';
-import visForAnnotation from './annotations/visForAnnotation';
+import link from '../annotations/link';
+import { H2Header, H3Header, H2NoBackround, H2HeaderMMeny, H4Header } from '../../components/styledComponents';
+import { InlineUtkastIkon, InlineUtkast } from '../../components/Utkast';
+import visForAnnotation from '../annotations/visForAnnotation';
 
 export const styles = {
   normal: { title: 'Normal', value: 'normal' },

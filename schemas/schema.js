@@ -12,10 +12,11 @@ import fremhevetRichText from './objects/fremhevetRichText';
 import visFor from './objects/visFor';
 import relatertInformasjonRichText from './objects/relatertInformasjonRichText';
 import oppsett from './documents/oppsett';
-import deltTekst from './documents/deltTekst/deltTekst';
-import deltRichText from './documents/deltTekst/deltRichText';
+import deltTekst from './documents/deltTekst';
+import deltRichText from './objects/deltRichText';
 import tileggsInformasjon from './objects/tileggsInformasjon';
 import tilleggsInfoRichText from './objects/tilleggsInfoRichText';
+import deltTekstReference from './objects/deltTekstReference';
 
 export default createSchema({
   name: 'dagpenger-info',
@@ -32,6 +33,7 @@ export default createSchema({
     relatertInformasjonRichText,
     oppsett,
     deltTekst,
+    deltTekstReference,
     deltRichText,
     tileggsInformasjon,
     tilleggsInfoRichText,

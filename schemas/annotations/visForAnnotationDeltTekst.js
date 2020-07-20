@@ -1,5 +1,5 @@
 import React from 'react';
-import visForAnnotation from '../../annotations/visForAnnotation';
+import visForAnnotation from './visForAnnotation';
 
 export default {
   ...visForAnnotation,

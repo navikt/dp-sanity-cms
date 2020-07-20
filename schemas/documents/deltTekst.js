@@ -1,11 +1,10 @@
-import React from 'react';
-import ShortText from 'react-icons/lib/md/short-text';
+import { DeltTekstIkon } from '../../components/DeltTekstPreview';
 
 export default {
   type: 'document',
   name: 'deltTekst',
   title: 'Delt tekst',
-  icon: ShortText,
+  icon: DeltTekstIkon,
   fields: [
     {
       name: 'title',
@@ -27,7 +26,7 @@ export default {
     prepare(selection) {
       return {
         title: selection.title,
-        media: ShortText,
+        media: DeltTekstIkon,
       };
     },
   },

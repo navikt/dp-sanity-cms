@@ -27,7 +27,7 @@ export const decorators = {
   GtilNOK: {
     title: 'Grunnbelløp til NOK',
     value: 'GtilNOK',
-    blockEditor: { icon: GtilNOKIcon, render: GtilNOKPeview },
+    blockEditor: { icon: GtilNOKIcon, render: (props) => <GtilNOKPeview {...props.children.props} /> },
   },
   strong: { title: 'Strong', value: 'strong' },
   em: { title: 'Emphasis', value: 'em' },

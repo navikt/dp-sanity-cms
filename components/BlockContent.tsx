@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { ReactNode } from 'react';
 import SanityBlockContent from '@sanity/block-content-to-react';
-import { GtilNOKPeview } from '../schemas/objects/GtoNOK';
+import { GtilNOKPeview } from '../components/GtilNOKPreview';
+
 type Serializers = {
   types: {
     [key: string]: ({ node: any }) => ReactNode;
@@ -12,10 +13,10 @@ type Serializers = {
 };
 
 const serializers: Serializers = {
-  types: {
-    GtilNOK: (props) => <GtilNOKPeview G={props.node.G} />,
+  types: {},
+  marks: {
+    GtilNOK: GtilNOKPeview,
   },
-  marks: {},
 };
 
 function BlockContent(props: { blocks: any }) {

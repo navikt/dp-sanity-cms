@@ -4,8 +4,12 @@ import InlinePreview from './InlinePreview';
 
 export const GtilNOKIcon = Money;
 
-export const GtilNOKPeview = (props) => {
-  const notNumeric = isNaN(Number(props.children.props.children));
+interface Props {
+  children: string[];
+}
+
+export const GtilNOKPeview = (props: Props) => {
+  const notNumeric = isNaN(Number(props.children));
   return (
     <InlinePreview color={notNumeric ? 'red' : 'limegreen'} label={notNumeric ? 'Ikke et tall!' : 'G'}>
       {props.children}

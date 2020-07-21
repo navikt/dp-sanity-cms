@@ -3,6 +3,7 @@ import link from '../annotations/link';
 import { H2Header, H3Header, H2NoBackround, H2HeaderMMeny, H4Header } from '../../components/styledComponents';
 import { InlineUtkastIkon, InlineUtkast } from '../../components/Utkast';
 import visForAnnotation from '../annotations/visForAnnotation';
+import { GtilNOKIcon, GtilNOKPeview } from '../../components/GtilNOKPreview';
 
 export const styles = {
   normal: { title: 'Normal', value: 'normal' },
@@ -23,6 +24,11 @@ export const blocks = {
 
 export const decorators = {
   utkast: { title: 'Utkast', value: 'utkast', blockEditor: { icon: InlineUtkastIkon, render: InlineUtkast } },
+  GtilNOK: {
+    title: 'Grunnbelløp til NOK',
+    value: 'GtilNOK',
+    blockEditor: { icon: GtilNOKIcon, render: GtilNOKPeview },
+  },
   strong: { title: 'Strong', value: 'strong' },
   em: { title: 'Emphasis', value: 'em' },
 };
@@ -38,7 +44,7 @@ export default {
       of: [blocks.gTilNok],
       styles: [styles.h2, styles.h2_M_Meny, styles.h2_no_background, styles.h3, styles.h4, styles.normal],
       marks: {
-        decorators: [decorators.strong, decorators.em, decorators.utkast],
+        decorators: [decorators.strong, decorators.em, decorators.utkast, decorators.GtilNOK],
         annotations: [link, visForAnnotation],
       },
     },

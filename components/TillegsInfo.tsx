@@ -15,7 +15,7 @@ const TillegsInfo = (props) => (
         <TillegsInfoIkon /> Tilleggsinfo
       </>
     }
-    color="lightskyblue"
+    color="mistyrose"
     before={<Tittel>{props.value.title}</Tittel>}
     blocks={props.value.innhold}
   />

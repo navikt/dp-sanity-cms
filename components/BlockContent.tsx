@@ -15,7 +15,7 @@ type Serializers = {
 const serializers: Serializers = {
   types: {},
   marks: {
-    GtilNOK: GtilNOKPeview,
+    GtilNOK: (props) => <GtilNOKPeview {...props} grunnbelløp={props.children.join('')} />,
   },
 };
 

@@ -3,7 +3,7 @@ import link from '../annotations/link';
 import { H2Header, H3Header, H2NoBackround, H2HeaderMMeny, H4Header } from '../../components/styledComponents';
 import { InlineUtkastIkon, InlineUtkast } from '../../components/Utkast';
 import visForAnnotation from '../annotations/visForAnnotation';
-import { GtilNOKIcon, GtilNOKPeview } from '../../components/GtilNOKPreview';
+import { GtilNokEditor, GtilNOKIcon, GtilNOKPeview } from '../../components/GtilNOKPreview';
 
 export const styles = {
   normal: { title: 'Normal', value: 'normal' },
@@ -23,7 +23,7 @@ export const decorators = {
   GtilNOK: {
     title: 'Grunnbelløp til NOK',
     value: 'GtilNOK',
-    blockEditor: { icon: GtilNOKIcon, render: (props) => <GtilNOKPeview {...props.children.props} /> },
+    blockEditor: { icon: GtilNOKIcon, render: (props) => <GtilNOKPeview {...props} grunnbelløp={props.text} /> },
   },
   strong: { title: 'Strong', value: 'strong' },
   em: { title: 'Emphasis', value: 'em' },

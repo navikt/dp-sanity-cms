@@ -18,10 +18,6 @@ export const styles = {
   h4: { title: 'Liten mellomtittel', value: 'h4', blockEditor: { render: H4Header } },
 };
 
-export const blocks = {
-  gTilNok: { type: 'GtilNOK' },
-};
-
 export const decorators = {
   utkast: { title: 'Utkast', value: 'utkast', blockEditor: { icon: InlineUtkastIkon, render: InlineUtkast } },
   GtilNOK: {
@@ -41,7 +37,6 @@ export default {
     {
       title: 'Block',
       type: 'block',
-      of: [blocks.gTilNok],
       styles: [styles.h2, styles.h2_M_Meny, styles.h2_no_background, styles.h3, styles.h4, styles.normal],
       marks: {
         decorators: [decorators.strong, decorators.em, decorators.utkast, decorators.GtilNOK],
@@ -53,10 +48,5 @@ export default {
     { type: 'video' },
     { type: 'tileggsInformasjon' },
     { type: 'deltTekstReference' },
-    {
-      type: 'reference',
-      description: 'Den delte teksten må være "Published" for å dukke opp i denne lista',
-      to: { type: 'deltTekst' },
-    },
   ],
 };

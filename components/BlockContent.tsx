@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ReactNode } from 'react';
 import SanityBlockContent from '@sanity/block-content-to-react';
-import { GtilNOKPeview } from '../components/GtilNOKPreview';
+import { GtilNOKPeview } from './GtilNOKPreview';
 
 type Serializers = {
   types: {

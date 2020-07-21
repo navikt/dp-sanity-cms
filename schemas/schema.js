@@ -4,7 +4,6 @@ import richText from './objects/richText';
 import faktaSide from './documents/faktaSide';
 import localize from './utils/localize';
 import customComponent from './objects/komponent';
-import GtoNOK from './objects/GtoNOK';
 import video from './objects/video';
 import fremhevetTekst from './objects/fremhevetTekst';
 import visSprakversjon from './objects/visSprakversjon';
@@ -24,7 +23,6 @@ export default createSchema({
     richText,
     faktaSide,
     customComponent,
-    GtoNOK,
     video,
     fremhevetRichText,
     fremhevetTekst,

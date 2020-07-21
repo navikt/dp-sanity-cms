@@ -16,6 +16,8 @@ import deltRichText from './objects/deltRichText';
 import tileggsInformasjon from './objects/tileggsInformasjon';
 import tilleggsInfoRichText from './objects/tilleggsInfoRichText';
 import deltTekstReference from './objects/deltTekstReference';
+import deltFremhevetTekst from './objects/deltFremhevetTekst';
+import deltFremhevetRichText from './objects/deltFremhevetRichText';
 
 export default createSchema({
   name: 'dagpenger-info',
@@ -33,6 +35,8 @@ export default createSchema({
     deltTekst,
     deltTekstReference,
     deltRichText,
+    deltFremhevetTekst,
+    deltFremhevetRichText,
     tileggsInformasjon,
     tilleggsInfoRichText,
     localize('richText'),

@@ -3,14 +3,14 @@ import FremhevetTekst, { FremhevetTekstIkon } from '../../components/FremhevetTe
 
 export default {
   type: 'object',
-  name: 'fremhevetTekst',
-  title: 'Fremhevet tekst',
+  name: 'deltFremhevetTekst',
+  title: 'Fremhevet tekst i delt tekst',
   icon: FremhevetTekstIkon,
   fields: [
     {
       name: 'innhold',
       title: 'Innhold',
-      type: 'fremhevetRichText',
+      type: 'deltFremhevetRichText',
     },
   ],
   preview: {
@@ -18,6 +18,6 @@ export default {
       innhold: 'innhold',
     },
     prepare: (selection) => selection,
-    component: (selection) => <FremhevetTekst blocks={selection.value.innhold} />,
+    component: FremhevetTekst,
   },
 };

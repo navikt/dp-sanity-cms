@@ -1,25 +1,23 @@
 import React from 'react';
-import visForAnnotationDeltTekst from '../annotations/visForAnnotationDeltTekst';
 import link from '../annotations/link';
 import { decorators, styles } from './richText';
+import visForAnnotationDeltTekst from '../annotations/visForAnnotationDeltTekst';
 
 export default {
-  title: 'Rich Text',
-  name: 'deltRichText',
+  title: 'Fremhevet Rich Text',
+  name: 'deltFremhevetRichText',
   type: 'array',
   of: [
     {
       title: 'Block',
       type: 'block',
-      styles: [styles.h2, styles.h2_M_Meny, styles.h2_no_background, styles.h3, styles.h4, styles.normal],
+      styles: [styles.normal, styles.h3, styles.h4],
       marks: {
         decorators: [decorators.strong, decorators.em, decorators.utkast, decorators.GtilNOK],
         annotations: [link, visForAnnotationDeltTekst],
       },
     },
     { type: 'customComponent' },
-    { type: 'deltFremhevetTekst' },
     { type: 'video' },
-    { type: 'tileggsInformasjon' },
   ],
 };

@@ -3,7 +3,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import richText from './objects/richText';
 import faktaSide from './documents/faktaSide';
 import localize from './utils/localize';
-import customComponent from './objects/komponent';
+import customComponent from './objects/customComponent';
 import video from './objects/video';
 import fremhevetTekst from './objects/fremhevetTekst';
 import visSprakversjon from './objects/visSprakversjon';

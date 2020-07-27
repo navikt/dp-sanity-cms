@@ -8,7 +8,12 @@ const Tittel = styled.p`
   font-weight: bold;
 `;
 
-const TillegsInfo = (props) => (
+interface Props {
+  title: string;
+  blocks: any;
+}
+
+const TillegsInfo = (props: Props) => (
   <BlockContentPreview
     label={
       <>
@@ -16,8 +21,8 @@ const TillegsInfo = (props) => (
       </>
     }
     color="mistyrose"
-    before={<Tittel>{props.value.title}</Tittel>}
-    blocks={props.value.innhold}
+    before={<Tittel>{props.title}</Tittel>}
+    blocks={props.blocks}
   />
 );
 

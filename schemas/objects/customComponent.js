@@ -1,5 +1,5 @@
 import React from 'react';
-import Gift from 'react-icons/lib/go/gift';
+import CustomComponentPreview, { CustomComponentIkon } from '../../components/CustomComponentPreview';
 
 const tilgjengeligeKomponenter = ['DagpengeKalkulator - normal', 'DagpengeKalkulator - lærling'];
 
@@ -7,7 +7,7 @@ export default {
   name: 'customComponent',
   title: 'Komponent',
   type: 'object',
-  icon: Gift,
+  icon: CustomComponentIkon,
   fields: [
     {
       title: 'Velg komponent',
@@ -24,11 +24,7 @@ export default {
     select: {
       title: 'komponent',
     },
-    prepare(selection) {
-      return {
-        ...selection,
-        subtitle: 'React-komponent',
-      };
-    },
+    prepare: (selection) => selection,
+    component: (props) => <CustomComponentPreview name={props.value.title} />,
   },
 };

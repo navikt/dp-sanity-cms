@@ -8,6 +8,7 @@ interface Props {
   label: ReactNode;
   before?: ReactNode;
   blocks: any;
+  className?: string;
 }
 
 const Style = styled.div<{ color: string }>`
@@ -29,7 +30,7 @@ const Label = styled.div<{ color: string }>`
 
 function BlockContentPreview(props: Props) {
   return (
-    <Style color={props.color}>
+    <Style color={props.color} className={`${props.className} block-content-preview`}>
       <Label color={props.color}>{props.label}</Label>
       {props.before}
       <BlockContent blocks={props.blocks} />

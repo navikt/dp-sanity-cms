@@ -1,11 +1,11 @@
 import React from 'react';
-import Video from 'react-icons/lib/md/ondemand-video';
+import VideoPreview, { VideoIkon } from '../../components/VideoPreview';
 
 export default {
   type: 'object',
   name: 'video',
   title: 'Video',
-  icon: Video,
+  icon: VideoIkon,
   fields: [
     {
       name: 'title',
@@ -18,7 +18,7 @@ export default {
       title: 'URL',
       description:
         'Ikke lenk til youtube eller andre tjenester som kan finne på å spore brukerne våre. qbrick.com regnes som trygt. (https://video.qbrick.com/play2/embed/player?accountId=763...)',
-      type: 'string',
+      type: 'url',
     },
   ],
   preview: {
@@ -26,11 +26,7 @@ export default {
       title: 'title',
       url: 'url',
     },
-    prepare(selection) {
-      return {
-        ...selection,
-        media: Video,
-      };
-    },
+    prepare: (selection) => selection,
+    component: (props) => <VideoPreview name={props.value.title} url={props.value.url} />,
   },
 };

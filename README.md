@@ -11,6 +11,12 @@ npm start
 
 Du må logge deg inn i appen med feks github-bruker, du må få tilgang av en administrator for å redigere innhold.
 
+### Deploy av endringer i Sanity Studio
+
+Push på master kjører ikke build & deploy, så for å deploye kodeendringer til [https://dagpenger.sanity.studio](https://dagpenger.sanity.studio) må du deploye slik:
+
+`npm run deploy`
+
 ## Publisere innhold
 
 Først må innholdet publiseres i Sanity. Innholdet blir dessverre ikke publisert på nav.no automatisk etter dette, men det jobber vi med. I mellomtiden kan man trigge et manuelt bygg av [faktasider-frontend](https://github.com/navikt/dp-faktasider-frontend) ved å pushe en tom commit `git commit -m "Trigger bygg" --allow-empty` (ikke i dette repoet, men i faktasider-frontend).

@@ -17,7 +17,7 @@
     "copyDataToDevelopment": "npm run backup && sanity dataset import backup.ndjson development --replace"
   },
   "dependencies": {
-    "@sanity/base": "^1.149.16",
+    "@sanity/base": "^1.149.18",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/components": "^1.149.16",
     "@sanity/core": "^1.149.17",

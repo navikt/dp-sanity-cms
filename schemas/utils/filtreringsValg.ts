@@ -5,6 +5,7 @@ export const filtreringsValg = [
   'Konkurs',
   'SelvstendigNaeringsdrivende',
   'Frilanser',
-  'NyDimmitert',
+  'Nydimmitert',
   'Laerling',
+  'Doktorgradskandidat',
 ].sort();

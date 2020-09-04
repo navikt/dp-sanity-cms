@@ -5,6 +5,12 @@ export default {
   type: 'document',
   title: 'Faktaside',
   icon: Web,
+  fieldsets: [
+    {
+      name: 'filtrering',
+      title: 'Filtrering',
+    },
+  ],
   fields: [
     {
       name: 'visSprakversjon',
@@ -43,6 +49,12 @@ export default {
     {
       name: 'relatertInformasjon',
       type: 'localeRelatertInformasjonRichText',
+    },
+    {
+      fieldset: 'filtrering',
+      name: 'visIngenValgPasser',
+      title: 'Vis ingen valg passer',
+      type: 'boolean',
     },
   ],
   preview: {

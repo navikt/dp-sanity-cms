@@ -25,6 +25,11 @@ export default {
         },
       ],
     },
+    {
+      name: 'folketrygdensGrunnbellop',
+      type: 'number',
+      description: 'Brukes for å konvertere G til kroner i frontenden',
+    },
   ],
   preview: {
     prepare: (selection) => ({

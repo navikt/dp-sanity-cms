@@ -40,4 +40,6 @@ export const H4Header = styled.span`
 
 export const Lenke = styled.span`
   color: blue;
+  min-width: 1rem;
+  display: inline-block;
 `;

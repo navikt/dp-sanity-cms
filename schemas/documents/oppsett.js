@@ -28,6 +28,7 @@ export default {
     {
       name: 'folketrygdensGrunnbellop',
       type: 'number',
+      validation: (Rule) => Rule.required(),
       description: 'Brukes for å konvertere G til kroner i frontenden',
     },
   ],

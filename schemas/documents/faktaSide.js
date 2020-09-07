@@ -7,33 +7,46 @@ export default {
   icon: Web,
   fieldsets: [
     {
-      name: 'filtrering',
-      title: 'Filtrering',
+      name: 'oppsett',
+      title: 'Oppsett',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
     },
   ],
   fields: [
     {
-      name: 'visSprakversjon',
-      type: 'visSprakversjon',
-      title: 'Vis språkversjon',
-      validation: (Rule) =>
-        Rule.custom((sprak) => sprak?.no || sprak?.en || 'Siden må være tilgjengelig på minst et språk'),
-    },
-    {
       name: 'title',
       type: 'localeString',
       title: 'Tittel',
+      fieldset: 'oppsett',
     },
     {
       name: 'slug',
       type: 'slug',
       title: 'URL (slug)',
+      fieldset: 'oppsett',
       validation: (Rule) => Rule.required(),
       description: 'Velg en god url. Hvis den må endres i ettertid vil dette knekke lenker som går til denne siden',
       options: {
         source: 'title.no',
         maxLength: 96,
       },
+    },
+    {
+      name: 'visSprakversjon',
+      type: 'visSprakversjon',
+      title: 'Vis språkversjon',
+      fieldset: 'oppsett',
+      validation: (Rule) =>
+        Rule.custom((sprak) => sprak?.no || sprak?.en || 'Siden må være tilgjengelig på minst et språk'),
+    },
+    {
+      fieldset: 'oppsett',
+      name: 'visIngenValgPasser',
+      title: 'Tilpass innhold: Vis "ingen valg passer"',
+      type: 'boolean',
     },
     {
       name: 'ingress',
@@ -49,12 +62,6 @@ export default {
     {
       name: 'relatertInformasjon',
       type: 'localeRelatertInformasjonRichText',
-    },
-    {
-      fieldset: 'filtrering',
-      name: 'visIngenValgPasser',
-      title: 'Vis ingen valg passer',
-      type: 'boolean',
     },
   ],
   preview: {

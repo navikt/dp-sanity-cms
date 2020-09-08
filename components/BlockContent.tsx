@@ -9,6 +9,7 @@ import TillegsInfo from './TillegsInfo';
 import { InlineUtkast } from './Utkast';
 import VideoPreview from './VideoPreview';
 import { InlineVisForPreview } from './VisForPreview';
+import { H2Header, H3Header, H2NoBackround, H2HeaderMMeny, H4Header } from '../components/styledComponents';
 
 type Serializers = {
   types: {
@@ -19,12 +20,32 @@ type Serializers = {
   };
 };
 
+const BlockRenderer = (props) => {
+  const { style = 'normal' } = props.node;
+
+  switch (style) {
+    case 'h2':
+      return <H2Header {...props} />;
+    case 'h2-m-meny':
+      return <H2HeaderMMeny {...props} />;
+    case 'h2-no-background':
+      return <H2NoBackround {...props} />;
+    case 'h3':
+      return <H3Header {...props} />;
+    case 'h4':
+      return <H4Header {...props} />;
+    default:
+      return SanityBlockContent.defaultSerializers.types.block(props);
+  }
+};
+
 const serializers: Serializers = {
   types: {
     deltFremhevetTekst: (props) => <FremhevetTekst blocks={props.node.innhold} />,
     customComponent: (props) => <CustomComponentPreview name={props.node.komponent} />,
     tileggsInformasjon: (props) => <TillegsInfo title={props.node.title} blocks={props.node.innhold} />,
     video: (props) => <VideoPreview name={props.node.title} url={props.node.url} />,
+    block: BlockRenderer,
   },
   marks: {
     GtilNOK: (props) => <GtilNOKPeview {...props} grunnbelløp={props.children.join('')} />,

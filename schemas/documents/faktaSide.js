@@ -55,6 +55,11 @@ export default {
       description: 'Kort beskrivelse av innholdet for ingress, landingsside, søkemotorer og sosiale medier',
     },
     {
+      name: 'kortFortalt',
+      type: 'localeKortFortaltRichText',
+      title: 'Kort fortalt',
+    },
+    {
       name: 'innhold',
       type: 'localeRichText',
       title: 'Innhold',

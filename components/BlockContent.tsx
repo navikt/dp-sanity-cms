@@ -29,6 +29,7 @@ const serializers: Serializers = {
   marks: {
     GtilNOK: (props) => <GtilNOKPeview {...props} grunnbelløp={props.children.join('')} />,
     utkast: InlineUtkast,
+    visForAnnotation: (props) => <InlineVisForPreview visFor={props.mark.visFor} {...props} />,
     visForAnnotationDeltTekst: (props) => (
       <InlineVisForPreview visPaaSider={props.mark.visPaaSider} visFor={props.mark.visFor} {...props} />
     ),

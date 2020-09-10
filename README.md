@@ -2,7 +2,9 @@
 
 [Sanity-studio](https://www.sanity.io/studio) / cms-frontend for dagpengerelatert informasjon.
 
-## Starte appen lokalt
+## Utvikling
+
+### Starte appen lokalt
 
 ```
 npm i
@@ -10,6 +12,12 @@ npm start
 ```
 
 Du må logge deg inn i appen med feks github-bruker, du må få tilgang av en administrator for å redigere innhold.
+
+### Scripts
+
+`backup` lagrer en backup av proddatasettet lokalt
+`clearDevelopmentDataset` sletter all data i development-datasettet slik at du har et clean utgangspunkt
+`copyProdDataToDevelopment` sletter development-datasettet og bytter det ut med en kopi av prod-datasettet
 
 ### Deploy av endringer i Sanity Studio
 

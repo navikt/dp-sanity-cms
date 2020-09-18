@@ -11,6 +11,12 @@ export default {
       description: 'Hovedtittel på forsiden nav.no/arbeid',
     },
     {
+      name: 'ingress',
+      type: 'localeText',
+      title: 'Ingress',
+      description: 'Kort beskrivelse av innholdet på landingssiden for ingress, søkemotorer og sosiale medier',
+    },
+    {
       name: 'eksterneLenker',
       title: 'Forsidelenker',
       description: 'Lenker på forsiden som leder bruker til andre apper',

@@ -8,4 +8,8 @@ export const filtreringsValg = [
   'Nydimmitert',
   'Laerling',
   'Doktorgradskandidat',
+  'SagtOppSelv',
+  'MottarAnnenStotteFraNav',
+  'StreikLockout',
+  'MottarVentelønn',
 ].sort();

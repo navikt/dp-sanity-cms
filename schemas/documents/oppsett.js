@@ -10,6 +10,17 @@ export default {
       description: 'Hovedtittel på forsiden nav.no/arbeid',
     },
     {
+      name: 'eksterneLenker',
+      title: 'Forsidelenker',
+      description: 'Lenker på forsiden som leder bruker til andre apper',
+      type: 'array',
+      of: [
+        {
+          type: 'forsideLenke',
+        },
+      ],
+    },
+    {
       name: 'faktasideSortering',
       title: 'Sortering faktasider',
       type: 'array',

@@ -1,5 +1,6 @@
 export default {
   name: 'oppsett',
+  title: 'Oppsett',
   type: 'document',
   __experimental_actions: ['update', 'publish'],
   fields: [

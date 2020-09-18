@@ -5,6 +5,7 @@ import visForAnnotation from '../annotations/visForAnnotation';
 
 export default {
   name: 'tilleggsInfoRichText',
+  title: 'Tillegsinfo richtext',
   type: 'array',
   of: [
     {

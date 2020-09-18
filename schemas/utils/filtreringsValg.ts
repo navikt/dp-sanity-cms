@@ -11,5 +11,5 @@ export const filtreringsValg = [
   'SagtOppSelv',
   'MottarAnnenStotteFraNav',
   'StreikLockout',
-  'MottarVentelønn',
+  'MottarVentelonn',
 ].sort();

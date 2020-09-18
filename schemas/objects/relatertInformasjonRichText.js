@@ -5,6 +5,7 @@ import visForAnnotation from '../annotations/visForAnnotation';
 
 export default {
   name: 'relatertInformasjonRichText',
+  title: 'Relatert innformasjon richtext',
   type: 'array',
   description: 'Legg gjerne lenkene i en bulletpoint-liste, da blir formatteringen i frontend bedre',
   of: [

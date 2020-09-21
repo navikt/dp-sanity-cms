@@ -8,7 +8,7 @@ export default {
   fieldsets: [
     {
       name: 'config',
-      title: 'Konfigurasjon',
+      title: 'Skjul for',
     },
     {
       name: 'situasjoner',
@@ -19,7 +19,7 @@ export default {
     {
       type: 'boolean',
       name: 'skjulFor',
-      title: 'Ovmendt filtrering / skjul for',
+      title: 'Ovmendt filtrering',
       description:
         'Skru på denne for å skjule teksten for valgte situasjoner istedenfor å vise. (Vil fortsatt vises dersom bruker ikke har valgt filtrering eller velger "Ingen valg passer").',
       fieldset: 'config',

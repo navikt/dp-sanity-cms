@@ -12,8 +12,15 @@ function getVisForLabel(visFor: VisFor): string {
   if (!visFor) {
     return '';
   }
-  const visForSituasjoner = Object.keys(visFor).filter((key) => visFor[key] === true);
-  return visForSituasjoner.length ? 'Vises for ' + visForSituasjoner.join(' & ') : '';
+
+  const skjulFor = visFor.skjulFor;
+  const visForSituasjoner = Object.keys(visFor)
+    .filter((key) => visFor[key] === true)
+    .filter((key) => key !== 'skjulFor');
+
+  if (!visForSituasjoner.length) return '';
+
+  return (skjulFor ? 'Skjules for ' : 'Vises for ') + visForSituasjoner.join(' & ');
 }
 
 interface Props {

@@ -17,21 +17,11 @@ export default {
       description: 'Kort beskrivelse av innholdet på landingssiden for ingress, søkemotorer og sosiale medier',
     },
     {
-      name: 'eksterneLenker',
-      title: 'Forsidelenker',
-      description: 'Lenker på forsiden som leder bruker til andre apper',
+      name: 'sideoversiktLenker',
+      title: 'Lenker sideoversikt',
       type: 'array',
-      of: [
-        {
-          type: 'forsideLenke',
-        },
-      ],
-    },
-    {
-      name: 'faktasideSortering',
-      title: 'Sortering faktasider',
-      type: 'array',
-      description: 'Brukes for å bestemme rekkefølge på lenker i menyen',
+      description:
+        'Brukes for å bestemme innhold og rekkefølge på lenker i menyen på forside og på faktasider. Interne sider som ikke blir eksplisitt lagt til her vil automatisk dukke opp sist i menyen',
       of: [
         {
           type: 'reference',
@@ -42,7 +32,18 @@ export default {
           ],
         },
         {
-          type: 'forsideLenke',
+          type: 'eksternLenke',
+        },
+      ],
+    },
+    {
+      name: 'komIgangLenker',
+      title: 'Kom igang lenker',
+      description: 'Lenker på forsiden som oppforder bruker til å komme igang',
+      type: 'array',
+      of: [
+        {
+          type: 'eksternLenke',
         },
       ],
     },

@@ -41,6 +41,9 @@ export default {
             },
           ],
         },
+        {
+          type: 'forsideLenke',
+        },
       ],
     },
     {

@@ -12,4 +12,5 @@ export const filtreringsValg = [
   'MottarAnnenStotteFraNav',
   'StreikLockout',
   'MottarVentelonn',
+  'SelvAnsvarligForAtJegMistetJobben',
 ].sort();

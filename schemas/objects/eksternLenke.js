@@ -17,7 +17,7 @@ export default {
     },
     {
       title: 'Beskrivelse',
-      name: 'ingress',
+      name: 'beskrivelse',
       type: 'localeText',
     },
   ],

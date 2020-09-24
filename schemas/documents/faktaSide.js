@@ -49,9 +49,9 @@ export default {
       type: 'boolean',
     },
     {
-      name: 'ingress',
+      name: 'beskrivelse',
       type: 'localeText',
-      title: 'Ingress',
+      title: 'Beskrivelse',
       description: 'Kort beskrivelse av innholdet for ingress, landingsside, søkemotorer og sosiale medier',
     },
     {

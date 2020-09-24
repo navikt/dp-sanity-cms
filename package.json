@@ -15,7 +15,9 @@
     "deployDevSchema": "sanity graphql deploy --no-playground --dataset development",
     "backup": "curl https://rt6o382n.api.sanity.io/v1/data/export/production/ > backup.ndjson",
     "clearDevelopmentDataset": "sanity dataset delete development && sanity dataset create development --visibility private",
-    "copyProdDataToDevelopment": "npm run backup && npm run clearDevelopmentDataset && sanity dataset import backup.ndjson development --replace"
+    "clearProdCloneDataset": "sanity dataset delete prodclone && sanity dataset create prodclone --visibility private",
+    "copyProdDataToDevelopment": "npm run backup && npm run clearDevelopmentDataset && sanity dataset import backup.ndjson development --replace",
+    "copyProdDataToProdClone": "npm run backup && npm run clearProdCloneDataset && sanity dataset import backup.ndjson prodclone --replace"
   },
   "dependencies": {
     "@sanity/base": "^1.149.16",

@@ -15,10 +15,18 @@
     },
     {
       "name": "development",
-      "title": "Test",
+      "title": "Development",
       "api": {
         "projectId": "rt6o382n",
         "dataset": "development"
+      }
+    },
+    {
+      "name": "prodclone",
+      "title": "ProdClone",
+      "api": {
+        "projectId": "rt6o382n",
+        "dataset": "prodclone"
       }
     }
   ],

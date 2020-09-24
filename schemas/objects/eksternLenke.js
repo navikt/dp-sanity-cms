@@ -1,13 +1,13 @@
 import React from 'react';
 
 export default {
-  name: 'forsideLenke',
-  title: 'Forsidelenke',
+  name: 'eksternLenke',
+  title: 'Ekstern lenke',
   type: 'object',
   fields: [
     {
       title: 'Tittel',
-      name: 'title',
+      name: 'tittel',
       type: 'localeString',
     },
     {
@@ -17,13 +17,13 @@ export default {
     },
     {
       title: 'Beskrivelse',
-      name: 'description',
+      name: 'ingress',
       type: 'localeText',
     },
   ],
   preview: {
     select: {
-      title: 'title.no',
+      title: 'tittel.no',
       subtitle: 'url.no',
     },
   },

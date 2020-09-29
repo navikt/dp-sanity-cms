@@ -9,10 +9,11 @@
   "scripts": {
     "start": "sanity start",
     "test": "sanity check",
-    "deploy": "npm run deploySchema && npm run deployDevSchema && npm run deployStudio",
+    "deploy": "npm run deploySchema && npm run deployDevSchema && npm run deployDemoSchema && npm run deployStudio",
     "deployStudio": "sanity deploy",
     "deploySchema": "sanity graphql deploy --no-playground",
     "deployDevSchema": "sanity graphql deploy --no-playground --dataset development",
+    "deployDemoSchema": "sanity graphql deploy --no-playground --dataset demo",
     "backup": "curl https://rt6o382n.api.sanity.io/v1/data/export/production/ > backup.ndjson",
     "clearDevelopmentDataset": "sanity dataset delete development && sanity dataset create development --visibility private",
     "clearProdCloneDataset": "sanity dataset delete prodclone && sanity dataset create prodclone --visibility private",

@@ -28,6 +28,14 @@
         "projectId": "rt6o382n",
         "dataset": "prodclone"
       }
+    },
+    {
+      "name": "demo",
+      "title": "Demo",
+      "api": {
+        "projectId": "rt6o382n",
+        "dataset": "demo"
+      }
     }
   ],
   "api": {

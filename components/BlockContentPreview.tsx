@@ -13,7 +13,7 @@ interface Props {
 
 const Style = styled.div<{ color: string }>`
   position: relative;
-  padding: 0.5rem;
+  padding: 1rem 0.5rem 0.5rem;
   border: solid ${(props) => props.color} 0.2rem;
 `;
 

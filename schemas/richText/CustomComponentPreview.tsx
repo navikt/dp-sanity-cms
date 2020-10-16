@@ -1,8 +1,8 @@
 import * as React from 'react';
-import Gift from 'react-icons/lib/go/gift';
+import { GoGift } from 'react-icons/go';
 import MediaPreview from '../../components/MediaPreview';
 
-export const CustomComponentIkon = Gift;
+export const CustomComponentIkon = GoGift;
 
 interface Props {
   name: string;

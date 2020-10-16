@@ -1,0 +1,5 @@
+/* Denne kan kanksje fjernes hvis sanity fikser. https://sanity-io-land.slack.com/archives/C9Z7RC3V1/p1607091375201600, https://github.com/sanity-io/sanity/issues/2170 */
+[class^='PopoverDialog_root_'] {
+  height: 100%;
+  overflow-y: auto;
+}

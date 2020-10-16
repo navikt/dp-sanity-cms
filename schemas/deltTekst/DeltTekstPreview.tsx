@@ -1,9 +1,9 @@
 import * as React from 'react';
 import BlockContentPreview from '../../components/BlockContentPreview';
-import Icon from 'react-icons/lib/md/share';
+import { MdShare } from 'react-icons/md';
 import styled from 'styled-components';
 
-export const DeltTekstIkon = Icon;
+export const DeltTekstIkon = MdShare;
 
 const StyledBlockContentPreview = styled(BlockContentPreview)`
   .block-content-preview {

@@ -3,6 +3,7 @@ import link from '../richText/annotations/link';
 import visForAnnotation from '../richText/annotations/visForAnnotation';
 import { TidslinjePunkt } from './TidslinjePreview';
 import { decorators, styles } from '../richText/richText';
+import pasChildren from '../../components/pasChildren';
 
 export default {
   name: 'tidslinjeRichText',
@@ -12,7 +13,10 @@ export default {
     {
       title: 'Block',
       type: 'block',
-      styles: [{ title: 'Punkt', value: 'tidslinjepunkt', blockEditor: { render: TidslinjePunkt } }, styles.normal],
+      styles: [
+        styles.normal,
+        { title: 'Punkt', value: 'tidslinjepunkt', blockEditor: { render: pasChildren(TidslinjePunkt) } },
+      ],
       marks: {
         decorators: [
           decorators.strong,

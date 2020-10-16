@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Icon from 'react-icons/lib/md/timeline';
 import styled from 'styled-components';
 import { headerMixin } from '../richText/HeaderPreviews';
 import BlockContentPreview from '../../components/BlockContentPreview';
+import { MdTimeline } from 'react-icons/md/';
 
-export const TidslinjeIkon = Icon;
+export const TidslinjeIkon = MdTimeline;
 
 const color = 'burlywood';
 
@@ -13,6 +13,7 @@ interface Props {
 }
 
 export const TidslinjePunkt = styled.div`
+  margin-top: 1rem;
   font-size: 1.1rem;
   font-weight: 600;
   ${headerMixin('Punkt')}

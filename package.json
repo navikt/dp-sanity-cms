@@ -22,21 +22,22 @@
     "copyProdDataToProdClone": "npm run backup && npm run clearProdCloneDataset && sanity dataset import backup.ndjson prodclone --replace"
   },
   "dependencies": {
-    "@sanity/base": "^1.149.16",
+    "@sanity/base": "^2.0.9",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^2.0.9",
-    "@sanity/components": "^1.149.16",
-    "@sanity/core": "^1.149.17",
-    "@sanity/dashboard": "^1.149.16",
-    "@sanity/default-layout": "^1.149.16",
-    "@sanity/default-login": "^1.149.16",
-    "@sanity/desk-tool": "^1.149.16",
-    "@sanity/vision": "^1.149.16",
+    "@sanity/components": "^2.0.9",
+    "@sanity/core": "^2.0.9",
+    "@sanity/dashboard": "^2.0.9",
+    "@sanity/default-layout": "^2.0.9",
+    "@sanity/default-login": "^2.0.9",
+    "@sanity/desk-tool": "^2.0.9",
+    "@sanity/vision": "^2.0.9",
     "nav-frontend-js-utils": "^1.0.15",
     "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "styled-components": "^5.1.1"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-icons": "^3.11.0",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.0",

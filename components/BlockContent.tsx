@@ -10,6 +10,7 @@ import { InlineUtkast } from './Utkast';
 import VideoPreview from './VideoPreview';
 import { InlineVisForPreview } from './VisForPreview';
 import { H2Header, H3Header, H2NoBackround, H2HeaderMMeny, H4Header } from '../components/styledComponents';
+import { TidslinjePunkt } from '../schemas/tidslinje/TidslinjePreview';
 
 type Serializers = {
   types: {
@@ -34,6 +35,8 @@ const BlockRenderer = (props) => {
       return <H3Header {...props} />;
     case 'h4':
       return <H4Header {...props} />;
+    case 'tidslinjepunkt':
+      return <TidslinjePunkt {...props} />;
     default:
       return SanityBlockContent.defaultSerializers.types.block(props);
   }

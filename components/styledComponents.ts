@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const headerMixin = (description: string) => css`
+export const headerMixin = (description: string) => css`
   &::after {
       content: ' (${description})';
       opacity: .5;

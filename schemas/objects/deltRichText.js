@@ -21,5 +21,6 @@ export default {
     { type: 'deltFremhevetTekst' },
     { type: 'video' },
     { type: 'tileggsInformasjon' },
+    { type: 'tidslinje' },
   ],
 };

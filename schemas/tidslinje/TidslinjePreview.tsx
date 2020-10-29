@@ -21,10 +21,9 @@ export const TidslinjePunkt = styled.span`
     width: 0.7em;
     height: 0.7em;
     margin-right: 0.6em;
-    margin-top: 1em;
     transform: translateY(0.1em);
     border-radius: 50%;
-    border: 0.2rem ${color} dashed;
+    border: 0.2rem ${color} solid;
   }
 `;
 

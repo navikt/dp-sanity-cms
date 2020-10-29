@@ -10,7 +10,7 @@ import { InlineUtkast } from './Utkast';
 import VideoPreview from './VideoPreview';
 import { InlineVisForPreview } from './VisForPreview';
 import { H2Header, H3Header, H2NoBackround, H2HeaderMMeny, H4Header } from '../components/styledComponents';
-import { TidslinjePunkt } from '../schemas/tidslinje/TidslinjePreview';
+import TidslinjePreview, { TidslinjePunkt } from '../schemas/tidslinje/TidslinjePreview';
 
 type Serializers = {
   types: {
@@ -49,6 +49,7 @@ const serializers: Serializers = {
     tileggsInformasjon: (props) => <TillegsInfo title={props.node.title} blocks={props.node.innhold} />,
     video: (props) => <VideoPreview name={props.node.title} url={props.node.url} />,
     block: BlockRenderer,
+    tidslinje: (props) => <TidslinjePreview blocks={props.node.innhold} />,
   },
   marks: {
     GtilNOK: (props) => <GtilNOKPeview {...props} grunnbelløp={props.children.join('')} />,

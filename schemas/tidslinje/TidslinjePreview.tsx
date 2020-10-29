@@ -12,7 +12,7 @@ interface Props {
   blocks: any;
 }
 
-export const TidslinjePunkt = styled.span`
+export const TidslinjePunkt = styled.div`
   font-size: 1.5rem;
   ${headerMixin('Punkt')}
   &::before {

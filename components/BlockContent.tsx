@@ -11,6 +11,7 @@ import VideoPreview from '../schemas/video/VideoPreview';
 import { InlineVisForPreview } from '../schemas/richText/VisForPreview';
 import { H2Header, H3Header, H2NoBackround, H2HeaderMMeny, H4Header } from '../schemas/richText/HeaderPreviews';
 import TidslinjePreview, { TidslinjePunkt } from '../schemas/tidslinje/TidslinjePreview';
+import { LenkePreview } from '../schemas/richText/annotations/link';
 
 type Serializers = {
   types: {
@@ -58,6 +59,7 @@ const serializers: Serializers = {
     visForAnnotationDeltTekst: (props) => (
       <InlineVisForPreview visPaaSider={props.mark.visPaaSider} visFor={props.mark.visFor} {...props} />
     ),
+    link: (props) => <LenkePreview {...props.mark} children={props.children} />,
   },
 };
 

@@ -37,8 +37,3 @@ export const H4Header = styled.span`
   font-size: 1.3rem;
   ${headerMixin('Liten mellomtittel')}
 `;
-
-export const Lenke = styled.span`
-  color: blue;
-  min-width: 1rem;
-`;

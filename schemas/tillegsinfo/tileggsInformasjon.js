@@ -1,5 +1,5 @@
 import React from 'react';
-import TillegsInfo, { TillegsInfoIkon } from './TillegsInfo';
+import TillegsInformasjonPreview, { TillegsInfoIkon } from './TillegsInformasjonPreview';
 
 export default {
   type: 'object',
@@ -23,6 +23,6 @@ export default {
       innhold: 'innhold',
     },
     prepare: (selection) => selection,
-    component: (props) => <TillegsInfo blocks={props.value.innhold} title={props.value.title} />,
+    component: (props) => <TillegsInformasjonPreview blocks={props.value.innhold} title={props.value.title} />,
   },
 };

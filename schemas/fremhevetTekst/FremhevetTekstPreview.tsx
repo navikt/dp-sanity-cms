@@ -3,7 +3,7 @@ import BlockContentPreview from '../../components/BlockContentPreview';
 
 export const FremhevetTekstIkon = () => <>❤️</>;
 
-const FremhevetTekst = (props: { blocks }) => (
+const FremhevetTekstPreview = (props: { blocks }) => (
   <BlockContentPreview
     label={
       <>
@@ -15,4 +15,4 @@ const FremhevetTekst = (props: { blocks }) => (
   />
 );
 
-export default FremhevetTekst;
+export default FremhevetTekstPreview;

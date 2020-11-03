@@ -1,5 +1,5 @@
 import React from 'react';
-import FremhevetTekst, { FremhevetTekstIkon } from '../fremhevetTekst/FremhevetTekst';
+import FremhevetTekstPreview, { FremhevetTekstIkon } from '../fremhevetTekst/FremhevetTekstPreview';
 
 export default {
   type: 'object',
@@ -18,6 +18,6 @@ export default {
       innhold: 'innhold',
     },
     prepare: (selection) => selection,
-    component: (selection) => <FremhevetTekst blocks={selection.value.innhold} />,
+    component: (selection) => <FremhevetTekstPreview blocks={selection.value.innhold} />,
   },
 };

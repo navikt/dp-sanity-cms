@@ -13,7 +13,7 @@ interface Props {
   blocks: any;
 }
 
-const TillegsInfo = (props: Props) => (
+const TillegsInformasjonPreview = (props: Props) => (
   <BlockContentPreview
     label={
       <>
@@ -26,4 +26,4 @@ const TillegsInfo = (props: Props) => (
   />
 );
 
-export default TillegsInfo;
+export default TillegsInformasjonPreview;

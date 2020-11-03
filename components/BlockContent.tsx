@@ -2,10 +2,10 @@ import * as React from 'react';
 import { ReactNode } from 'react';
 import SanityBlockContent from '@sanity/block-content-to-react';
 import { GtilNOKPeview } from '../schemas/richText/GtilNOKPreview';
-import FremhevetTekst from '../schemas/fremhevetTekst/FremhevetTekst';
+import FremhevetTekstPreview from '../schemas/fremhevetTekst/FremhevetTekstPreview';
 import withErrorBoundary from './withErrorBoundary';
 import CustomComponentPreview from '../schemas/richText/CustomComponentPreview';
-import TillegsInfo from '../schemas/tillegsinfo/TillegsInfo';
+import TillegsInformasjonPreview from '../schemas/tillegsinfo/TillegsInformasjonPreview';
 import { InlineUtkast } from '../schemas/richText/Utkast';
 import VideoPreview from '../schemas/video/VideoPreview';
 import { InlineVisForPreview } from '../schemas/richText/VisForPreview';
@@ -45,9 +45,9 @@ const BlockRenderer = (props) => {
 
 const serializers: Serializers = {
   types: {
-    deltFremhevetTekst: (props) => <FremhevetTekst blocks={props.node.innhold} />,
+    deltFremhevetTekst: (props) => <FremhevetTekstPreview blocks={props.node.innhold} />,
     customComponent: (props) => <CustomComponentPreview name={props.node.komponent} />,
-    tileggsInformasjon: (props) => <TillegsInfo title={props.node.title} blocks={props.node.innhold} />,
+    tileggsInformasjon: (props) => <TillegsInformasjonPreview title={props.node.title} blocks={props.node.innhold} />,
     video: (props) => <VideoPreview name={props.node.title} url={props.node.url} />,
     block: BlockRenderer,
     tidslinje: (props) => <TidslinjePreview blocks={props.node.innhold} />,

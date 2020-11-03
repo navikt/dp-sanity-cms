@@ -1,17 +1,17 @@
 import React from 'react';
-import link from '../annotations/link';
-import { decorators, styles } from './richText';
-import visForAnnotation from '../annotations/visForAnnotation';
+import link from '../richText/annotations/link';
+import { decorators, styles } from '../richText/richText';
+import visForAnnotation from '../richText/annotations/visForAnnotation';
 
 export default {
-  title: 'Kort Fortalt Rich Text',
-  name: 'kortFortaltRichText',
+  name: 'tilleggsInfoRichText',
+  title: 'Tillegsinfo richtext',
   type: 'array',
   of: [
     {
       title: 'Block',
       type: 'block',
-      styles: [styles.normal, styles.h3, styles.h4],
+      styles: [styles.normal],
       marks: {
         decorators: [decorators.strong, decorators.em, decorators.utkast, decorators.GtilNOK],
         annotations: [link, visForAnnotation],

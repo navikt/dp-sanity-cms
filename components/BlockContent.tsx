@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { ReactNode } from 'react';
 import SanityBlockContent from '@sanity/block-content-to-react';
-import { GtilNOKPeview } from './GtilNOKPreview';
-import FremhevetTekst from './FremhevetTekst';
+import { GtilNOKPeview } from '../schemas/richText/GtilNOKPreview';
+import FremhevetTekst from '../schemas/fremhevetTekst/FremhevetTekst';
 import withErrorBoundary from './withErrorBoundary';
-import CustomComponentPreview from './CustomComponentPreview';
-import TillegsInfo from './TillegsInfo';
-import { InlineUtkast } from './Utkast';
-import VideoPreview from './VideoPreview';
-import { InlineVisForPreview } from './VisForPreview';
-import { H2Header, H3Header, H2NoBackround, H2HeaderMMeny, H4Header } from '../components/styledComponents';
+import CustomComponentPreview from '../schemas/richText/CustomComponentPreview';
+import TillegsInfo from '../schemas/tillegsinfo/TillegsInfo';
+import { InlineUtkast } from '../schemas/richText/Utkast';
+import VideoPreview from '../schemas/video/VideoPreview';
+import { InlineVisForPreview } from '../schemas/richText/VisForPreview';
+import { H2Header, H3Header, H2NoBackround, H2HeaderMMeny, H4Header } from '../schemas/richText/HeaderPreviews';
 import TidslinjePreview, { TidslinjePunkt } from '../schemas/tidslinje/TidslinjePreview';
 
 type Serializers = {

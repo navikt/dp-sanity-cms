@@ -1,5 +1,5 @@
 import React from 'react';
-import { InlineVisForPreview, InlineVisForIkon } from '../../components/VisForPreview';
+import { InlineVisForPreview, InlineVisForIkon } from '../VisForPreview';
 
 export default {
   name: 'visForAnnotation',

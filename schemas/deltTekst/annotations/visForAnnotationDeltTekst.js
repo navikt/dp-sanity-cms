@@ -1,5 +1,5 @@
 import React from 'react';
-import visForAnnotation from './visForAnnotation';
+import visForAnnotation from '../../richText/annotations/visForAnnotation';
 
 export default {
   ...visForAnnotation,

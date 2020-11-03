@@ -1,4 +1,4 @@
-import { DeltTekstIkon } from '../../components/DeltTekstPreview';
+import { DeltTekstIkon } from './DeltTekstPreview';
 
 export default {
   type: 'document',

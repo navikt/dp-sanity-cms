@@ -1,8 +1,8 @@
 import React from 'react';
-import link from '../annotations/link';
-import visForAnnotation from '../annotations/visForAnnotation';
+import link from '../richText/annotations/link';
+import visForAnnotation from '../richText/annotations/visForAnnotation';
 import { TidslinjePunkt } from './TidslinjePreview';
-import { decorators, styles } from '../objects/richText';
+import { decorators, styles } from '../richText/richText';
 
 export default {
   name: 'tidslinjeRichText',

@@ -1,16 +1,16 @@
 import React from 'react';
-import FremhevetTekst, { FremhevetTekstIkon } from '../../components/FremhevetTekst';
+import FremhevetTekst, { FremhevetTekstIkon } from '../fremhevetTekst/FremhevetTekst';
 
 export default {
   type: 'object',
-  name: 'fremhevetTekst',
-  title: 'Fremhevet tekst',
+  name: 'deltFremhevetTekst',
+  title: 'Fremhevet tekst i delt tekst',
   icon: FremhevetTekstIkon,
   fields: [
     {
       name: 'innhold',
       title: 'Innhold',
-      type: 'fremhevetRichText',
+      type: 'deltFremhevetRichText',
     },
   ],
   preview: {

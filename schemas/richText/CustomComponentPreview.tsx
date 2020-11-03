@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Gift from 'react-icons/lib/go/gift';
-import MediaPreview from './MediaPreview';
+import MediaPreview from '../../components/MediaPreview';
 
 export const CustomComponentIkon = Gift;
 

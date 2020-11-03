@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Icon from 'react-icons/lib/md/timeline';
 import styled from 'styled-components';
-import { headerMixin } from '../../components/styledComponents';
+import { headerMixin } from '../richText/HeaderPreviews';
 import BlockContentPreview from '../../components/BlockContentPreview';
 
 export const TidslinjeIkon = Icon;

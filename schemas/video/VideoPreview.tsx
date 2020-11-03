@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Video from 'react-icons/lib/md/ondemand-video';
-import MediaPreview from './MediaPreview';
+import MediaPreview from '../../components/MediaPreview';
 
 export const VideoIkon = Video;
 

@@ -1,4 +1,4 @@
-import DeltTekstPreview, { DeltTekstIkon } from '../../components/DeltTekstPreview';
+import DeltTekstPreview, { DeltTekstIkon } from './DeltTekstPreview';
 
 export default {
   name: 'deltTekstReference',

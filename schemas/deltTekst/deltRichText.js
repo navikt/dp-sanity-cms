@@ -1,7 +1,7 @@
 import React from 'react';
-import visForAnnotationDeltTekst from '../annotations/visForAnnotationDeltTekst';
-import link from '../annotations/link';
-import { decorators, styles } from './richText';
+import visForAnnotationDeltTekst from './annotations/visForAnnotationDeltTekst';
+import link from '../richText/annotations/link';
+import { decorators, styles } from '../richText/richText';
 
 export default {
   title: 'Rich Text',

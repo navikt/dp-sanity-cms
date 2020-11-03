@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import InlinePreview from './InlinePreview';
+import InlinePreview from '../../components/InlinePreview';
 
 const yellow = '#ff0a';
 

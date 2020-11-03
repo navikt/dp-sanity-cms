@@ -1,5 +1,5 @@
 import React from 'react';
-import VideoPreview, { VideoIkon } from '../../components/VideoPreview';
+import VideoPreview, { VideoIkon } from './VideoPreview';
 
 export default {
   type: 'object',

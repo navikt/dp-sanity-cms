@@ -1,5 +1,5 @@
 import React from 'react';
-import TillegsInfo, { TillegsInfoIkon } from '../../components/TillegsInfo';
+import TillegsInfo, { TillegsInfoIkon } from './TillegsInfo';
 
 export default {
   type: 'object',

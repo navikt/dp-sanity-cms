@@ -1,5 +1,5 @@
 import * as React from 'react';
-import BlockContentPreview from './BlockContentPreview';
+import BlockContentPreview from '../../components/BlockContentPreview';
 import Icon from 'react-icons/lib/md/share';
 import styled from 'styled-components';
 

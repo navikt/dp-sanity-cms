@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomComponentPreview, { CustomComponentIkon } from '../../components/CustomComponentPreview';
+import CustomComponentPreview, { CustomComponentIkon } from './CustomComponentPreview';
 
 const tilgjengeligeKomponenter = ['DagpengeKalkulator - normal', 'DagpengeKalkulator - lærling'];
 

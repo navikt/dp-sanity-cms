@@ -64,7 +64,7 @@ const serializers: Serializers = {
 };
 
 function BlockContent(props: { blocks: any }) {
-  return <SanityBlockContent blocks={props.blocks} serializers={serializers} />;
+  return <SanityBlockContent blocks={props.blocks || []} serializers={serializers} />;
 }
 
 export default withErrorBoundary(BlockContent);

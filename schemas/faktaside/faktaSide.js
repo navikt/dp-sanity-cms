@@ -52,7 +52,14 @@ export default {
       name: 'beskrivelse',
       type: 'localeText',
       title: 'Beskrivelse',
-      description: 'Kort beskrivelse av innholdet for ingress, landingsside, søkemotorer og sosiale medier',
+      description:
+        'Kort beskrivelse av innholdet for ingress, søkemotorer og sosiale medier. Skriv en sammenhengende setning',
+    },
+    {
+      name: 'nokkelordBeskrivelse',
+      type: 'localeString',
+      title: 'Nøkkelord',
+      description: 'Beskriv innholdet med noen få nøkkelord, til bruk på navigasjonsside',
     },
     {
       name: 'kortFortalt',

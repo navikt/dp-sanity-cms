@@ -14,7 +14,13 @@ export default {
       type: 'block',
       styles: [{ title: 'Punkt', value: 'tidslinjepunkt', blockEditor: { render: TidslinjePunkt } }, styles.normal],
       marks: {
-        decorators: [decorators.strong, decorators.em, decorators.utkast, decorators.GtilNOK],
+        decorators: [
+          decorators.strong,
+          decorators.em,
+          decorators.utkast,
+          decorators.foreslattStykes,
+          decorators.GtilNOK,
+        ],
         annotations: [link, visForAnnotation],
       },
     },

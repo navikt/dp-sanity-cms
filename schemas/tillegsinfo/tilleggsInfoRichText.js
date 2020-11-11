@@ -13,7 +13,13 @@ export default {
       type: 'block',
       styles: [styles.normal],
       marks: {
-        decorators: [decorators.strong, decorators.em, decorators.utkast, decorators.GtilNOK],
+        decorators: [
+          decorators.strong,
+          decorators.em,
+          decorators.utkast,
+          decorators.foreslattStykes,
+          decorators.GtilNOK,
+        ],
         annotations: [link, visForAnnotation],
       },
     },

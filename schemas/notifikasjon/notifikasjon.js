@@ -16,7 +16,7 @@ export default {
     },
     {
       name: 'visPaaForside',
-      title: 'Vis På Forside',
+      title: 'Vis på nav.no/arbeid',
       type: 'boolean',
     },
     {

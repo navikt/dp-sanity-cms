@@ -22,6 +22,7 @@ import kortFortaltRichText from './faktaside/kortFortaltRichText';
 import eksternLenke from './richText/eksternLenke';
 import tidslinjeRichText from './tidslinje/tidslinjeRichText';
 import tidslinje from './tidslinje/tidslinje';
+import notifikasjon from './notifikasjon/notifikasjon';
 
 export default createSchema({
   name: 'dagpenger-info',
@@ -47,6 +48,7 @@ export default createSchema({
     eksternLenke,
     tidslinjeRichText,
     tidslinje,
+    notifikasjon,
     localize('kortFortaltRichText'),
     localize('richText'),
     localize('deltRichText'),

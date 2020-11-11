@@ -56,6 +56,15 @@ export default {
       ],
       description: 'Brukes for å konvertere G til kroner i frontenden',
     },
+    {
+      name: 'notifikasjoner',
+      type: 'array',
+      of: [
+        {
+          type: 'notifikasjon',
+        },
+      ],
+    },
   ],
   preview: {
     prepare: (selection) => ({

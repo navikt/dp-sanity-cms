@@ -12,7 +12,7 @@ export default {
     },
     {
       name: 'innhold',
-      type: 'localeText',
+      type: 'localeNotifikasjonRichText',
     },
     {
       name: 'visPaaForside',

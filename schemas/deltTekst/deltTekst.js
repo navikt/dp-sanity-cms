@@ -10,6 +10,7 @@ export default {
     {
       name: 'hvorDenBrukes',
       type: 'string',
+      description: 'Dette er et dummyfelt for å få vist komponenten som viser hvor den delte teksten er i bruk',
       inputComponent: HvorErDenIBruk,
     },
     {

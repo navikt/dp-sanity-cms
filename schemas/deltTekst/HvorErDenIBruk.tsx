@@ -3,13 +3,6 @@ import sanityClient from '@sanity/client';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-const dataset = window.location.pathname.split('/')[1];
-
-const client = sanityClient({
-  projectId: 'rt6o382n',
-  dataset: dataset,
-});
-
 const ErrorStyling = styled.div`
   color: red;
 `;
@@ -36,6 +29,11 @@ function HvorErDenIBruk(props: any) {
   const gydldigId = documentId.length === 36;
 
   useEffect(() => {
+    const dataset = window.location.pathname.split('/')[1];
+    const client = sanityClient({
+      projectId: 'rt6o382n',
+      dataset: dataset,
+    });
     client.fetch(query).then(setData);
   }, []);
 

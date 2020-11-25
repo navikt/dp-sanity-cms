@@ -1,4 +1,5 @@
 import { DeltTekstIkon } from './DeltTekstPreview';
+import HvorErDenIBruk from './HvorErDenIBruk';
 
 export default {
   type: 'document',
@@ -6,6 +7,11 @@ export default {
   title: 'Delt tekst',
   icon: DeltTekstIkon,
   fields: [
+    {
+      name: 'hvorDenBrukes',
+      type: 'string',
+      inputComponent: HvorErDenIBruk,
+    },
     {
       name: 'title',
       title: 'Beskrivelse',

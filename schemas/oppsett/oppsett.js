@@ -38,8 +38,7 @@ export default {
     },
     {
       name: 'komIgangLenker',
-      title: 'Kom igang lenker',
-      description: 'Lenker på forsiden som oppforder bruker til å komme igang',
+      title: 'Snarveier',
       type: 'array',
       of: [
         {

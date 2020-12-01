@@ -19,7 +19,7 @@ import deltTekstReference from './deltTekst/deltTekstReference';
 import deltFremhevetTekst from './deltTekst/deltFremhevetTekst';
 import deltFremhevetRichText from './deltTekst/deltFremhevetRichText';
 import kortFortaltRichText from './faktaside/kortFortaltRichText';
-import eksternLenke from './richText/eksternLenke';
+import eksternLenke from './oppsett/eksternLenke';
 import tidslinjeRichText from './tidslinje/tidslinjeRichText';
 import tidslinje from './tidslinje/tidslinje';
 import notifikasjon from './notifikasjon/notifikasjon';

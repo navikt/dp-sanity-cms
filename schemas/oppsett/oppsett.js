@@ -1,9 +1,28 @@
+import React from 'react';
+import VelgSituasjoner from './VelgSituasjoner';
+
 export default {
   name: 'oppsett',
   title: 'Oppsett',
   type: 'document',
   __experimental_actions: ['update', 'publish'],
   fields: [
+    {
+      name: `filtreringsvalg`,
+      type: `array`,
+      of: [
+        {
+          type: `string`,
+        },
+      ],
+    },
+    {
+      title: 'Test',
+      name: 'categorySet',
+      type: 'array',
+      of: [{ type: 'string' }],
+      inputComponent: VelgSituasjoner,
+    },
     {
       name: 'title',
       type: 'localeString',

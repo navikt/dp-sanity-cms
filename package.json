@@ -32,12 +32,14 @@
     "@sanity/default-login": "^1.149.16",
     "@sanity/desk-tool": "^1.149.16",
     "@sanity/vision": "^1.149.16",
+    "nav-frontend-js-utils": "^1.0.15",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.12.7",
     "@babel/preset-env": "^7.12.7",
     "@babel/preset-react": "^7.12.7",
     "@testing-library/react": "^11.2.2",

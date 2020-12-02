@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start": "sanity start",
-    "test": "sanity check",
+    "test": "sanity check && jest",
     "deploy": "npm run deploySchema && npm run deployProdCloneSchema && npm run deployDevSchema && npm run deployDemoSchema && npm run deployStudio",
     "deployStudio": "sanity deploy",
     "deploySchema": "sanity graphql deploy --no-playground",
@@ -38,10 +38,16 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "@testing-library/react": "^11.2.2",
     "@types/styled-components": "^5.1.0",
+    "babel-jest": "^26.6.3",
     "husky": "^4.2.5",
+    "jest": "^26.6.3",
     "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "react-test-renderer": "^17.0.1"
   },
   "husky": {
     "hooks": {

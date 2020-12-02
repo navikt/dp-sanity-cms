@@ -2,6 +2,7 @@ import * as React from 'react';
 import sanityClient from '@sanity/client';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import useSanityQuery from '../../utils/useSanityQuery';
 
 const ErrorStyling = styled.div`
   color: red;
@@ -22,20 +23,10 @@ type Referrer = {
 };
 
 function HvorErDenIBruk(props: any) {
-  const [data, setData] = useState<Referrer[] | undefined>(undefined);
-
   const documentId = window.location.pathname.split(';').pop();
   const query = `*[references("${documentId}")]`;
-  const gydldigId = documentId.length === 36;
-
-  useEffect(() => {
-    const dataset = window.location.pathname.split('/')[1];
-    const client = sanityClient({
-      projectId: 'rt6o382n',
-      dataset: dataset,
-    });
-    client.fetch(query).then(setData);
-  }, []);
+  const gydldigId = documentId?.length === 36;
+  const data = useSanityQuery<Referrer[]>(query);
 
   if (!data?.length) {
     return (
@@ -57,9 +48,9 @@ function HvorErDenIBruk(props: any) {
     <div {...props}>
       <Header>Denne delte teksten er brukt {data.length} steder:</Header>
       <ul>
-        {data.map((refferer) => (
+        {data.map((ref) => (
           <li>
-            <a href={`${referenceBaseUrl}/${refferer._type};${refferer._id}`}>{refferer?.title.no}</a>
+            <a href={`${referenceBaseUrl}/${ref._type};${ref._id}`}>{ref?.title.no}</a>
           </li>
         ))}
       </ul>

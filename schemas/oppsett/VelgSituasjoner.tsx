@@ -1,7 +1,9 @@
 import * as React from 'react';
+import { useRef } from 'react';
 import PatchEvent, { set, unset } from 'part:@sanity/form-builder/patch-event';
 import { guid } from 'nav-frontend-js-utils';
-import { useRef, useState } from 'react';
+import useSanityQuery from '../../utils/useSanityQuery';
+import styled from 'styled-components';
 
 interface Props {
   filterField?: any;
@@ -33,28 +35,38 @@ function CheckBox(props: CheckBoxProps) {
   );
 }
 
-const valg = ['Celine', 'Daniel', 'Synneva'];
+const query = `*[_id == "oppsett"][0]
+{
+   filtreringsvalg
+}`;
 
+interface Data {
+  filtreringsvalg: string[];
+}
+
+const UgyldigeValgStyle = styled.p`
+  color: red;
+`;
 function VelgSituasjoner(props: Props) {
   console.log(props);
+  const data = useSanityQuery<Data>(query);
   const currentValue = props.value || [];
 
   const handleChange = (label: string) => {
-    if (currentValue.includes(label)) {
-      const newValues = currentValue.filter((it) => it !== label);
-      props.onChange(createPatchFrom(newValues));
-    } else {
-      const newValues = [...currentValue, label];
-      props.onChange(createPatchFrom(newValues));
-    }
+    const newValues = currentValue.includes(label)
+      ? currentValue.filter((it) => it !== label)
+      : [...currentValue, label];
+    props.onChange(createPatchFrom(newValues));
   };
+
+  const ugyldigeValg = props.value.filter((it) => !data?.filtreringsvalg.includes(it));
 
   return (
     <div>
-      {props.value}
-      {valg.map((it) => (
+      {data?.filtreringsvalg.map((it) => (
         <CheckBox label={it} checked={currentValue.includes(it)} onChange={() => handleChange(it)} />
       ))}
+      {!!ugyldigeValg.length && <UgyldigeValgStyle> Ugyldige valg funnet: {ugyldigeValg.join(', ')}</UgyldigeValgStyle>}
     </div>
   );
 }

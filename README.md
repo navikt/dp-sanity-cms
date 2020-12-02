@@ -6,6 +6,8 @@
 
 ### Starte appen lokalt
 
+Installer sanity-cli globalt om du ikke har alt: `npm install -g @sanity/cli`
+
 ```
 npm i
 npm start

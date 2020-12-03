@@ -1,5 +1,6 @@
 import React from 'react';
 import { filtreringsValg } from '../utils/filtreringsValg';
+import VelgSituasjoner from '../oppsett/VelgSituasjoner';
 
 export default {
   name: 'visFor',
@@ -23,6 +24,13 @@ export default {
       description:
         'Skru på denne for å skjule teksten for valgte situasjoner istedenfor å vise. (Vil fortsatt vises dersom bruker ikke har valgt filtrering eller velger "Ingen valg passer").',
       fieldset: 'config',
+    },
+    {
+      title: 'Situasjoner',
+      name: 'situasjoner',
+      type: 'array',
+      of: [{ type: 'string' }],
+      inputComponent: VelgSituasjoner,
     },
     ...filtreringsValg.map((it) => ({
       type: 'boolean',

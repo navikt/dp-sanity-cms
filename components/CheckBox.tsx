@@ -14,11 +14,13 @@ const StyledInput = styled.input`
   width: 1.4rem;
   margin-right: 0.5rem;
 `;
+
 const Style = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
 `;
+
 function CheckBox(props: CheckBoxProps) {
   const id = useRef(guid()).current;
   return (

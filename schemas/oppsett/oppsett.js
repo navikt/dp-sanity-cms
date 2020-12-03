@@ -17,7 +17,7 @@ export default {
       ],
     },
     {
-      title: 'Test',
+      title: 'Hei',
       name: 'categorySet',
       type: 'array',
       of: [{ type: 'string' }],

@@ -11,6 +11,7 @@ interface FiltreringsValgData {
 interface Props {
   onChange?: any;
   value?: string[];
+  type: { jsonType: string; name: string; title: string };
 }
 
 const UgyldigeValgStyle = styled.div`
@@ -29,6 +30,17 @@ const FjernValgButton = styled.button`
   padding: 0;
 `;
 
+const StyledLegend = styled.legend`
+  font-size: 1.25rem;
+`;
+
+const Border = styled.div`
+  border: 1px solid rgba(123, 140, 168, 0.25);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 0.25rem;
+`;
+
 const createPatchFrom = (value: string[]) => PatchEvent.from(value.length === 0 ? unset() : set(value));
 const query = `*[_id == "oppsett"][0]
 {
@@ -38,7 +50,7 @@ const query = `*[_id == "oppsett"][0]
 function VelgSituasjoner(props: Props) {
   const data = useSanityQuery<FiltreringsValgData>(query);
   const currentValue = props.value || [];
-
+  console.log(props);
   const handleChange = (label: string) => {
     const newValues = currentValue.includes(label)
       ? currentValue.filter((it) => it !== label)
@@ -57,15 +69,18 @@ function VelgSituasjoner(props: Props) {
 
   return (
     <div>
-      {data?.filtreringsvalg?.map(
-        (it) => it && <CheckBox label={it} checked={currentValue.includes(it)} onChange={() => handleChange(it)} />
-      )}
-      {finnesUgyldigeValg && (
-        <UgyldigeValgStyle>
-          <p>Ugyldige valg funnet: {ugyldigeValg?.join(', ')}</p>
-          <FjernValgButton onClick={handleFjerneUgyldigeValg}>Fjern ugyldige valg</FjernValgButton>
-        </UgyldigeValgStyle>
-      )}
+      <StyledLegend>{props.type.title}</StyledLegend>
+      <Border>
+        {data?.filtreringsvalg?.map(
+          (it) => it && <CheckBox label={it} checked={currentValue.includes(it)} onChange={() => handleChange(it)} />
+        )}
+        {finnesUgyldigeValg && (
+          <UgyldigeValgStyle>
+            <p>Ugyldige valg funnet: {ugyldigeValg?.join(', ')}</p>
+            <FjernValgButton onClick={handleFjerneUgyldigeValg}>Fjern ugyldige valg</FjernValgButton>
+          </UgyldigeValgStyle>
+        )}
+      </Border>
     </div>
   );
 }

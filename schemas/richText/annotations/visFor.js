@@ -1,6 +1,6 @@
 import React from 'react';
-import { filtreringsValg } from '../utils/filtreringsValg';
-import VelgSituasjoner from '../oppsett/VelgSituasjoner';
+import { filtreringsValg } from '../../utils/filtreringsValg';
+import VelgSituasjoner from '../../oppsett/VelgSituasjoner';
 
 export default {
   name: 'visFor',
@@ -26,7 +26,7 @@ export default {
       fieldset: 'config',
     },
     {
-      title: 'Situasjoner',
+      title: 'Situasjoner (Ikke i bruk)',
       name: 'situasjoner',
       type: 'array',
       of: [{ type: 'string' }],

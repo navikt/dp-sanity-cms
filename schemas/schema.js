@@ -8,7 +8,7 @@ import video from './video/video';
 import fremhevetTekst from './fremhevetTekst/fremhevetTekst';
 import visSprakversjon from './faktaside/visSprakversjon';
 import fremhevetRichText from './fremhevetTekst/fremhevetRichText';
-import visFor from './richText/visFor';
+import visFor from './richText/annotations/visFor';
 import relatertInformasjonRichText from './faktaside/relatertInformasjonRichText';
 import oppsett from './oppsett/oppsett';
 import deltTekst from './deltTekst/deltTekst';

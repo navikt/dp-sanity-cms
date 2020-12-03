@@ -17,13 +17,6 @@ export default {
       ],
     },
     {
-      title: 'Hei',
-      name: 'categorySet',
-      type: 'array',
-      of: [{ type: 'string' }],
-      inputComponent: VelgSituasjoner,
-    },
-    {
       name: 'title',
       type: 'localeString',
       title: 'Tittel',

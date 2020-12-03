@@ -7,21 +7,30 @@ export const InlineVisForIkon = LightBulb;
 const visForColor = '#80f8';
 const skjulForColor = '#f048';
 
-type VisFor = { [name: string]: boolean };
+type VisFor = {
+  skjulFor?: boolean;
+  situasjoner?: string[];
+};
 
 function getVisForLabel(visFor: VisFor): string {
-  if (!visFor) {
-    return '';
+  if (!visFor?.situasjoner?.length) {
+    return 'Ingen situasjoner valgt';
   }
 
-  const skjulFor = visFor.skjulFor;
+  return (visFor.skjulFor ? 'Skjules for ' : 'Vises for ') + visFor.situasjoner.join(' & ');
+}
+
+//Skal slettes når vi har migrert fra gammel til ny situasjonsvelger
+function brukerGammelSituasjonsVelger(visFor: VisFor): boolean {
+  if (!visFor) {
+    return false;
+  }
+
   const visForSituasjoner = Object.keys(visFor)
     .filter((key) => visFor[key] === true)
     .filter((key) => key !== 'skjulFor');
 
-  if (!visForSituasjoner.length) return '';
-
-  return (skjulFor ? 'Skjules for ' : 'Vises for ') + visForSituasjoner.join(' & ');
+  return !!visForSituasjoner.length;
 }
 
 interface Props {
@@ -33,6 +42,15 @@ interface Props {
 export function InlineVisForPreview(props: Props) {
   const visForSide = props.visPaaSider?.length ? 'Vises på utvalgte sider. ' : '';
   const label = getVisForLabel(props.visFor);
+
+  if (brukerGammelSituasjonsVelger(props.visFor)) {
+    return (
+      <InlinePreview label={'Gammel situasjonsvelger'} color={'red'}>
+        {props.children}
+      </InlinePreview>
+    );
+  }
+
   return (
     <InlinePreview label={visForSide + label} color={props.visFor?.skjulFor ? skjulForColor : visForColor}>
       {props.children}

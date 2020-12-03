@@ -3,9 +3,13 @@ import PatchEvent, { set, unset } from 'part:@sanity/form-builder/patch-event';
 import useSanityQuery from '../../utils/useSanityQuery';
 import styled from 'styled-components';
 import CheckBox from '../../components/CheckBox';
+import withErrorBoundary from '../../components/withErrorBoundary';
 
 interface FiltreringsValgData {
-  filtreringsvalg?: string[];
+  filtreringsvalg?: {
+    no: string;
+    en: string;
+  }[];
 }
 
 interface Props {
@@ -50,7 +54,7 @@ const query = `*[_id == "oppsett"][0]
 function VelgSituasjoner(props: Props) {
   const data = useSanityQuery<FiltreringsValgData>(query);
   const currentValue = props.value || [];
-  console.log(props);
+
   const handleChange = (label: string) => {
     const newValues = currentValue.includes(label)
       ? currentValue.filter((it) => it !== label)
@@ -58,7 +62,7 @@ function VelgSituasjoner(props: Props) {
     props.onChange(createPatchFrom(newValues));
   };
 
-  const ugyldigeValg = props.value?.filter((it) => !data?.filtreringsvalg?.includes(it));
+  const ugyldigeValg = props.value?.filter((it) => !data?.filtreringsvalg?.map((it) => it.no).includes(it));
 
   const handleFjerneUgyldigeValg = () => {
     const newValues = currentValue.filter((it) => !ugyldigeValg?.includes(it));
@@ -72,7 +76,10 @@ function VelgSituasjoner(props: Props) {
       <StyledLegend>{props.type.title}</StyledLegend>
       <Border>
         {data?.filtreringsvalg?.map(
-          (it) => it && <CheckBox label={it} checked={currentValue.includes(it)} onChange={() => handleChange(it)} />
+          (it) =>
+            it.no && (
+              <CheckBox label={it.no} checked={currentValue.includes(it.no)} onChange={() => handleChange(it.no)} />
+            )
         )}
         {finnesUgyldigeValg && (
           <UgyldigeValgStyle>
@@ -85,4 +92,4 @@ function VelgSituasjoner(props: Props) {
   );
 }
 
-export default VelgSituasjoner;
+export default withErrorBoundary(VelgSituasjoner);

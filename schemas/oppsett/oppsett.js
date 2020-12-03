@@ -8,15 +8,6 @@ export default {
   __experimental_actions: ['update', 'publish'],
   fields: [
     {
-      name: `filtreringsvalg`,
-      type: `array`,
-      of: [
-        {
-          type: `localeString`,
-        },
-      ],
-    },
-    {
       name: 'title',
       type: 'localeString',
       title: 'Tittel',
@@ -73,6 +64,15 @@ export default {
       of: [
         {
           type: 'notifikasjon',
+        },
+      ],
+    },
+    {
+      name: `filtreringsvalg`,
+      type: `array`,
+      of: [
+        {
+          type: `localeString`,
         },
       ],
     },

@@ -13,7 +13,7 @@ export default {
     },
     {
       name: 'situasjoner',
-      title: 'Situasjoner',
+      title: 'Situasjoner (Ikke i bruk)',
     },
   ],
   fields: [
@@ -26,7 +26,7 @@ export default {
       fieldset: 'config',
     },
     {
-      title: 'Situasjoner (Ikke i bruk)',
+      title: 'Situasjoner',
       name: 'situasjoner',
       type: 'array',
       of: [{ type: 'string' }],

@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start": "sanity start",
-    "test": "sanity check && jest",
+    "test": "sanity check",
     "deploy": "npm run deploySchema && npm run deployProdCloneSchema && npm run deployDevSchema && npm run deployDemoSchema && npm run deployStudio",
     "deployStudio": "sanity deploy",
     "deploySchema": "sanity graphql deploy --no-playground",

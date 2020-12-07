@@ -1,10 +1,10 @@
-import Web from 'react-icons/lib/md/web';
+import { MdWeb } from 'react-icons/md';
 
 export default {
   name: 'faktaSide',
   type: 'document',
   title: 'Faktaside',
-  icon: Web,
+  icon: MdWeb,
   fieldsets: [
     {
       name: 'oppsett',

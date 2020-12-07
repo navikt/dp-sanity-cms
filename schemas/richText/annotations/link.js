@@ -1,5 +1,6 @@
-import LinkIcon from 'react-icons/lib/md/link';
+import { MdLink } from 'react-icons/lib';
 import styled, { css } from 'styled-components';
+import React from 'react';
 
 const color = '#2276fc';
 
@@ -10,7 +11,8 @@ export const LenkePreview = styled.span`
   ${(props) =>
     props.knapp &&
     css`
-      display: inline-block;
+      display: block;
+      width: fit-content;
       padding: 0.3rem 1rem;
       margin: 0.5rem 0;
       border: 0.2rem solid ${color};
@@ -22,9 +24,9 @@ export default {
   name: 'link',
   type: 'object',
   title: 'Lenke',
-  icon: LinkIcon,
+  icon: MdLink,
   blockEditor: {
-    render: LenkePreview,
+    render: (props) => <LenkePreview knapp={props.knapp}>{props.children}</LenkePreview>,
   },
   fields: [
     {

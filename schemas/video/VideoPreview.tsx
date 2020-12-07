@@ -1,8 +1,8 @@
 import * as React from 'react';
-import Video from 'react-icons/lib/md/ondemand-video';
+import { MdOndemandVideo } from 'react-icons/md';
 import MediaPreview from '../../components/MediaPreview';
 
-export const VideoIkon = Video;
+export const VideoIkon = MdOndemandVideo;
 
 interface Props {
   name: string;

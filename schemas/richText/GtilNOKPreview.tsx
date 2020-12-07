@@ -1,20 +1,25 @@
 import * as React from 'react';
-import Money from 'react-icons/lib/fa/money';
+import { FaMoneyBill } from 'react-icons/fa';
 import InlinePreview from '../../components/InlinePreview';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 
-export const GtilNOKIcon = Money;
+export const GtilNOKIcon = FaMoneyBill;
 
 interface Props {
-  grunnbelløp: string;
   children: ReactNode;
 }
 
 export const GtilNOKPeview = (props: Props) => {
-  const notNumeric = isNaN(Number(props.grunnbelløp));
+  const [content, setContent] = useState<undefined | string>(undefined);
+  const notNumeric = isNaN(Number(content));
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    setContent(ref.current?.innerText);
+  }, [props.children]);
 
   return (
-    <InlinePreview {...props} color={notNumeric ? 'red' : 'limegreen'} label={notNumeric ? 'Ikke et tall!' : 'G'}>
+    <InlinePreview ref={ref} color={notNumeric ? 'red' : 'limegreen'} label={notNumeric ? 'Ikke et tall!' : 'G'}>
       {props.children}
       <GtilNOKIcon style={{ marginLeft: '.3rem' }} />
     </InlinePreview>

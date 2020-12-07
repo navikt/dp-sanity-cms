@@ -53,7 +53,7 @@ const serializers: Serializers = {
     tidslinje: (props) => <TidslinjePreview blocks={props.node.innhold} />,
   },
   marks: {
-    GtilNOK: (props) => <GtilNOKPeview {...props} grunnbelløp={props.children.join('')} />,
+    GtilNOK: (props) => <GtilNOKPeview children={props.children} />,
     utkast: InlineUtkast,
     visForAnnotation: (props) => <InlineVisForPreview visFor={props.mark.visFor} {...props} />,
     visForAnnotationDeltTekst: (props) => (

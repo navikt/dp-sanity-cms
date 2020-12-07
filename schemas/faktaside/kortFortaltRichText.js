@@ -11,7 +11,7 @@ export default {
     {
       title: 'Block',
       type: 'block',
-      styles: [styles.normal, styles.h3, styles.h4],
+      styles: [styles.normal, styles.h4, styles.h3],
       marks: {
         decorators: [
           decorators.strong,

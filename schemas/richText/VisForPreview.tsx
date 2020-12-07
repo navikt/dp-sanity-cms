@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { ReactNode } from 'react';
-import LightBulb from 'react-icons/lib/fa/lightbulb-o';
+import { FaLightbulb } from 'react-icons/fa';
 import InlinePreview from '../../components/InlinePreview';
 
-export const InlineVisForIkon = LightBulb;
+export const InlineVisForIkon = FaLightbulb;
 const visForColor = '#80f8';
 const skjulForColor = '#f048';
 

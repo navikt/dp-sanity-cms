@@ -4,6 +4,7 @@ import useSanityQuery from '../../utils/useSanityQuery';
 import styled from 'styled-components';
 import CheckBox from '../../components/CheckBox';
 import withErrorBoundary from '../../components/withErrorBoundary';
+import { PopoverWorkarround } from '../../style/PopoverWorkarround';
 
 interface FiltreringsValgData {
   filtreringsvalg?: {
@@ -73,6 +74,7 @@ function VelgSituasjoner(props: Props) {
 
   return (
     <div>
+      <PopoverWorkarround /> {/* Importeres her fordi denne komponenten mountes når man har vis for annotation åpen */}
       <StyledLegend>{props.type.title}</StyledLegend>
       <Border>
         {data?.filtreringsvalg?.map(

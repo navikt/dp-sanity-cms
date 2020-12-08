@@ -63,10 +63,6 @@
     {
       "name": "part:@sanity/desk-tool/structure",
       "path": "./deskStructure.ts"
-    },
-    {
-      "implements": "part:@sanity/base/theme/variables/override-style",
-      "path": "./style/global.css"
     }
   ]
 }

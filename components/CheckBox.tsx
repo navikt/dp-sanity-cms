@@ -19,6 +19,10 @@ const Style = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
+  label,
+  input {
+    cursor: pointer;
+  }
 `;
 
 function CheckBox(props: CheckBoxProps) {

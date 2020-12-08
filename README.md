@@ -27,6 +27,10 @@ Push på master kjører ikke build & deploy, så for å deploye kodeendringer ti
 
 `npm run deploy`
 
+## Public data
+
+Alt innhold som legges inn i alle dataset i dette sanityprosjektet må regnes som offentlig tilgjengelig fra øyeblikket det skrives inn. Det er naturligvis greit å kladde og skrive inn uferdig innhold, men aldri skriv sensitiv data i Sanity.
+
 ## Publisere innhold
 
 Først må innholdet publiseres i Sanity. Innholdet blir dessverre ikke publisert på nav.no automatisk etter dette, men det jobber vi med. I mellomtiden kan man trigge et manuelt bygg av [faktasider-frontend](https://github.com/navikt/dp-faktasider-frontend) ved å pushe en tom commit `git commit -m "Trigger bygg" --allow-empty` (ikke i dette repoet, men i faktasider-frontend).

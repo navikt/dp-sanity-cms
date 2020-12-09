@@ -53,7 +53,7 @@ const query = `*[_id == "oppsett"][0]
 }`;
 
 function VelgSituasjoner(props: Props) {
-  const data = useSanityQuery<FiltreringsValgData>(query);
+  const { data } = useSanityQuery<FiltreringsValgData>(query);
   const currentValue = props.value || [];
 
   const handleChange = (label: string) => {
@@ -72,12 +72,21 @@ function VelgSituasjoner(props: Props) {
 
   const finnesUgyldigeValg = !!ugyldigeValg?.length;
 
+  if (!data) {
+    return (
+      <div>
+        <PopoverWorkarround />
+        Laster filtreringsvalg..
+      </div>
+    );
+  }
+
   return (
     <div>
       <PopoverWorkarround /> {/* Importeres her fordi denne komponenten mountes når man har vis for annotation åpen */}
       <StyledLegend>{props.type.title}</StyledLegend>
       <Border>
-        {data?.filtreringsvalg?.map(
+        {data.filtreringsvalg?.map(
           (it) =>
             it.no && (
               <CheckBox label={it.no} checked={currentValue.includes(it.no)} onChange={() => handleChange(it.no)} />

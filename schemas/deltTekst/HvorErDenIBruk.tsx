@@ -1,15 +1,13 @@
 import * as React from 'react';
-import sanityClient from '@sanity/client';
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import useSanityQuery from '../../utils/useSanityQuery';
 
-const ErrorStyling = styled.div`
-  color: red;
-`;
-
 const Header = styled.div`
   font-size: 1.25rem;
+`;
+
+const ErrorStyling = styled(Header)`
+  color: red;
 `;
 
 const Emoji = styled.span`
@@ -23,21 +21,23 @@ type Referrer = {
 };
 
 function HvorErDenIBruk(props: any) {
-  const documentId = window.location.pathname.split(';').pop();
+  const documentId = window.location.pathname.split(';').reverse()[0].slice(0, 36);
   const query = `*[references("${documentId}")]`;
-  const gydldigId = documentId?.length === 36;
-  const data = useSanityQuery<Referrer[]>(query);
+  const { data, error } = useSanityQuery<Referrer[]>(query);
 
-  if (!data?.length) {
+  if (error) {
+    console.error(error);
+    return <ErrorStyling>Det skjedde en feil.</ErrorStyling>;
+  }
+
+  if (!data) {
+    return <div>Sjekker om den delte teksten er i bruk..</div>;
+  }
+
+  if (!data.length) {
     return (
       <Header {...props}>
-        {!gydldigId ? (
-          <ErrorStyling>Dette ser ut som en ugyldig dokumentID: {documentId}</ErrorStyling>
-        ) : (
-          <>
-            Denne delte teksten er ikke i bruk <Emoji>😢</Emoji>
-          </>
-        )}
+        Denne delte teksten er ikke i bruk <Emoji>😢</Emoji>
       </Header>
     );
   }
@@ -50,7 +50,7 @@ function HvorErDenIBruk(props: any) {
       <ul>
         {data.map((ref) => (
           <li>
-            <a href={`${referenceBaseUrl}/${ref._type};${ref._id}`}>{ref?.title.no}</a>
+            <a href={`${referenceBaseUrl}/${ref._type};${ref._id}`}>{ref?.title?.no}</a>
           </li>
         ))}
       </ul>

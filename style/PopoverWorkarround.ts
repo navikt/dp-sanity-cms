@@ -4,7 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 export const PopoverWorkarround = createGlobalStyle`
   [class^='popover_card'] {
     overflow: auto;
-    max-height: 80vh;
+    max-height: 70vh;
   }
   
   [class^='popover_root_'] {

@@ -11,7 +11,6 @@ export default {
       title: 'Block',
       type: 'block',
       styles: [styles.normal],
-      lists: [],
       marks: {
         decorators: [
           decorators.strong,

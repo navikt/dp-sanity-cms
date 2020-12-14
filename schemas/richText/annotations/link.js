@@ -8,7 +8,7 @@ export const LenkePreview = styled.span`
   color: ${color};
   min-width: 1rem;
   text-decoration: underline;
-  display: inline-block;
+  display: inline-block; // for å vise lenker som mangler tekst
   ${(props) =>
     props.knapp &&
     css`

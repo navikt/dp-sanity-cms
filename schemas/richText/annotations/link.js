@@ -8,6 +8,7 @@ export const LenkePreview = styled.span`
   color: ${color};
   min-width: 1rem;
   text-decoration: underline;
+  display: inline-block;
   ${(props) =>
     props.knapp &&
     css`

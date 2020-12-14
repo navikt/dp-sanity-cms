@@ -1,14 +1,25 @@
 import { MdLink } from 'react-icons/lib';
 import styled, { css } from 'styled-components';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const color = '#2276fc';
 
-export const LenkePreview = styled.span`
+const Style = styled.span`
   color: ${color};
   min-width: 1rem;
   text-decoration: underline;
-  display: inline-block; // for å vise lenker som mangler tekst
+  ${(props) =>
+    props.isEmpty &&
+    css`
+      box-shadow: 0 0 0 0.2rem red;
+      &::after {
+        content: ' (Denne lenketeksten er for kort)';
+        opacity: 0.6;
+        font-size: 0.8em;
+        color: black;
+        text-decoration: none;
+      }
+    `};
   ${(props) =>
     props.knapp &&
     css`
@@ -20,6 +31,18 @@ export const LenkePreview = styled.span`
       border-radius: 0.4rem;
     `};
 `;
+
+export const LenkePreview = (props) => {
+  const ref = useRef(null);
+  const [isEmpty, setIsEmpty] = useState(false);
+
+  useEffect(() => {
+    const innerText = ref.current?.innerText;
+    setIsEmpty(innerText.length < 2);
+  }, []);
+
+  return <Style ref={ref} {...props} isEmpty={isEmpty} />;
+};
 
 export default {
   name: 'link',

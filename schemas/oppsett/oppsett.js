@@ -1,5 +1,4 @@
 import React from 'react';
-import VelgSituasjoner from './VelgSituasjoner';
 
 export default {
   name: 'oppsett',

@@ -22,14 +22,6 @@
       }
     },
     {
-      "name": "prodclone",
-      "title": "ProdClone",
-      "api": {
-        "projectId": "rt6o382n",
-        "dataset": "prodclone"
-      }
-    },
-    {
       "name": "demo",
       "title": "Demo",
       "api": {

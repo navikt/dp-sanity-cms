@@ -78,8 +78,13 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title.no',
-      subtitle: 'description.no',
+      title: 'title',
+      subtitle: 'beskrivelse',
+      slug: 'slug.current',
     },
+    prepare: (selection) => ({
+      title: selection.title.no || selection.title.en,
+      subtitle: `/${selection.slug}/   ${selection.subtitle.no || selection.subtitle.en}`,
+    }),
   },
 };

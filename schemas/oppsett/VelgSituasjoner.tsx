@@ -92,6 +92,9 @@ function VelgSituasjoner(props: Props) {
               <CheckBox label={it.no} checked={currentValue.includes(it.no)} onChange={() => handleChange(it.no)} />
             )
         )}
+        {!data.filtreringsvalg?.length && (
+          <div>Fant ingen filtreringsvalg. Legg til filtreringsvalg i Oppsett-fanen</div>
+        )}
         {finnesUgyldigeValg && (
           <UgyldigeValgStyle>
             <p>Ugyldige valg funnet: {ugyldigeValg?.join(', ')}</p>

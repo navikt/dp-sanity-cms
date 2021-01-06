@@ -4,7 +4,7 @@ export default {
   name: 'oppsett',
   title: 'Oppsett',
   type: 'document',
-  __experimental_actions: ['update', 'publish'],
+  __experimental_actions: ['update', 'publish'], // Har du laget et nytt datasett må du midlertidig fjerne denne for å kunne lage et nytt oppsett-dokument
   fields: [
     {
       name: 'title',

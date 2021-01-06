@@ -3,7 +3,7 @@ import { MdWeb } from 'react-icons/md';
 export default {
   name: 'faktaSide',
   type: 'document',
-  title: 'Faktaside',
+  title: 'Infoside',
   icon: MdWeb,
   fieldsets: [
     {

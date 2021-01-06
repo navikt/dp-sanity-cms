@@ -89,7 +89,12 @@ function VelgSituasjoner(props: Props) {
         {data.filtreringsvalg?.map(
           (it) =>
             it.no && (
-              <CheckBox label={it.no} checked={currentValue.includes(it.no)} onChange={() => handleChange(it.no)} />
+              <CheckBox
+                key={it.no}
+                label={it.no}
+                checked={currentValue.includes(it.no)}
+                onChange={() => handleChange(it.no)}
+              />
             )
         )}
         {!data.filtreringsvalg?.length && (

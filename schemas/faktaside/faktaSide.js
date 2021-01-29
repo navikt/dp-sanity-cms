@@ -83,8 +83,8 @@ export default {
       slug: 'slug.current',
     },
     prepare: (selection) => ({
-      title: selection.title.no || selection.title.en,
-      subtitle: `/${selection.slug}/   ${selection.subtitle.no || selection.subtitle.en}`,
+      title: selection.title?.no || selection.title?.en,
+      subtitle: `/${selection.slug}/   ${selection.subtitle?.no || selection.subtitle?.en}`,
     }),
   },
 };

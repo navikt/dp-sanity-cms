@@ -75,6 +75,15 @@ export default {
         },
       ],
     },
+    {
+      name: 'seoImage',
+      title: 'Previewbilde',
+      description: 'Dette bildet brukes for preveiw av lenker i feks sosiale medier',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
   ],
   preview: {
     prepare: (selection) => ({

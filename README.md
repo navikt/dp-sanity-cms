@@ -1,3 +1,7 @@
+> NB! Dette repoet er arkivert og ikke lenger i bruk
+> 
+> Koden ble dratt inn i [https://github.com/navikt/dp-faktasider-frontend]() som nå er monorepo for både sanity og frontend.
+
 # Dagpenger cms - sanity studio
 
 [Sanity-studio](https://www.sanity.io/studio) / cms-frontend for dagpengerelatert informasjon.

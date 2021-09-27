@@ -1,7 +1,8 @@
 {
   "root": true,
   "project": {
-    "name": "dp-sanity-cms"
+    "name": "dp-sanity-cms",
+    "basePath": "/arbeid/cms"
   },
   "__experimental_spaces": [
     {
@@ -15,10 +16,26 @@
     },
     {
       "name": "development",
-      "title": "Test",
+      "title": "Development",
       "api": {
         "projectId": "rt6o382n",
         "dataset": "development"
+      }
+    },
+    {
+      "name": "demo",
+      "title": "Demo",
+      "api": {
+        "projectId": "rt6o382n",
+        "dataset": "demo"
+      }
+    },
+    {
+      "name": "lekegrind",
+      "title": "Lekegrind🧚🏾",
+      "api": {
+        "projectId": "rt6o382n",
+        "dataset": "lekegrind"
       }
     }
   ],
@@ -47,6 +64,14 @@
     {
       "name": "part:@sanity/desk-tool/structure",
       "path": "./deskStructure.ts"
+    },
+    {
+      "implements": "part:@sanity/base/brand-logo",
+      "path": "./logo.tsx"
+    },
+    {
+      "implements": "part:@sanity/base/theme/variables/override-style",
+      "path": "./style/customStyles.css"
     }
   ]
 }

@@ -1,0 +1,32 @@
+apiVersion: nais.io/v1alpha1
+kind: Application
+metadata:
+  name: dp-faktasider-cms
+  namespace: teamdagpenger
+  labels:
+    team: teamdagpenger
+spec:
+  image: {{image}}
+  port: 8000
+  liveness:
+    path: /isalive
+    initialDelay: 20
+    timeout: 60
+  readiness:
+    path: /isready
+    initialDelay: 20
+    timeout: 60
+  replicas:
+    min: 1
+    max: 2
+    cpuThresholdPercentage: 50
+  prometheus:
+    enabled: false
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 200m
+    memory: 256Mi
+  ingresses:
+    - https://www.nav.no/arbeid/cms

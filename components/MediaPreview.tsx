@@ -1,6 +1,6 @@
-import * as React from 'react';
-import styled from 'styled-components';
-import { ReactNode } from 'react';
+import * as React from "react";
+import styled from "styled-components";
+import { ReactNode } from "react";
 
 const Style = styled.div`
   padding: 0.5rem;

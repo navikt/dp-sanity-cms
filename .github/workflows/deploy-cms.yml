@@ -1,0 +1,48 @@
+name: Build and deploy dp-faktasider-cms
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'src/**'
+
+env:
+  IMAGE: docker.pkg.github.com/${{ github.repository }}/dp-faktasider-cms:${{ github.sha }}
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        working-directory: ./sanity
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Sanity Studio App
+        run: npm run build
+      - name: Build docker image
+        run: docker build -t $IMAGE . -f Dockerfile --pull
+      - name: Login to Github Package Registry
+        env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} -p ${GITHUB_TOKEN}
+      - name: Push Docker image
+        run: docker push $IMAGE
+
+  deployToProd:
+    name: Deploy to prod
+    needs: build
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to prod-gcp
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: prod-gcp
+          RESOURCE: sanity/nais/nais-sanity.yaml

@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { ErrorInfo } from 'react';
-import styled from 'styled-components';
+import * as React from "react";
+import { ErrorInfo } from "react";
+import styled from "styled-components";
 
 const FeilStyle = styled.div`
   border: 0.3rem red solid;

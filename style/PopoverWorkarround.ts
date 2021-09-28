@@ -1,5 +1,5 @@
 /* Denne kan kanksje fjernes hvis sanity fikser. https://sanity-io.slack.com/archives/CF876M37F/p1607430402057100, https://sanity-io-land.slack.com/archives/C9Z7RC3V1/p1607091375201600, https://github.com/sanity-io/sanity/issues/2170 */
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const PopoverWorkarround = createGlobalStyle`
   [class^='popover_card'] {

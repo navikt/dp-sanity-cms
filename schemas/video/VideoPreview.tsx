@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { MdOndemandVideo } from 'react-icons/md';
-import MediaPreview from '../../components/MediaPreview';
+import * as React from "react";
+import { MdOndemandVideo } from "react-icons/md";
+import MediaPreview from "../../components/MediaPreview";
 
 export const VideoIkon = MdOndemandVideo;
 

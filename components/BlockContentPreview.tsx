@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { ReactNode } from 'react';
-import styled from 'styled-components';
-import BlockContent from './BlockContent';
+import * as React from "react";
+import { ReactNode } from "react";
+import styled from "styled-components";
+import BlockContent from "./BlockContent";
 
 interface Props {
   color: string;

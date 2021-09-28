@@ -1,10 +1,6 @@
-> NB! Dette repoet er arkivert og ikke lenger i bruk
-> 
-> Koden ble dratt inn i [https://github.com/navikt/dp-faktasider-frontend]() som nå er monorepo for både sanity og frontend.
+# CMS - sanity studio
 
-# Dagpenger cms - sanity studio
-
-[Sanity-studio](https://www.sanity.io/studio) / cms-frontend for dagpengerelatert informasjon.
+[Sanity-studio](https://www.sanity.io/studio) / cms-frontend for dagpengerelatert informasjon
 
 ## Utvikling
 
@@ -21,15 +17,14 @@ Du må logge deg inn i appen med feks github-bruker, du må få tilgang av en ad
 
 ### Scripts
 
-`backup` lagrer en backup av proddatasettet lokalt
-`clearDevelopmentDataset` sletter all data i development-datasettet slik at du har et clean utgangspunkt
-`copyProdDataToDevelopment` sletter development-datasettet og bytter det ut med en kopi av prod-datasettet
+- `backup` lagrer en backup av proddatasettet lokalt
+- `clearDevelopmentDataset` sletter all data i development-datasettet slik at du har et clean utgangspunkt
+- `copyProdDataToDevelopment` sletter development-datasettet og bytter det ut med en kopi av prod-datasettet
+- `npm run docker` bygger appen i en dockercontainer på samme måte som i pipeline, hoster appen på [localhost:8000/arbeid/cms]().
 
 ### Deploy av endringer i Sanity Studio
 
-Push på master kjører ikke build & deploy, så for å deploye kodeendringer til [https://dagpenger.sanity.studio](https://dagpenger.sanity.studio) må du deploye slik:
-
-`npm run deploy`
+Push på main vil automatisk deploye Studio til [https://www.nav.no/arbeid/cms](https://www.nav.no/arbeid/cms).
 
 ## Public data
 
@@ -37,13 +32,7 @@ Alt innhold som legges inn i alle dataset i dette sanityprosjektet må regnes so
 
 ## Publisere innhold
 
-Først må innholdet publiseres i Sanity. Innholdet blir dessverre ikke publisert på nav.no automatisk etter dette, men det jobber vi med. I mellomtiden kan man trigge et manuelt bygg av [faktasider-frontend](https://github.com/navikt/dp-faktasider-frontend) ved å pushe en tom commit `git commit -m "Trigger bygg" --allow-empty` (ikke i dette repoet, men i faktasider-frontend).
-
-## Konsumenter
-
-Innholdet brukes av:
-
-- https://github.com/navikt/dp-faktasider-frontend
+Innhold som blir publisert i Sanity blir automatisk vist på infosidene på nav.no/arbeid etter noen minutter.
 
 ## Kontakt
 
@@ -55,4 +44,4 @@ Spørsmål tilknyttet koden kan rettes mot:
 
 ### Internt
 
-Slack: #team-dagpenger, #team-dagpenger-dev
+Slack: #område-arbeid-innhold, #område-arbeid, #team-dagpenger, #team-dagpenger-dev

@@ -1,7 +1,7 @@
-import { useRef } from 'react';
-import { guid } from 'nav-frontend-js-utils';
-import * as React from 'react';
-import styled from 'styled-components';
+import { useRef } from "react";
+import { guid } from "nav-frontend-js-utils";
+import * as React from "react";
+import styled from "styled-components";
 
 interface CheckBoxProps {
   label: string;

@@ -1,7 +1,7 @@
 apiVersion: nais.io/v1alpha1
 kind: Application
 metadata:
-  name: dp-faktasider-cms
+  name: dp-sanity-cms
   namespace: teamdagpenger
   labels:
     team: teamdagpenger

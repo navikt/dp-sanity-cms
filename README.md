@@ -38,7 +38,7 @@ Innhold som blir publisert i Sanity blir automatisk vist på infosidene på nav.
 
 Spørsmål tilknyttet koden kan rettes mot:
 
-- Daniel Winsvold, daniel.winsvold@nav.no
+- Sindre Sægrov, sindre.segrov@nav.no
 - Knut Magne Riise, knut.magne.riise@nav.no
 - Synneva Aasbrenn, synneva.aasbrenn@nav.no
 

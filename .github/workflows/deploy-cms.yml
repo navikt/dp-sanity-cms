@@ -11,9 +11,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-18.04
-    defaults:
-      run:
-        working-directory: ./sanity
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -43,4 +40,4 @@ jobs:
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: prod-gcp
-          RESOURCE: sanity/nais/nais-sanity.yaml
+          RESOURCE: nais/nais-sanity.yaml

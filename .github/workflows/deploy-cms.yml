@@ -1,14 +1,12 @@
-name: Build and deploy dp-faktasider-cms
+name: Build and deploy dp-sanity-cms
 
 on:
   push:
     branches:
       - main
-    paths-ignore:
-      - 'src/**'
 
 env:
-  IMAGE: docker.pkg.github.com/${{ github.repository }}/dp-faktasider-cms:${{ github.sha }}
+  IMAGE: docker.pkg.github.com/${{ github.repository }}/dp-sanity-cms:${{ github.sha }}
 
 jobs:
   build:

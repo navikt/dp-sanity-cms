@@ -25,7 +25,7 @@
     "@sanity/dashboard": "^2.13.1",
     "@sanity/default-layout": "^2.13.1",
     "@sanity/default-login": "^2.13.1",
-    "@sanity/desk-tool": "^2.13.1",
+    "@sanity/desk-tool": "^2.18.0",
     "@sanity/image-url": "^0.140.22",
     "@sanity/vision": "^2.13.1",
     "nav-frontend-js-utils": "^1.0.19",

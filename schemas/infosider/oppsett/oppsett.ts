@@ -1,11 +1,10 @@
-import { FiCheckSquare } from "react-icons/fi";
 import { localeValueRequired } from "../../utils/validationHelpers";
 
 export default {
   name: "oppsett",
   title: "Oppsett",
   type: "document",
-  __experimental_actions: ["update", "publish"], // Har du laget et nytt datasett må du midlertidig fjerne denne for å kunne lage et nytt oppsett-dokument
+  __experimental_actions: ["update", "publish"], // Har du laget et nytt datasett må du midlertidig fjerne denne for å kunne lltreage et nytt oppsett-dokument
   fields: [
     {
       name: "title",
@@ -64,17 +63,6 @@ export default {
         Rule.max(250000).error("Dette tallet ser for stort ut"),
       ],
       description: "Brukes for å konvertere G til kroner i frontenden",
-    },
-    {
-      name: `filtreringsvalg`,
-      type: `array`,
-      of: [
-        {
-          type: `localeString`,
-          title: "Filtreringsvalg",
-          icon: FiCheckSquare,
-        },
-      ],
     },
     {
       name: "seoImage",

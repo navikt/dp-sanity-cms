@@ -1,4 +1,3 @@
-import VelgSituasjoner from "./VelgSituasjoner";
 import VelgSituasjonerRef from "./VelgSituasjonerRef";
 
 export default {
@@ -9,20 +8,12 @@ export default {
     {
       type: "boolean",
       name: "skjulFor",
-      title: "Ovmendt filtrering",
+      title: "Omvendt filtrering",
       description:
         'Skru på denne for å skjule teksten for valgte situasjoner istedenfor å vise. (Vil fortsatt vises dersom bruker ikke har valgt filtrering eller velger "Ingen valg passer").',
     },
     {
-      //todo: slett meg når gamle situasjoner er overflødig
-      title: "Situasjoner GAMMEL",
-      name: "situasjoner",
-      type: "array",
-      of: [{ type: "string" }],
-      inputComponent: VelgSituasjoner,
-    },
-    {
-      title: "Situasjoner NY",
+      title: "Situasjoner",
       name: "visForSituasjoner",
       type: "array",
       of: [{ type: "reference", to: [{ type: "situasjon" }] }],

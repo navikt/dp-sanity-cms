@@ -1,4 +1,3 @@
-import { FiCheckSquare } from "react-icons/fi";
 import { localeValueRequired } from "../../utils/validationHelpers";
 
 export default {
@@ -64,17 +63,6 @@ export default {
         Rule.max(250000).error("Dette tallet ser for stort ut"),
       ],
       description: "Brukes for å konvertere G til kroner i frontenden",
-    },
-    {
-      name: `filtreringsvalg`,
-      type: `array`,
-      of: [
-        {
-          type: `localeString`,
-          title: "Filtreringsvalg",
-          icon: FiCheckSquare,
-        },
-      ],
     },
     {
       name: "seoImage",

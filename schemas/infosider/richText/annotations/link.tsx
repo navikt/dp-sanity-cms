@@ -57,6 +57,7 @@ export default {
       name: "href",
       type: "url",
       title: "URL",
+      description: "Hvis du ønsker å redigere selve teksten brukeren ser, så må du først trykke utenfor tekstboksen og så klikke kun en gang på lenken, slik at denne dialogboksen ikke dukker opp. Eller bruke piltastene.",
     },
     {
       title: "Vis som knapp",

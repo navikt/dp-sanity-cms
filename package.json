@@ -16,6 +16,7 @@
     "copyProdDataToDevelopment": "npm run backup && npm run clearDevelopmentDataset && sanity dataset import production.tar.gz development --replace"
   },
   "dependencies": {
+    "ua-parser-js": "0.7.30",
     "@sanity/base": "^2.13.1",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/cli": "^2.13.1",

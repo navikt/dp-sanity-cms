@@ -8,6 +8,7 @@ import DemoappPreview from "./previews/DemoappPreview";
 import { DagpengeKalkulatorIkon } from "./schemas/kalkulator/kalkulator";
 import { HistorikkIkon } from "./schemas/infosider/historikk/historikkHjelpetekster";
 import KalkulatorPreview from "./previews/KalkulatorPreview";
+import { subFaktum } from "./schemas/soknad/sub-faktum";
 
 export default () =>
   S.list()
@@ -26,13 +27,16 @@ export default () =>
               S.view.component(ForsidePreview).title("Forside-preview"),
             ])
         ),
+
       S.listItem()
         .title("Historikk")
         .icon(HistorikkIkon)
-        .child(S.editor().schemaType("historikkHjelpetekster").documentId("historikkHjelpetekster")),
-      ...S.documentTypeListItems().filter(
-        (listItem) => !["oppsett", "dagpengekalkulator", "historikkHjelpetekster"].includes(listItem.getId())
-      ),
+        .child(
+          S.editor()
+            .schemaType("historikkHjelpetekster")
+            .documentId("historikkHjelpetekster")
+        ),
+
       S.listItem()
         .title("DagpengerKalkulator")
         .icon(DagpengeKalkulatorIkon)
@@ -40,8 +44,89 @@ export default () =>
           S.editor()
             .schemaType("dagpengekalkulator")
             .documentId("dagpengekalkulator")
-            .views([S.view.form(), S.view.component(KalkulatorPreview).title("Kalkulator-preview")])
+            .views([
+              S.view.form(),
+              S.view.component(KalkulatorPreview).title("Kalkulator-preview"),
+            ])
         ),
+
+      S.listItem()
+        .title("TEST Dagpenger søknad")
+        .child(
+          S.list()
+            .title("Dagpenger søknad")
+            .items([
+              // S.divider(),
+
+              S.listItem({
+                id: "innholdssider",
+                title: "Innholdssider",
+                schemaType: "contentPage",
+              }).child(
+                S.documentTypeList({
+                  schemaType: "contentPage",
+                  title: "Innholdssider",
+                })
+              ),
+
+              S.listItem({
+                id: "seksjoner",
+                title: "Seksjoner",
+                schemaType: "seksjon",
+              }).child(
+                S.documentTypeList({
+                  schemaType: "seksjon",
+                  title: "Seksjoner",
+                })
+              ),
+
+              S.listItem({
+                id: "faktum",
+                title: "Spørsmål",
+                schemaType: "faktum",
+              }).child(
+                S.documentTypeList({
+                  schemaType: "faktum",
+                  title: "Spørsmål",
+                })
+              ),
+
+              S.listItem({
+                id: "subFaktum",
+                title: "Oppfølgingspørsmål",
+                schemaType: subFaktum.name,
+              }).child(
+                S.documentTypeList({
+                  schemaType: subFaktum.name,
+                  title: "Oppfølgingspørsmål",
+                })
+              ),
+
+              S.listItem({
+                id: "answer",
+                title: "Svaralternativer",
+                schemaType: "answer",
+              }).child(
+                S.documentTypeList({
+                  schemaType: "answer",
+                  title: "Alternativ",
+                })
+              ),
+            ])
+        ),
+
+      ...S.documentTypeListItems().filter(
+        (listItem) =>
+          ![
+            "oppsett",
+            "dagpengekalkulator",
+            "historikkHjelpetekster",
+            "contentPage",
+            "faktum",
+            "subFaktum",
+            "seksjon",
+          ].includes(listItem.getId())
+      ),
     ]);
 
 export const getDefaultDocumentNode = ({ schemaType }) => {

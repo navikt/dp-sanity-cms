@@ -15,30 +15,37 @@
     "clearDevelopmentDataset": "sanity dataset delete development && sanity dataset create development --visibility public",
     "copyProdDataToDevelopment": "npm run backup && npm run clearDevelopmentDataset && sanity dataset import production.tar.gz development --replace"
   },
+  "prettier": {
+    "printWidth": 120
+  },
   "dependencies": {
-    "@sanity/base": "^2.13.1",
+    "@sanity/base": "^2.23.0",
     "@sanity/block-content-to-react": "^3.0.0",
-    "@sanity/cli": "^2.13.1",
-    "@sanity/client": "^2.13.0",
-    "@sanity/components": "^2.13.0",
-    "@sanity/core": "^2.13.1",
-    "@sanity/dashboard": "^2.13.1",
-    "@sanity/default-layout": "^2.13.1",
-    "@sanity/default-login": "^2.13.1",
-    "@sanity/desk-tool": "^2.13.1",
-    "@sanity/image-url": "^0.140.22",
-    "@sanity/vision": "^2.13.1",
-    "nav-frontend-js-utils": "^1.0.19",
-    "prettier": "^2.4.1",
-    "prop-types": "^15.7.2",
+    "@sanity/client": "^2.23.0",
+    "@sanity/components": "^2.14.0",
+    "@sanity/core": "^2.23.0",
+    "@sanity/dashboard": "^2.23.0",
+    "@sanity/default-layout": "^2.23.0",
+    "@sanity/default-login": "^2.23.0",
+    "@sanity/desk-tool": "^2.23.0",
+    "@sanity/image-url": "^1.0.1",
+    "@sanity/vision": "^2.23.0",
+    "nav-frontend-js-utils": "^1.0.20",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-icons": "^4.2.0",
-    "styled-components": "^5.3.0",
-    "swr": "^0.5.6",
-    "ua-parser-js": "0.7.30"
+    "react-icons": "^4.3.1",
+    "styled-components": "^5.3.3",
+    "swr": "^1.1.0"
   },
   "devDependencies": {
-    "@types/styled-components": "5.1.9"
+    "@sanity/cli": "^2.23.0",
+    "@types/styled-components": "5.1.17",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-sanity": "^5.1.0",
+    "eslint-plugin-react": "^7.27.1",
+    "prettier": "^2.5.1"
   }
 }

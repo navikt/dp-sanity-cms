@@ -49,15 +49,15 @@ export const faktum = {
       title: "Svaralternativ",
       name: "answers",
       description: "",
-      of: [{ type: "reference", to: [{ type: answer.name }] }],
       type: "array",
+      of: [{ type: "reference", to: [{ type: answer.name }] }],
     },
     {
       title: "Underfaktum",
       name: "subFaktum",
       description: "",
-      of: [{ type: "reference", to: [{ type: subFaktum.name }] }],
       type: "array",
+      of: [{ type: "reference", to: [{ type: subFaktum.name }] }],
     },
   ],
   preview: {

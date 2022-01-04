@@ -1,5 +1,6 @@
 import { keyValuePair } from "./key-value-pair";
 import { faktum } from "./faktum";
+import { answer } from "./answer";
 
 export const seksjon = {
   type: "document",
@@ -33,8 +34,15 @@ export const seksjon = {
       title: "Faktum",
       name: "faktum",
       description: "",
-      of: [{ type: "reference", to: [{ type: faktum.name }] }],
       type: "array",
+      of: [{ type: "reference", to: [{ type: faktum.name }] }],
+    },
+    {
+      title: "Svaralternativ",
+      name: "answers",
+      description: "",
+      type: "array",
+      of: [{ type: "reference", to: [{ type: answer.name }] }],
     },
   ],
   preview: {

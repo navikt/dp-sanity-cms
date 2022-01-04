@@ -9,6 +9,10 @@ import { DagpengeKalkulatorIkon } from "./schemas/kalkulator/kalkulator";
 import { HistorikkIkon } from "./schemas/infosider/historikk/historikkHjelpetekster";
 import KalkulatorPreview from "./previews/KalkulatorPreview";
 import { subFaktum } from "./schemas/soknad/sub-faktum";
+import { seksjon } from "./schemas/soknad/seksjon";
+import { faktum } from "./schemas/soknad/faktum";
+import { answer } from "./schemas/soknad/answer";
+import { contentPage } from "./schemas/soknad/soknad";
 
 export default () =>
   S.list()
@@ -31,11 +35,7 @@ export default () =>
       S.listItem()
         .title("Historikk")
         .icon(HistorikkIkon)
-        .child(
-          S.editor()
-            .schemaType("historikkHjelpetekster")
-            .documentId("historikkHjelpetekster")
-        ),
+        .child(S.editor().schemaType("historikkHjelpetekster").documentId("historikkHjelpetekster")),
 
       S.listItem()
         .title("DagpengerKalkulator")
@@ -44,10 +44,7 @@ export default () =>
           S.editor()
             .schemaType("dagpengekalkulator")
             .documentId("dagpengekalkulator")
-            .views([
-              S.view.form(),
-              S.view.component(KalkulatorPreview).title("Kalkulator-preview"),
-            ])
+            .views([S.view.form(), S.view.component(KalkulatorPreview).title("Kalkulator-preview")])
         ),
 
       S.listItem()
@@ -61,10 +58,10 @@ export default () =>
               S.listItem({
                 id: "innholdssider",
                 title: "Innholdssider",
-                schemaType: "contentPage",
+                schemaType: contentPage.name,
               }).child(
                 S.documentTypeList({
-                  schemaType: "contentPage",
+                  schemaType: contentPage.name,
                   title: "Innholdssider",
                 })
               ),
@@ -72,10 +69,10 @@ export default () =>
               S.listItem({
                 id: "seksjoner",
                 title: "Seksjoner",
-                schemaType: "seksjon",
+                schemaType: seksjon.name,
               }).child(
                 S.documentTypeList({
-                  schemaType: "seksjon",
+                  schemaType: seksjon.name,
                   title: "Seksjoner",
                 })
               ),
@@ -83,10 +80,10 @@ export default () =>
               S.listItem({
                 id: "faktum",
                 title: "Spørsmål",
-                schemaType: "faktum",
+                schemaType: faktum.name,
               }).child(
                 S.documentTypeList({
-                  schemaType: "faktum",
+                  schemaType: faktum.name,
                   title: "Spørsmål",
                 })
               ),
@@ -105,10 +102,10 @@ export default () =>
               S.listItem({
                 id: "answer",
                 title: "Svaralternativer",
-                schemaType: "answer",
+                schemaType: answer.name,
               }).child(
                 S.documentTypeList({
-                  schemaType: "answer",
+                  schemaType: answer.name,
                   title: "Alternativ",
                 })
               ),

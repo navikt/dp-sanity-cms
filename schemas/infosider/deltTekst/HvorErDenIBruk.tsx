@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 import useSanityQuery from "../../../utils/useSanityQuery";
 
@@ -19,8 +19,7 @@ type Referrer = {
   _id: string;
   _type: string;
 };
-
-function HvorErDenIBruk(props: any) {
+export const HvorErDenIBruk = forwardRef(function HvorErDenIBruk() {
   const documentId = window.location.pathname.split(";").reverse()[0].slice(0, 36);
   const query = `*[references("${documentId}")]`;
   const { data, error } = useSanityQuery<Referrer[]>(query);
@@ -36,23 +35,23 @@ function HvorErDenIBruk(props: any) {
 
   if (!data.length) {
     return (
-      <Header {...props}>
+      <Header>
         Denne delte teksten er ikke i bruk <Emoji>😢</Emoji>
       </Header>
     );
   }
 
   return (
-    <div {...props}>
+    <div>
       <Header>Denne delte teksten er brukt {data.length} steder:</Header>
       <ul>
         {data.map((refferer) => (
-          <Element refferer={refferer} />
+          <Element key={refferer._id} refferer={refferer} />
         ))}
       </ul>
     </div>
   );
-}
+});
 
 function Element(props: { refferer: Referrer }) {
   const { refferer } = props;

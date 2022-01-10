@@ -70,5 +70,3 @@ function Element(props: { refferer: Referrer }) {
     </li>
   );
 }
-
-export default HvorErDenIBruk;

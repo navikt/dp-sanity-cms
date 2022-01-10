@@ -1,5 +1,5 @@
 import { DeltTekstIkon } from "./DeltTekstPreview";
-import HvorErDenIBruk from "./HvorErDenIBruk";
+import { HvorErDenIBruk } from "./HvorErDenIBruk";
 import { localeValueRequired } from "../../utils/validationHelpers";
 
 export default {

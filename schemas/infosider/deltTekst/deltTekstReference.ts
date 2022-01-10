@@ -24,5 +24,5 @@ export default {
     },
     prepare: (selection) => selection,
     component: DeltTekstPreview,
-  },
+  }
 };

@@ -7,10 +7,10 @@ import { infosideSchemas } from "./infosider";
 import { kalkulatorSchemas } from "./kalkulator";
 import { contentPage } from "./soknad/soknad";
 import { seksjon } from "./soknad/seksjon";
-import { keyValuePair } from "./soknad/key-value-pair";
-import { faktum } from "./soknad/faktum";
-import { answer } from "./soknad/answer";
-import { subFaktum } from "./soknad/sub-faktum";
+import { valgFaktum } from "./soknad/valgfaktum";
+import { generatorFaktum } from "./soknad/generatorFaktum";
+import { basefaktum } from "./soknad/baseFaktum";
+import { answerOption } from "./soknad/answerOption";
 
 export default createSchema({
   name: "dagpenger-info",
@@ -24,9 +24,9 @@ export default createSchema({
     localize("url"),
     contentPage,
     seksjon,
-    keyValuePair,
-    faktum,
-    subFaktum,
-    answer,
+    basefaktum,
+    valgFaktum,
+    generatorFaktum,
+    answerOption,
   ]),
 });

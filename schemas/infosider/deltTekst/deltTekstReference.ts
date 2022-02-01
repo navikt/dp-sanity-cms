@@ -24,11 +24,5 @@ export default {
     },
     prepare: (selection) => selection,
     component: DeltTekstPreview,
-  },
-  options: {
-    modal: {
-      type: "popover",
-      width: "medium",
-    },
-  },
+  }
 };

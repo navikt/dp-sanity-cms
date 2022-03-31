@@ -3,6 +3,43 @@ import { basefaktum } from "./baseFaktum";
 import { generatorFaktum } from "./generatorFaktum";
 import { valgFaktum } from "./valgfaktum";
 
+export const periodeType = {
+  title: "dato (fra-til)",
+  value: "periode"
+}
+export const booleanType = {
+  value: "boolean",
+  title: "Ja/Nei Spørsmål",
+}
+export const intType = {
+  value: "int",
+  title: "Heltall",
+}
+export const doubleType = {
+  title: "Desimaltall",
+  value: "double"
+}
+export const tekstType = {
+  value: "tekst",
+  title: "Fritekst",
+}
+export const localdateType = {
+  title: "Dato",
+  value: "localdate"
+}
+export const valgType = {
+  value: "valg",
+  title: "Radioknapper",
+}
+export const dropdownType = {
+  value: "dropdown",
+  title: "Nedtrekksliste",
+}
+export const flervalgType = {
+  value: "flervalg",
+  title: "Avkryssingsboks (flervalg)",
+}
+
 export const keyField = {
   type: "string",
   name: "key",
@@ -14,7 +51,7 @@ export const keyField = {
 export const sectionTitleField = {
   type: "text",
   name: "title",
-  title: "Tittel",
+  title: "Seksjonstittel",
   rows: 3,
 };
 
@@ -37,7 +74,7 @@ export const baseFaktumTypeField = {
   name: "type",
   title: "Type",
   options: {
-    list: ["int", "double", "tekst", "localdate", "periode"],
+    list: [intType, doubleType, tekstType, localdateType, periodeType],
   },
 };
 
@@ -46,16 +83,16 @@ export const valgFaktumTypeField = {
   name: "type",
   title: "Type",
   options: {
-    list: ["boolean", "valg", "dropdown", "flervalg"],
+    list: [booleanType, valgType, dropdownType, flervalgType],
   },
 };
 
 export const generatorFaktumTypeField = {
   type: "string",
   name: "type",
-  title: "Type",
+  title: "Spørsmålstype",
   options: {
-    list: ["generator"],
+    list: [{value: "generator", title: "Spørsmålsbolk"}],
     layout: "dropdown",
   },
   initialValue: {
@@ -66,7 +103,7 @@ export const generatorFaktumTypeField = {
 export const generatorFaktumListTypeField = {
   type: "string",
   name: "listType",
-  title: "Listetype",
+  title: "Spørsmålsbolk",
   options: {
     list: ["Arbeidsforhold", "Barn", "Standard"],
   },
@@ -75,7 +112,7 @@ export const generatorFaktumListTypeField = {
 export const unitField = {
   type: "string",
   name: "unit",
-  title: "Enhet for inputfelt",
+  title: "Enhet for inputfelt (f.eks timer, dager)",
 };
 
 export const descriptionTextField = {
@@ -104,7 +141,7 @@ export const alertTextField = {
 };
 
 export const requiredAnswerOptionsArray = {
-  title: "Required answer ids",
+  title: "Påkrevd svar på tidligere spørsmål",
   name: "requiredAnswerIds",
   type: "array",
   of: [{ type: "reference", to: [{ type: "answerOption" }] }],
@@ -118,7 +155,7 @@ export const answerOptionsArray = {
 };
 
 export const subFaktumArray = {
-  title: "SubFaktum",
+  title: "Oppfølgingsspørsmål",
   name: "subFaktum",
   type: "array",
   of: [
@@ -130,7 +167,7 @@ export const subFaktumArray = {
 };
 
 export const faktumArray = {
-  title: "Faktum",
+  title: "Spørsmål",
   name: "faktum",
   type: "array",
   of: [{ type: "reference", to: [{ type: "baseFaktum" }, { type: "valgFaktum" }, { type: "generatorFaktum" }] }],

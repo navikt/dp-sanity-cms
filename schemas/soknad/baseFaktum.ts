@@ -12,7 +12,7 @@ import {
 export const basefaktum = {
   type: "document",
   name: "baseFaktum",
-  title: "Base Faktum",
+  title: "Inputfelt",
   fields: [
     keyField,
     questionTitleField,
@@ -30,3 +30,5 @@ export const basefaktum = {
     },
   },
 };
+
+

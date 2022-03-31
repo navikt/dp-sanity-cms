@@ -13,7 +13,7 @@ import {
 export const valgFaktum = {
   type: "document",
   name: "valgFaktum",
-  title: "Valg Faktum",
+  title: "Spørsmål med alternativ",
   fields: [
     keyField,
     questionTitleField,

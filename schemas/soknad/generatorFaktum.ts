@@ -13,7 +13,7 @@ import {
 export const generatorFaktum = {
   type: "document",
   name: "generatorFaktum",
-  title: "Generator Faktum",
+  title: "Spørsmålsbolk",
   fields: [
     keyField,
     questionTitleField,

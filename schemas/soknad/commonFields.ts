@@ -12,16 +12,16 @@ export const sectionTitleField = {
   rows: 3,
 };
 
-export const questionTitleField = {
+export const questionTextField = {
   type: "text",
-  name: "title",
+  name: "text",
   title: "Spørsmål",
   rows: 3,
 };
 
-export const answerTitleField = {
+export const answerTextField = {
   type: "text",
-  name: "title",
+  name: "text",
   title: "Svar",
   rows: 3,
 };

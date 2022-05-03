@@ -1,13 +1,13 @@
-import { alertTextField, answerTitleField, questionTitleField, textIdField } from "./commonFields";
+import { alertTextField, answerTextField, questionTextField, textIdField } from "./commonFields";
 
 export const svaralternativ = {
   type: "document",
   name: "svaralternativ",
   title: "Svaralternativ",
-  fields: [textIdField, answerTitleField, alertTextField],
+  fields: [textIdField, answerTextField, alertTextField],
   preview: {
     select: {
-      title: questionTitleField.name,
+      title: questionTextField.name,
       subtitle: textIdField.name,
     },
   },

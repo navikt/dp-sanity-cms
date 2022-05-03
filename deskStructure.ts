@@ -1,10 +1,7 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { MdSettings } from "react-icons/md";
-import FaktasidePreview from "./previews/FaktasidePreview";
-import FaktasideSEOPreview from "./previews/FaktasideSEOPreview";
 import ForsideSEOPreview from "./previews/ForsideSEOPreview";
 import ForsidePreview from "./previews/ForsidePreview";
-import DemoappPreview from "./previews/DemoappPreview";
 import { DagpengeKalkulatorIkon } from "./schemas/kalkulator/kalkulator";
 import { HistorikkIkon } from "./schemas/infosider/historikk/historikkHjelpetekster";
 import KalkulatorPreview from "./previews/KalkulatorPreview";
@@ -51,9 +48,8 @@ export default () =>
           S.list()
             .title("Dagpengesøknad")
             .items([
-
               S.listItem({
-                id: "seksjon",
+                id: seksjon.name,
                 title: "Seksjoner",
                 schemaType: seksjon.name,
               }).child(
@@ -64,7 +60,7 @@ export default () =>
               ),
 
               S.listItem({
-                id: "faktum",
+                id: faktum.name,
                 title: "Spørsmål",
                 schemaType: faktum.name,
               }).child(
@@ -75,7 +71,7 @@ export default () =>
               ),
 
               S.listItem({
-                id: "answerOption",
+                id: svaralternativ.name,
                 title: "Svaralternativer",
                 schemaType: svaralternativ.name,
               }).child(
@@ -93,20 +89,9 @@ export default () =>
             "oppsett",
             "dagpengekalkulator",
             "historikkHjelpetekster",
-            "svaralternativ",
-            "faktum",
-          ].includes(listItem.getId())
+            svaralternativ.name,
+            faktum.name,
+            seksjon.name,
+          ].includes(<string>listItem.getId())
       ),
     ]);
-
-export const getDefaultDocumentNode = ({ schemaType }) => {
-  switch (schemaType) {
-    case "faktaSide":
-      return S.document().views([
-        S.view.form(),
-        S.view.component(FaktasidePreview).title("Preview"),
-        S.view.component(FaktasideSEOPreview).title("SEO"),
-        S.view.component(DemoappPreview).title("Demoapp"),
-      ]);
-  }
-};

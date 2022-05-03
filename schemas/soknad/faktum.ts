@@ -1,19 +1,13 @@
-import { descriptionTextField, helpTextField, questionTitleField, textIdField, unitField } from "./commonFields";
+import { descriptionTextField, helpTextField, questionTextField, textIdField, unitField } from "./commonFields";
 
 export const faktum = {
   type: "document",
   name: "faktum",
   title: "Spørsmål",
-  fields: [
-    textIdField,
-    questionTitleField,
-    descriptionTextField,
-    helpTextField,
-    unitField,
-  ],
+  fields: [textIdField, questionTextField, descriptionTextField, helpTextField, unitField],
   preview: {
     select: {
-      title: questionTitleField.name,
+      title: questionTextField.name,
       subtitle: textIdField.name,
     },
   },

@@ -9,9 +9,8 @@ import { DagpengeKalkulatorIkon } from "./schemas/kalkulator/kalkulator";
 import { HistorikkIkon } from "./schemas/infosider/historikk/historikkHjelpetekster";
 import KalkulatorPreview from "./previews/KalkulatorPreview";
 import { seksjon } from "./schemas/soknad/seksjon";
-import { contentPage } from "./schemas/soknad/soknad";
-import { valgFaktum } from "./schemas/soknad/valgfaktum";
-import { answerOption } from "./schemas/soknad/answerOption";
+import { faktum } from "./schemas/soknad/faktum";
+import { svaralternativ } from "./schemas/soknad/svaralternativ";
 
 export default () =>
   S.list()
@@ -52,21 +51,9 @@ export default () =>
           S.list()
             .title("Dagpengesøknad")
             .items([
-              // S.divider(),
 
               S.listItem({
-                id: "innholdssider",
-                title: "Innholdssider",
-                schemaType: contentPage.name,
-              }).child(
-                S.documentTypeList({
-                  schemaType: contentPage.name,
-                  title: "Innholdssider",
-                })
-              ),
-
-              S.listItem({
-                id: "seksjoner",
+                id: "seksjon",
                 title: "Seksjoner",
                 schemaType: seksjon.name,
               }).child(
@@ -77,12 +64,12 @@ export default () =>
               ),
 
               S.listItem({
-                id: "valgFaktum",
+                id: "faktum",
                 title: "Spørsmål",
-                schemaType: valgFaktum.name,
+                schemaType: faktum.name,
               }).child(
                 S.documentTypeList({
-                  schemaType: valgFaktum.name,
+                  schemaType: faktum.name,
                   title: "Faktum",
                 })
               ),
@@ -90,10 +77,10 @@ export default () =>
               S.listItem({
                 id: "answerOption",
                 title: "Svaralternativer",
-                schemaType: answerOption.name,
+                schemaType: svaralternativ.name,
               }).child(
                 S.documentTypeList({
-                  schemaType: answerOption.name,
+                  schemaType: svaralternativ.name,
                   title: "Alternativ",
                 })
               ),
@@ -106,12 +93,8 @@ export default () =>
             "oppsett",
             "dagpengekalkulator",
             "historikkHjelpetekster",
-            "contentPage",
-            "baseFaktum",
-            "valgFaktum",
-            "generatorFaktum",
-            "answerOption",
-            "seksjon",
+            "svaralternativ",
+            "faktum",
           ].includes(listItem.getId())
       ),
     ]);

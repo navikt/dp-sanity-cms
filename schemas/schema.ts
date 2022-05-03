@@ -5,12 +5,9 @@ import notifikasjon from "./notifikasjon/notifikasjon";
 import notifikasjonRichText from "./notifikasjon/notifikasjonRichText";
 import { infosideSchemas } from "./infosider";
 import { kalkulatorSchemas } from "./kalkulator";
-import { contentPage } from "./soknad/soknad";
 import { seksjon } from "./soknad/seksjon";
-import { valgFaktum } from "./soknad/valgfaktum";
-import { generatorFaktum } from "./soknad/generatorFaktum";
-import { basefaktum } from "./soknad/baseFaktum";
-import { answerOption } from "./soknad/answerOption";
+import { faktum } from "./soknad/faktum";
+import { svaralternativ } from "./soknad/svaralternativ";
 
 export default createSchema({
   name: "dagpenger-info",
@@ -22,11 +19,8 @@ export default createSchema({
     localize("string"),
     localize("text"),
     localize("url"),
-    contentPage,
     seksjon,
-    basefaktum,
-    valgFaktum,
-    generatorFaktum,
-    answerOption,
+    faktum,
+    svaralternativ
   ]),
 });

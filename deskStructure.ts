@@ -1,5 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder";
-import * as Structure from '@sanity/document-internationalization/lib/structure';
+import * as InternationalizationStructure from "@sanity/document-internationalization/lib/structure";
 import { MdSettings } from "react-icons/md";
 import ForsideSEOPreview from "./previews/ForsideSEOPreview";
 import ForsidePreview from "./previews/ForsidePreview";
@@ -10,9 +10,9 @@ import { seksjon } from "./schemas/soknad/seksjon";
 import { faktum } from "./schemas/soknad/faktum";
 import { svaralternativ } from "./schemas/soknad/svaralternativ";
 
-const soknadTypes = [seksjon.name, faktum.name, svaralternativ.name];
-const isSoknadType = (item) => soknadTypes.includes(item.id);
-const internationalizedSoknadTypeItems = Structure.getFilteredDocumentTypeListItems().filter(isSoknadType)
+const soknadSchemaNames = [seksjon.name, faktum.name, svaralternativ.name];
+const isSoknadSchema = (listItem) => soknadSchemaNames.includes(listItem.id);
+const internationalizedSoknadTypeItems = InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isSoknadSchema)
 
 export default () =>
   S.list()
@@ -61,7 +61,7 @@ export default () =>
             "oppsett",
             "dagpengekalkulator",
             "historikkHjelpetekster",
-            ...soknadTypes,
+            ...soknadSchemaNames,
           ].includes(<string>listItem.getId())
       ),
     ]);

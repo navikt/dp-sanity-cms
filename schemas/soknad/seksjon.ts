@@ -5,6 +5,9 @@ export const seksjon = {
   name: "seksjon",
   title: "Seksjon",
   i18n: true,
+  initialValue: {
+    __i18n_lang: "nb"
+  },
   fields: [textIdField, sectionTitleField, descriptionTextField, helpTextField],
   preview: {
     select: {

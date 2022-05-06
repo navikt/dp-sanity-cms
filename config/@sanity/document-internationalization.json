@@ -6,10 +6,5 @@
         { "id": "nb", "title": "Norsk - Bokmål" },
         { "id": "nn", "title": "Norsk - Nynorsk" },
         { "id": "en", "title": "English󠁢󠁥󠁮󠁧󠁿" }
-    ],
-    "fieldNames": {
-        "lang": "__i18n_lang",
-        "references": "__i18n_refs",
-        "baseReference": "__i18n_base"
-    }
+    ]
 }

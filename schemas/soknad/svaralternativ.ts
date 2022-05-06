@@ -5,6 +5,9 @@ export const svaralternativ = {
   name: "svaralternativ",
   title: "Svaralternativ",
   i18n: true,
+  initialValue: {
+    __i18n_lang: "nb"
+  },
   fields: [textIdField, answerTextField, alertTextField],
   preview: {
     select: {

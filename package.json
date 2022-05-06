@@ -28,6 +28,7 @@
     "@sanity/default-layout": "^2.29.8",
     "@sanity/default-login": "^2.29.8",
     "@sanity/desk-tool": "^2.29.8",
+    "@sanity/document-internationalization": "^0.1.7",
     "@sanity/image-url": "^1.0.1",
     "@sanity/vision": "^2.29.8",
     "nav-frontend-js-utils": "^1.0.20",

@@ -4,6 +4,7 @@ export const seksjon = {
   type: "document",
   name: "seksjon",
   title: "Seksjon",
+  i18n: true,
   fields: [textIdField, sectionTitleField, descriptionTextField, helpTextField],
   preview: {
     select: {

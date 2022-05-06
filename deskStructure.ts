@@ -1,4 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder";
+import * as Structure from '@sanity/document-internationalization/lib/structure';
 import { MdSettings } from "react-icons/md";
 import ForsideSEOPreview from "./previews/ForsideSEOPreview";
 import ForsidePreview from "./previews/ForsidePreview";
@@ -8,6 +9,10 @@ import KalkulatorPreview from "./previews/KalkulatorPreview";
 import { seksjon } from "./schemas/soknad/seksjon";
 import { faktum } from "./schemas/soknad/faktum";
 import { svaralternativ } from "./schemas/soknad/svaralternativ";
+
+const soknadTypes = [seksjon.name, faktum.name, svaralternativ.name];
+const isSoknadType = (item) => soknadTypes.includes(item.id);
+const internationalizedSoknadTypeItems = Structure.getFilteredDocumentTypeListItems().filter(isSoknadType)
 
 export default () =>
   S.list()
@@ -47,40 +52,7 @@ export default () =>
         .child(
           S.list()
             .title("Dagpengesøknad")
-            .items([
-              S.listItem({
-                id: seksjon.name,
-                title: "Seksjoner",
-                schemaType: seksjon.name,
-              }).child(
-                S.documentTypeList({
-                  schemaType: seksjon.name,
-                  title: "Seksjoner",
-                })
-              ),
-
-              S.listItem({
-                id: faktum.name,
-                title: "Spørsmål",
-                schemaType: faktum.name,
-              }).child(
-                S.documentTypeList({
-                  schemaType: faktum.name,
-                  title: "Faktum",
-                })
-              ),
-
-              S.listItem({
-                id: svaralternativ.name,
-                title: "Svaralternativer",
-                schemaType: svaralternativ.name,
-              }).child(
-                S.documentTypeList({
-                  schemaType: svaralternativ.name,
-                  title: "Alternativ",
-                })
-              ),
-            ])
+            .items(internationalizedSoknadTypeItems)
         ),
 
       ...S.documentTypeListItems().filter(
@@ -89,9 +61,7 @@ export default () =>
             "oppsett",
             "dagpengekalkulator",
             "historikkHjelpetekster",
-            svaralternativ.name,
-            faktum.name,
-            seksjon.name,
+            ...soknadTypes,
           ].includes(<string>listItem.getId())
       ),
     ]);

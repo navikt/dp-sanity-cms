@@ -4,6 +4,7 @@ export const faktum = {
   type: "document",
   name: "faktum",
   title: "Spørsmål",
+  i18n: true,
   fields: [textIdField, questionTextField, descriptionTextField, helpTextField, unitField],
   preview: {
     select: {

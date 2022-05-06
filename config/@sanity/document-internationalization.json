@@ -1,0 +1,14 @@
+{
+    "base": "no",
+    "idStructure": "delimiter",
+    "referenceBehavior": "strong",
+    "languages": [
+        { "id": "no", "title": "Norsk" },
+        { "id": "en", "title": "English󠁢󠁥󠁮󠁧󠁿" }
+    ],
+    "fieldNames": {
+        "lang": "__i18n_lang",
+        "references": "__i18n_refs",
+        "baseReference": "__i18n_base"
+    }
+}

@@ -4,6 +4,7 @@ export const svaralternativ = {
   type: "document",
   name: "svaralternativ",
   title: "Svaralternativ",
+  i18n: true,
   fields: [textIdField, answerTextField, alertTextField],
   preview: {
     select: {

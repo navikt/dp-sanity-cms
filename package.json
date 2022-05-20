@@ -28,7 +28,7 @@
     "@sanity/default-layout": "^2.30.0",
     "@sanity/default-login": "^2.30.0",
     "@sanity/desk-tool": "^2.30.0",
-    "@sanity/document-internationalization": "^0.3.0",
+    "@sanity/document-internationalization": "^0.3.1",
     "@sanity/image-url": "^1.0.1",
     "@sanity/vision": "^2.30.0",
     "nav-frontend-js-utils": "^1.0.20",
@@ -42,12 +42,12 @@
   "devDependencies": {
     "@sanity/cli": "^2.30.0",
     "@types/styled-components": "5.1.25",
-    "@typescript-eslint/eslint-plugin": "^5.23.0",
-    "@typescript-eslint/parser": "^5.23.0",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-sanity": "^6.0.0",
-    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react": "^7.30.0",
     "prettier": "^2.6.2"
   }
 }

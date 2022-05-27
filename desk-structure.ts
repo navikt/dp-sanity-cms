@@ -12,8 +12,10 @@ import { svaralternativ } from "./schemas/soknad/svaralternativ";
 
 const soknadSchemaNames = [seksjon.name, faktum.name, svaralternativ.name];
 const isSoknadSchema = (listItem) => soknadSchemaNames.includes(listItem.id);
-const internationalizedSoknadTypeItems = InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isSoknadSchema)
+const internationalizedSoknadTypeItems =
+  InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isSoknadSchema);
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default () =>
   S.list()
     .title("Innhold")
@@ -49,19 +51,12 @@ export default () =>
 
       S.listItem()
         .title("Dagpengesøknad")
-        .child(
-          S.list()
-            .title("Dagpengesøknad")
-            .items(internationalizedSoknadTypeItems)
-        ),
+        .child(S.list().title("Dagpengesøknad").items(internationalizedSoknadTypeItems)),
 
       ...S.documentTypeListItems().filter(
         (listItem) =>
-          ![
-            "oppsett",
-            "dagpengekalkulator",
-            "historikkHjelpetekster",
-            ...soknadSchemaNames,
-          ].includes(<string>listItem.getId())
+          !["oppsett", "dagpengekalkulator", "historikkHjelpetekster", ...soknadSchemaNames].includes(
+            <string>listItem.getId()
+          )
       ),
     ]);

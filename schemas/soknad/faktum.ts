@@ -1,4 +1,4 @@
-import { descriptionTextField, helpTextField, questionTextField, textIdField, unitField } from "./commonFields";
+import { descriptionTextField, helpTextField, questionTextField, textIdField, unitField } from "./common-fields";
 
 export const faktum = {
   type: "document",
@@ -6,7 +6,8 @@ export const faktum = {
   title: "Spørsmål",
   i18n: true,
   initialValue: {
-    __i18n_lang: "nb"
+    // eslint-disable-next-line camelcase
+    __i18n_lang: "nb",
   },
   fields: [textIdField, questionTextField, descriptionTextField, helpTextField, unitField],
   preview: {

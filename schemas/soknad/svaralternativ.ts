@@ -1,4 +1,4 @@
-import { alertTextField, answerTextField, questionTextField, textIdField } from "./commonFields";
+import { alertTextField, answerTextField, questionTextField, textIdField } from "./common-fields";
 
 export const svaralternativ = {
   type: "document",
@@ -6,7 +6,8 @@ export const svaralternativ = {
   title: "Svaralternativ",
   i18n: true,
   initialValue: {
-    __i18n_lang: "nb"
+    // eslint-disable-next-line camelcase
+    __i18n_lang: "nb",
   },
   fields: [textIdField, answerTextField, alertTextField],
   preview: {

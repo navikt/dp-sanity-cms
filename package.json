@@ -13,10 +13,17 @@
     "docker": "npm run build && docker build -t dp-faktasider-cms . && docker run -p 8000:8000 dp-faktasider-cms",
     "backup": "sanity dataset export production production.tar.gz --overwrite",
     "clearDevelopmentDataset": "sanity dataset delete development && sanity dataset create development --visibility public",
-    "copyProdDataToDevelopment": "npm run backup && npm run clearDevelopmentDataset && sanity dataset import production.tar.gz development --replace"
+    "copyProdDataToDevelopment": "npm run backup && npm run clearDevelopmentDataset && sanity dataset import production.tar.gz development --replace",
+    "prepare": "husky install"
   },
   "prettier": {
     "printWidth": 120
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --list-different",
+      "eslint --max-warnings 0"
+    ]
   },
   "dependencies": {
     "@sanity/base": "^2.30.0",
@@ -48,6 +55,8 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-sanity": "^6.0.0",
     "eslint-plugin-react": "^7.30.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.2",
     "prettier": "^2.6.2"
   }
 }

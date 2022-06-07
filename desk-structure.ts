@@ -9,8 +9,9 @@ import KalkulatorPreview from "./previews/KalkulatorPreview";
 import { seksjon } from "./schemas/soknad/seksjon";
 import { faktum } from "./schemas/soknad/faktum";
 import { svaralternativ } from "./schemas/soknad/svaralternativ";
+import { landgruppe } from "./schemas/soknad/landgruppe";
 
-const soknadSchemaNames = [seksjon.name, faktum.name, svaralternativ.name];
+const soknadSchemaNames = [seksjon.name, faktum.name, svaralternativ.name, landgruppe.name];
 const isSoknadSchema = (listItem) => soknadSchemaNames.includes(listItem.id);
 const internationalizedSoknadTypeItems =
   InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isSoknadSchema);

@@ -1,4 +1,4 @@
-import { alertTextField, answerTextField, questionTextField, textIdField } from "./common-fields";
+import { alertTextField, answerTextField, textIdField } from "./common-fields";
 
 export const svaralternativ = {
   type: "document",
@@ -12,7 +12,7 @@ export const svaralternativ = {
   fields: [textIdField, answerTextField, alertTextField],
   preview: {
     select: {
-      title: questionTextField.name,
+      title: answerTextField.name,
       subtitle: textIdField.name,
     },
   },

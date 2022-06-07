@@ -8,6 +8,7 @@ import { kalkulatorSchemas } from "./kalkulator";
 import { seksjon } from "./soknad/seksjon";
 import { faktum } from "./soknad/faktum";
 import { svaralternativ } from "./soknad/svaralternativ";
+import { landgruppe } from "./soknad/landgruppe";
 
 export default createSchema({
   name: "dagpenger-info",
@@ -21,6 +22,7 @@ export default createSchema({
     localize("url"),
     seksjon,
     faktum,
-    svaralternativ
+    svaralternativ,
+    landgruppe
   ]),
 });

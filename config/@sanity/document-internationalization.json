@@ -1,0 +1,10 @@
+{
+    "base": "nb",
+    "idStructure": "delimiter",
+    "referenceBehavior": "strong",
+    "languages": [
+        { "id": "nb", "title": "Norsk - Bokmål" },
+        { "id": "nn", "title": "Norsk - Nynorsk" },
+        { "id": "en", "title": "English󠁢󠁥󠁮󠁧󠁿" }
+    ]
+}

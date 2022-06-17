@@ -1,6 +1,6 @@
 import S from "@sanity/desk-tool/structure-builder";
 import * as InternationalizationStructure from "@sanity/document-internationalization/lib/structure";
-import { MdSettings } from "react-icons/md";
+import { MdHouse, MdSettings } from "react-icons/md";
 import ForsideSEOPreview from "./previews/ForsideSEOPreview";
 import ForsidePreview from "./previews/ForsidePreview";
 import { DagpengeKalkulatorIkon } from "./schemas/kalkulator/kalkulator";
@@ -10,6 +10,7 @@ import { seksjon } from "./schemas/soknad/seksjon";
 import { faktum } from "./schemas/soknad/faktum";
 import { svaralternativ } from "./schemas/soknad/svaralternativ";
 import { landgruppe } from "./schemas/soknad/landgruppe";
+import { startside } from "./schemas/soknad/startside";
 
 const soknadSchemaNames = [seksjon.name, faktum.name, svaralternativ.name, landgruppe.name];
 const isSoknadSchema = (listItem) => soknadSchemaNames.includes(listItem.id);
@@ -52,7 +53,17 @@ export default () =>
 
       S.listItem()
         .title("Dagpengesøknad")
-        .child(S.list().title("Dagpengesøknad").items(internationalizedSoknadTypeItems)),
+        .child(
+          S.list()
+            .title("Dagpengesøknad")
+            .items([
+              S.listItem()
+                .title(startside.title)
+                .icon(MdHouse)
+                .child(S.editor().schemaType(startside.name).documentId(startside.name)),
+              ...internationalizedSoknadTypeItems,
+            ])
+        ),
 
       ...S.documentTypeListItems().filter(
         (listItem) =>

@@ -1,8 +1,8 @@
 :root {
-    --brand-primary: #06893A;
-    --brand-secondary: #0C5EA8;
+  --brand-primary: #06893a;
+  --brand-secondary: #0c5ea8;
 }
 
 [class^="documentPanel_documentViewerContainer"] {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }

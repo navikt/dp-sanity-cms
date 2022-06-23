@@ -6,11 +6,16 @@ import ForsidePreview from "./previews/ForsidePreview";
 import { DagpengeKalkulatorIkon } from "./schemas/kalkulator/kalkulator";
 import { HistorikkIkon } from "./schemas/infosider/historikk/historikkHjelpetekster";
 import KalkulatorPreview from "./previews/KalkulatorPreview";
+import deltTekst from "./schemas/infosider/deltTekst/deltTekst";
+import faktaSide from "./schemas/infosider/faktaside/faktaSide";
+import notifikasjon from "./schemas/notifikasjon/notifikasjon";
+import situasjon from "./schemas/infosider/richText/annotations/situasjon";
 import { seksjon } from "./schemas/soknad/seksjon";
 import { faktum } from "./schemas/soknad/faktum";
 import { svaralternativ } from "./schemas/soknad/svaralternativ";
 import { landgruppe } from "./schemas/soknad/landgruppe";
 
+const oldSchemaNames = [deltTekst.name, faktaSide.name, notifikasjon.name, situasjon.name];
 const soknadSchemaNames = [seksjon.name, faktum.name, svaralternativ.name, landgruppe.name];
 const isSoknadSchema = (listItem) => soknadSchemaNames.includes(listItem.id);
 const internationalizedSoknadTypeItems =
@@ -21,25 +26,6 @@ export default () =>
   S.list()
     .title("Innhold")
     .items([
-      S.listItem()
-        .title("Oppsett")
-        .icon(MdSettings)
-        .child(
-          S.editor()
-            .schemaType("oppsett")
-            .documentId("oppsett")
-            .views([
-              S.view.form(),
-              S.view.component(ForsideSEOPreview).title("SEO"),
-              S.view.component(ForsidePreview).title("Forside-preview"),
-            ])
-        ),
-
-      S.listItem()
-        .title("Historikk")
-        .icon(HistorikkIkon)
-        .child(S.editor().schemaType("historikkHjelpetekster").documentId("historikkHjelpetekster")),
-
       S.listItem()
         .title("DagpengerKalkulator")
         .icon(DagpengeKalkulatorIkon)
@@ -54,10 +40,44 @@ export default () =>
         .title("Dagpengesøknad")
         .child(S.list().title("Dagpengesøknad").items(internationalizedSoknadTypeItems)),
 
+      S.listItem()
+        .title("Gamle infosider")
+        .icon(MdSettings)
+        .child(
+          S.list()
+            .title("Gamle infosider")
+            .items([
+              S.listItem()
+                .title("Oppsett")
+                .icon(MdSettings)
+                .child(
+                  S.editor()
+                    .schemaType("oppsett")
+                    .documentId("oppsett")
+                    .views([
+                      S.view.form(),
+                      S.view.component(ForsideSEOPreview).title("SEO"),
+                      S.view.component(ForsidePreview).title("Forside-preview"),
+                    ])
+                ),
+
+              S.listItem()
+                .title("Historikk")
+                .icon(HistorikkIkon)
+                .child(S.editor().schemaType("historikkHjelpetekster").documentId("historikkHjelpetekster")),
+
+              ...S.documentTypeListItems().filter((listItem) => oldSchemaNames.includes(<string>listItem.getId())),
+            ])
+        ),
+
       ...S.documentTypeListItems().filter(
         (listItem) =>
-          !["oppsett", "dagpengekalkulator", "historikkHjelpetekster", ...soknadSchemaNames].includes(
-            <string>listItem.getId()
-          )
+          ![
+            "oppsett",
+            "dagpengekalkulator",
+            "historikkHjelpetekster",
+            ...soknadSchemaNames,
+            ...oldSchemaNames,
+          ].includes(<string>listItem.getId())
       ),
     ]);

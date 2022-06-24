@@ -1,4 +1,4 @@
-FROM navikt/node-express:16.15.1-alpine
+FROM navikt/node-express:16-alpine
 
 WORKDIR /
 

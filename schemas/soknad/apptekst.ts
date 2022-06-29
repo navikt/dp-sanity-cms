@@ -3,7 +3,7 @@ import { textIdField, valueTextField } from "./common-fields";
 export const apptekst = {
   type: "document",
   name: "apptekst",
-  title: "Apptekst",
+  title: "Generelle tekster",
   i18n: true,
   initialValue: {
     // eslint-disable-next-line camelcase

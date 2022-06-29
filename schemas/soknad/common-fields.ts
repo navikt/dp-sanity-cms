@@ -95,3 +95,9 @@ export const alertTextField = {
     },
   ],
 };
+
+export const valueTextField = {
+  type: "string",
+  name: "valueText",
+  title: "Verdi",
+};

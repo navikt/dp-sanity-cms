@@ -1,0 +1,36 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Weekly tasks
+on:
+    schedule:
+        - cron: 00 07 * * 4
+
+jobs:
+    create_issue:
+        name: Create weekly issue to upgrade dependencies
+        runs-on: ubuntu-latest
+        permissions:
+            issues: write
+        steps:
+            - name: Create weekly issue to upgrade dependencies
+              uses: imjohnbo/issue-bot@7e438653c0da13f4f79678a56bb9ecbd9dcc26ac
+              with:
+                  assignees: "mikaila94, kmriise"
+                  rotate-assignees: true
+                  labels: "🔁 round robin, 🔗 dependencies"
+                  pinned: true
+                  close-previous: true
+                  title: "Ukentlig oppdatering av avhengigheter"
+                  body: |
+                      ## Sjekkliste
+                      - [ ] Mottatt – jeg fikser i løpet av uka!
+                      - [ ] På rotnivå i prosjektet, kjør `npm run check-updates` (Ref: https://www.npmjs.com/package/npm-check-updates). 
+                            Velg alle patch- og minor-versjoner [^1], og se om majors kan oppgraderes uten problemer (f. eks. devDependency som fjerner støtte for gammel Node-versjon).
+                      - [ ] Lag issue(s) på Github for å gjøre oppgraderinger av versjoner som krever mer tid
+                      - [ ] Kjør `npm run build` og `npm run test`
+                      - [ ] Lag en pull request som vanlig
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

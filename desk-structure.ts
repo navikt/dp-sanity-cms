@@ -60,6 +60,11 @@ export default () =>
         .child(S.list().title("Dagpengesøknad").items(internationalizedSoknadTypeItems)),
 
       S.listItem()
+        .title("Produktside")
+        .icon(MdSettings)
+        .child(S.editor().schemaType("produktside").documentId("produktside").views([S.view.form()])),
+
+      S.listItem()
         .title("Gamle infosider")
         .icon(MdSettings)
         .child(
@@ -103,6 +108,7 @@ export default () =>
                 (listItem) =>
                   ![
                     "dagpengekalkulator",
+                    "produktside",
                     ...soknadSchemaNames,
                     oppsett.name,
                     historikkHjelpetekster.name,
@@ -114,6 +120,6 @@ export default () =>
 
       ...S.documentTypeListItems().filter(
         (listItem) =>
-          !["dagpengekalkulator", ...soknadSchemaNames, ...oldSchemaNames].includes(<string>listItem.getId())
+          !["dagpengekalkulator", "produktside", ...soknadSchemaNames, ...oldSchemaNames].includes(<string>listItem.getId())
       ),
     ]);

@@ -4,6 +4,7 @@ import localize from "./utils/localize";
 import notifikasjon from "./notifikasjon/notifikasjon";
 import notifikasjonRichText from "./notifikasjon/notifikasjonRichText";
 import { infosideSchemas } from "./infosider";
+import { produktsideSchemas } from "./produktside";
 import { kalkulatorSchemas } from "./kalkulator";
 import { seksjon } from "./soknad/seksjon";
 import { faktum } from "./soknad/faktum";
@@ -17,6 +18,7 @@ export default createSchema({
   name: "dagpenger-info",
   types: schemaTypes.concat([
     ...infosideSchemas,
+    ...produktsideSchemas,
     ...kalkulatorSchemas,
     notifikasjon,
     notifikasjonRichText,

@@ -1,6 +1,8 @@
+import React from "react";
 import { MdTimeline } from "react-icons/md/";
-import { TimelinePreview } from "./TimelinePreview";
-import NavSvgIcons from "../../nav-svg-icons";
+import { IconRender, NavIconEditor } from "./NavIconEditor";
+import { Timeline } from "../../components/timeline/Timeline";
+import * as NavIcons from "@navikt/ds-icons";
 
 export const timeline = {
   type: "object",
@@ -19,7 +21,7 @@ export const timeline = {
     select: {
       elements: "elements",
     },
-    component: TimelinePreview,
+    component: Timeline,
   },
 };
 
@@ -30,7 +32,7 @@ export const timelineElement = {
   fields: [
     {
       type: "navIconPicker",
-      name: "icon",
+      name: "iconName",
       title: "Ikon",
     },
     {
@@ -53,13 +55,21 @@ export const timelineElement = {
   preview: {
     select: {
       title: "title",
+      iconName: "iconName",
+    },
+    prepare({ title, iconName }: { title: string; iconName: string }) {
+      return {
+        title: title,
+        // @ts-ignore
+        media: <IconRender icon={NavIcons[iconName]} />,
+      };
     },
   },
 };
 
 export const navIconPicker = {
-  type: "image",
+  type: "string",
   name: "navIconPicker",
   title: "Tidslinjeikon",
-  options: { sources: [NavSvgIcons] },
+  inputComponent: NavIconEditor,
 };

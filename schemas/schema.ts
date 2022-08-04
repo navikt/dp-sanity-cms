@@ -9,7 +9,9 @@ import { seksjon } from "./soknad/seksjon";
 import { faktum } from "./soknad/faktum";
 import { svaralternativ } from "./soknad/svaralternativ";
 import { landgruppe } from "./soknad/landgruppe";
+import { startside } from "./soknad/startside";
 import { apptekst } from "./soknad/apptekst";
+import { navIconPicker, timeline, timelineElement } from "./soknad/timeline";
 
 export default createSchema({
   name: "dagpenger-info",
@@ -26,5 +28,9 @@ export default createSchema({
     svaralternativ,
     landgruppe,
     apptekst,
+    startside,
+    timeline,
+    timelineElement,
+    navIconPicker,
   ]),
 });

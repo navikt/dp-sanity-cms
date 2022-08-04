@@ -1,0 +1,29 @@
+.timelineItem {
+  display: flex;
+  margin-bottom: 8px;
+}
+.timelineItem h5 {
+  margin: 0;
+}
+
+.iconWrapper {
+  width: 34px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+.iconWrapper:after {
+  content: "";
+  width: 2px;
+  margin-top: 8px;
+  background-color: #8f8f8fff;
+  height: 100%;
+}
+.icon {
+  width: 24px;
+  height: 24px;
+}

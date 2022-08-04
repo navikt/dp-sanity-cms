@@ -14,7 +14,7 @@ export const svaralternativ = {
     answerTextField,
     {
       name: "alertTextToggle",
-      title: "Aktiver Alert tekst",
+      title: "Aktiver varseltekst",
       type: "boolean",
     },
     alertTextField,

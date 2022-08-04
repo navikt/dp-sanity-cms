@@ -9,7 +9,16 @@ export const svaralternativ = {
     // eslint-disable-next-line camelcase
     __i18n_lang: "nb",
   },
-  fields: [textIdField, answerTextField, alertTextField],
+  fields: [
+    textIdField,
+    answerTextField,
+    {
+      name: "alertTextToggle",
+      title: "Aktiver Alert tekst",
+      type: "boolean",
+    },
+    alertTextField,
+  ],
   preview: {
     select: {
       title: answerTextField.name,

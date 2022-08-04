@@ -66,6 +66,8 @@ export const alertTextField = {
   type: "object",
   name: "alertText",
   title: "Varseltekst",
+  //@ts-ignore;
+  hidden: ({ document }): boolean => !document?.alertTextToggle,
   fields: [
     {
       type: "string",

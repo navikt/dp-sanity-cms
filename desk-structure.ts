@@ -15,9 +15,17 @@ import { faktum } from "./schemas/soknad/faktum";
 import { svaralternativ } from "./schemas/soknad/svaralternativ";
 import { landgruppe } from "./schemas/soknad/landgruppe";
 import { apptekst } from "./schemas/soknad/apptekst";
+import { startside } from "./schemas/soknad/startside";
 
 const oldSchemaNames = [deltTekst.name, faktaSide.name, notifikasjon.name, situasjon.name];
-const soknadSchemaNames = [seksjon.name, faktum.name, svaralternativ.name, landgruppe.name, apptekst.name];
+const soknadSchemaNames = [
+  seksjon.name,
+  faktum.name,
+  svaralternativ.name,
+  landgruppe.name,
+  apptekst.name,
+  startside.name,
+];
 const isSoknadSchema = (listItem) => soknadSchemaNames.includes(listItem.id);
 const internationalizedSoknadTypeItems =
   InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isSoknadSchema);

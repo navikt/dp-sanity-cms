@@ -68,6 +68,11 @@ export const alertTextField = {
   title: "Varseltekst",
   fields: [
     {
+      name: "active",
+      title: "Aktiver varseltekst",
+      type: "boolean",
+    },
+    {
       type: "string",
       name: "type",
       title: "Type",
@@ -92,11 +97,6 @@ export const alertTextField = {
           type: "block",
         },
       ],
-    },
-    {
-      name: "active",
-      title: "Aktiver varseltekst",
-      type: "boolean",
     },
   ],
 };

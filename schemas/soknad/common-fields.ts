@@ -66,9 +66,12 @@ export const alertTextField = {
   type: "object",
   name: "alertText",
   title: "Varseltekst",
-  //@ts-ignore;
-  hidden: ({ document }): boolean | undefined => !document?.activateAlertText,
   fields: [
+    {
+      name: "active",
+      title: "Aktiver varseltekst",
+      type: "boolean",
+    },
     {
       type: "string",
       name: "type",

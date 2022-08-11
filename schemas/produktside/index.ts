@@ -1,3 +1,4 @@
-import produktside from "./produktside";
+import innholdsseksjon from "./innholdsseksjon";
+import siteSettings from "./siteSettings";
 
-export const produktsideSchemas = [produktside];
+export const produktsideSchemas = [innholdsseksjon, siteSettings];

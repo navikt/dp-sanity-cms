@@ -19,7 +19,10 @@ import { startside } from "./schemas/soknad/startside";
 import oppsett from "./schemas/infosider/oppsett/oppsett";
 import FaktasideSEOPreview from "./previews/FaktasideSEOPreview";
 import FaktasidePreview from "./previews/FaktasidePreview";
+import innholdsseksjon from "./schemas/produktside/innholdsseksjon";
+import siteSettings from "./schemas/produktside/siteSettings";
 
+const produktsideSchemaNames = [innholdsseksjon.name, siteSettings.name];
 const oldSchemaNames = [
   deltTekst.name,
   faktaSide.name,
@@ -60,9 +63,26 @@ export default () =>
         .child(S.list().title("Dagpengesøknad").items(internationalizedSoknadTypeItems)),
 
       S.listItem()
-        .title("Produktside")
-        .icon(MdSettings)
-        .child(S.editor().schemaType("produktside").documentId("produktside").views([S.view.form()])),
+        .title("Produktside beta")
+        .child(
+          S.list()
+            .title("Produktside beta")
+            .items([
+              S.listItem()
+                .title("Oppsett")
+                .icon(MdSettings)
+                .child(S.editor().schemaType(siteSettings.name).documentId("siteSettings").views([S.view.form()])),
+
+              S.listItem()
+                .title("Innholdsseksjoner")
+                .icon(MdWeb)
+                .child(
+                  S.documentTypeList(innholdsseksjon.name).child(
+                    S.editor().schemaType(innholdsseksjon.name).views([S.view.form()])
+                  )
+                ),
+            ])
+        ),
 
       S.listItem()
         .title("Gamle infosider")
@@ -108,7 +128,7 @@ export default () =>
                 (listItem) =>
                   ![
                     "dagpengekalkulator",
-                    "produktside",
+                    ...produktsideSchemaNames,
                     ...soknadSchemaNames,
                     oppsett.name,
                     historikkHjelpetekster.name,
@@ -120,6 +140,8 @@ export default () =>
 
       ...S.documentTypeListItems().filter(
         (listItem) =>
-          !["dagpengekalkulator", "produktside", ...soknadSchemaNames, ...oldSchemaNames].includes(<string>listItem.getId())
+          !["dagpengekalkulator", ...produktsideSchemaNames, ...soknadSchemaNames, ...oldSchemaNames].includes(
+            <string>listItem.getId()
+          )
       ),
     ]);

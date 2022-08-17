@@ -39,9 +39,14 @@ const soknadSchemaNames = [
   apptekst.name,
   startside.name,
 ];
+
 const isSoknadSchema = (listItem) => soknadSchemaNames.includes(listItem.id);
 const internationalizedSoknadTypeItems =
   InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isSoknadSchema);
+
+const isProduktsideSchema = (listItem) => produktsideSchemaNames.includes(listItem.id);
+const internationalizedProduktsideTypeItems =
+  InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isProduktsideSchema);
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default () =>
@@ -64,25 +69,7 @@ export default () =>
 
       S.listItem()
         .title("Produktside beta")
-        .child(
-          S.list()
-            .title("Produktside beta")
-            .items([
-              S.listItem()
-                .title("Oppsett")
-                .icon(MdSettings)
-                .child(S.editor().schemaType(siteSettings.name).documentId("siteSettings").views([S.view.form()])),
-
-              S.listItem()
-                .title("Innholdsseksjoner")
-                .icon(MdWeb)
-                .child(
-                  S.documentTypeList(innholdsseksjon.name).child(
-                    S.editor().schemaType(innholdsseksjon.name).views([S.view.form()])
-                  )
-                ),
-            ])
-        ),
+        .child(S.list().title("Produktside beta").items(internationalizedProduktsideTypeItems)),
 
       S.listItem()
         .title("Gamle infosider")

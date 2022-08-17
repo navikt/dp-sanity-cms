@@ -2,6 +2,7 @@ export default {
   name: "siteSettings",
   title: "Site Settings",
   type: "document",
+  i18n: true,
   // eslint-disable-next-line camelcase
   __experimental_actions: ["update", "publish"], // Har du laget et nytt datasett må du midlertidig fjerne denne for å kunne lage et nytt oppsett-dokument
   fields: [

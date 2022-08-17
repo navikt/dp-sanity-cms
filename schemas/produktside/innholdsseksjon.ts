@@ -4,6 +4,7 @@ export default {
   name: "innholdsseksjon",
   type: "document",
   title: "Innholdsseksjon",
+  i18n: true,
   // eslint-disable-next-line camelcase
   __experimental_actions: ["update", "publish"], // Har du laget et nytt datasett må du midlertidig fjerne denne for å kunne lage et nytt oppsett-dokument
   icon: MdWeb,

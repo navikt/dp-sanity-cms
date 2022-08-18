@@ -34,7 +34,6 @@ interface Props {
 }
 
 function AlertBoxIcon(props: Props) {
-  // eslint-disable-next-line default-case
   switch (props.variant) {
     case "info":
       return <InformationColored />;

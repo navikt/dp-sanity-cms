@@ -21,6 +21,7 @@ import FaktasideSEOPreview from "./previews/FaktasideSEOPreview";
 import FaktasidePreview from "./previews/FaktasidePreview";
 import innholdsseksjon from "./schemas/produktside/innholdsseksjon";
 import siteSettings from "./schemas/produktside/siteSettings";
+import { UnserializedListItem } from "@sanity/structure/src/ListItem";
 
 const produktsideSchemaNames = [innholdsseksjon.name, siteSettings.name];
 const oldSchemaNames = [
@@ -40,12 +41,10 @@ const soknadSchemaNames = [
   infopage.name,
 ];
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const isSoknadSchema = (listItem: any) => soknadSchemaNames.includes(listItem.id);
+const isSoknadSchema = (listItem: UnserializedListItem) => soknadSchemaNames.includes(listItem.id);
 const internationalizedSoknadTypeItems =
   InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isSoknadSchema);
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default () =>
   S.list()
     .title("Innhold")

@@ -15,7 +15,7 @@ import { faktum } from "./schemas/soknad/faktum";
 import { svaralternativ } from "./schemas/soknad/svaralternativ";
 import { landgruppe } from "./schemas/soknad/landgruppe";
 import { apptekst } from "./schemas/soknad/apptekst";
-import { startside } from "./schemas/soknad/startside";
+import { infopage } from "./schemas/soknad/infopage";
 import oppsett from "./schemas/infosider/oppsett/oppsett";
 import FaktasideSEOPreview from "./previews/FaktasideSEOPreview";
 import FaktasidePreview from "./previews/FaktasidePreview";
@@ -37,9 +37,11 @@ const soknadSchemaNames = [
   svaralternativ.name,
   landgruppe.name,
   apptekst.name,
-  startside.name,
+  infopage.name,
 ];
-const isSoknadSchema = (listItem) => soknadSchemaNames.includes(listItem.id);
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const isSoknadSchema = (listItem: any) => soknadSchemaNames.includes(listItem.id);
 const internationalizedSoknadTypeItems =
   InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isSoknadSchema);
 

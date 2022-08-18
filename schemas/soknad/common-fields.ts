@@ -1,3 +1,7 @@
+import { timeline } from "./timeline";
+import { AlertText } from "../../components/alert-text/AlertText";
+import { MdOutlineWarning } from "react-icons/all";
+
 export const textIdField = {
   type: "string",
   name: "textId",
@@ -40,6 +44,7 @@ export const descriptionTextField = {
     {
       type: "block",
     },
+    { type: timeline.name },
   ],
 };
 
@@ -62,27 +67,25 @@ export const helpTextField = {
   ],
 };
 
+const alertTextVariants = [
+  { value: "info", title: "Info" },
+  { value: "warning", title: "Varsel" },
+  { value: "error", title: "Feil" },
+  { value: "success", title: "Vellykket" },
+];
+
 export const alertTextField = {
   type: "object",
   name: "alertText",
   title: "Varseltekst",
+  icon: MdOutlineWarning,
   fields: [
-    {
-      name: "active",
-      title: "Aktiver varseltekst",
-      type: "boolean",
-    },
     {
       type: "string",
       name: "type",
       title: "Type",
       options: {
-        list: [
-          "info",
-          { value: "warning", title: "Varsel" },
-          { value: "error", title: "Feil" },
-          { value: "success", title: "Vellykket" },
-        ],
+        list: alertTextVariants,
         layout: "radio",
         direction: "horizontal",
       },
@@ -99,6 +102,21 @@ export const alertTextField = {
       ],
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+      type: "type",
+      body: "body",
+    },
+    prepare: ({ title, type, body }: never) => {
+      return {
+        title,
+        body,
+        type,
+      };
+    },
+    component: AlertText,
+  },
 };
 
 export const valueTextField = {

@@ -1,8 +1,8 @@
 import React from "react";
 import { MdTimeline } from "react-icons/md/";
 import { IconRender, NavIconEditor } from "../../components/nav-icon-editor/NavIconEditor";
-import { Timeline } from "../../../sanity-v3/components/timeline/Timeline";
 import * as NavIcons from "@navikt/ds-icons";
+import { Timeline } from "../../components/timeline/Timeline";
 
 export const timeline = {
   type: "object",

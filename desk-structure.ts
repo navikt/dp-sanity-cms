@@ -45,6 +45,10 @@ const isSoknadSchema = (listItem: UnserializedListItem) => soknadSchemaNames.inc
 const internationalizedSoknadTypeItems =
   InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isSoknadSchema);
 
+const isProduktsideSchema = (listItem: UnserializedListItem) => produktsideSchemaNames.includes(listItem.id);
+const internationalizedProduktsideTypeItems =
+  InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isProduktsideSchema);
+
 export default () =>
   S.list()
     .title("Innhold")
@@ -65,25 +69,7 @@ export default () =>
 
       S.listItem()
         .title("Produktside beta")
-        .child(
-          S.list()
-            .title("Produktside beta")
-            .items([
-              S.listItem()
-                .title("Oppsett")
-                .icon(MdSettings)
-                .child(S.editor().schemaType(siteSettings.name).documentId("siteSettings").views([S.view.form()])),
-
-              S.listItem()
-                .title("Innholdsseksjoner")
-                .icon(MdWeb)
-                .child(
-                  S.documentTypeList(innholdsseksjon.name).child(
-                    S.editor().schemaType(innholdsseksjon.name).views([S.view.form()])
-                  )
-                ),
-            ])
-        ),
+        .child(S.list().title("Produktside beta").items(internationalizedProduktsideTypeItems)),
 
       S.listItem()
         .title("Gamle infosider")

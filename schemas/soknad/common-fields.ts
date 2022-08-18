@@ -1,6 +1,6 @@
 import { timeline } from "./timeline";
 import { AlertText } from "../../components/alert-text/AlertText";
-import { MdOutlineWarning } from "react-icons/all";
+import { MdOutlineWarning } from "react-icons/md/";
 
 export const textIdField = {
   type: "string",
@@ -91,6 +91,7 @@ export const alertTextField = {
       },
     },
     { type: "string", name: "title", title: "Tittel" },
+    { type: "string", name: "test", title: "Tittel" },
     {
       type: "array",
       name: "body",

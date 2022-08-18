@@ -1,7 +1,7 @@
-import { PortableText } from "@portabletext/react";
 import React from "react";
-import classNames from "classnames";
+import { PortableText } from "@portabletext/react";
 import { ErrorColored, InformationColored, SuccessColored, WarningColored } from "@navikt/ds-icons";
+import classNames from "classnames";
 
 // @ts-ignore
 import styles from "./AlertText.module.css";

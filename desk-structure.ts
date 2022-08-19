@@ -22,6 +22,8 @@ import FaktasidePreview from "./previews/FaktasidePreview";
 import innholdsseksjon from "./schemas/produktside/innholdsseksjon";
 import siteSettings from "./schemas/produktside/siteSettings";
 import { UnserializedListItem } from "@sanity/structure/src/ListItem";
+import { dokumentkrav } from "./schemas/soknad/dokumentkrav";
+import { dokumentkravSvar } from "./schemas/soknad/dokumentkrav-svar";
 
 const produktsideSchemaNames = [innholdsseksjon.name, siteSettings.name];
 const oldSchemaNames = [
@@ -39,6 +41,8 @@ const soknadSchemaNames = [
   landgruppe.name,
   apptekst.name,
   infopage.name,
+  dokumentkrav.name,
+  dokumentkravSvar.name,
 ];
 
 const isSoknadSchema = (listItem: UnserializedListItem) => soknadSchemaNames.includes(listItem.id);

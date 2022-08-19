@@ -15,12 +15,13 @@ import { faktum } from "./schemas/soknad/faktum";
 import { svaralternativ } from "./schemas/soknad/svaralternativ";
 import { landgruppe } from "./schemas/soknad/landgruppe";
 import { apptekst } from "./schemas/soknad/apptekst";
-import { startside } from "./schemas/soknad/startside";
+import { infopage } from "./schemas/soknad/infopage";
 import oppsett from "./schemas/infosider/oppsett/oppsett";
 import FaktasideSEOPreview from "./previews/FaktasideSEOPreview";
 import FaktasidePreview from "./previews/FaktasidePreview";
 import innholdsseksjon from "./schemas/produktside/innholdsseksjon";
 import siteSettings from "./schemas/produktside/siteSettings";
+import { UnserializedListItem } from "@sanity/structure/src/ListItem";
 
 const produktsideSchemaNames = [innholdsseksjon.name, siteSettings.name];
 const oldSchemaNames = [
@@ -37,18 +38,17 @@ const soknadSchemaNames = [
   svaralternativ.name,
   landgruppe.name,
   apptekst.name,
-  startside.name,
+  infopage.name,
 ];
 
-const isSoknadSchema = (listItem) => soknadSchemaNames.includes(listItem.id);
+const isSoknadSchema = (listItem: UnserializedListItem) => soknadSchemaNames.includes(listItem.id);
 const internationalizedSoknadTypeItems =
   InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isSoknadSchema);
 
-const isProduktsideSchema = (listItem) => produktsideSchemaNames.includes(listItem.id);
+const isProduktsideSchema = (listItem: UnserializedListItem) => produktsideSchemaNames.includes(listItem.id);
 const internationalizedProduktsideTypeItems =
   InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isProduktsideSchema);
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default () =>
   S.list()
     .title("Innhold")

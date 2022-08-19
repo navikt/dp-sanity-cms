@@ -1,0 +1,44 @@
+.alert-text {
+  border-radius: 4px;
+  border: 1px solid rgba(143, 143, 143, 1);
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.alert-text div > * {
+  margin-top: 0.25rem;
+}
+
+.alert-text svg {
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  align-self: flex-start;
+  height: 1.75rem;
+}
+
+.alert-text--info {
+  border-color: rgba(54, 141, 168, 1);
+  background-color: rgba(235, 252, 255, 1);
+}
+
+.alert-text--error {
+  border-color: rgba(186, 58, 38, 1);
+  background-color: rgba(253, 232, 230, 1);
+}
+
+.alert-text--warning {
+  border-color: rgba(212, 123, 0, 1);
+  background-color: rgba(255, 249, 240, 1);
+}
+
+.alert-text--success {
+  border-color: rgba(6, 137, 58, 1);
+  background-color: rgba(243, 252, 245, 1);
+}
+
+.alertText p:last-of-type {
+  margin-bottom: 0;
+}

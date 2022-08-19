@@ -1,4 +1,6 @@
+// @ts-ignore
 import createSchema from "part:@sanity/base/schema-creator";
+// @ts-ignore
 import schemaTypes from "all:part:@sanity/base/schema-type";
 import localize from "./utils/localize";
 import notifikasjon from "./notifikasjon/notifikasjon";
@@ -10,9 +12,10 @@ import { seksjon } from "./soknad/seksjon";
 import { faktum } from "./soknad/faktum";
 import { svaralternativ } from "./soknad/svaralternativ";
 import { landgruppe } from "./soknad/landgruppe";
-import { startside } from "./soknad/startside";
+import { infopage } from "./soknad/infopage";
 import { apptekst } from "./soknad/apptekst";
 import { navIconPicker, timeline, timelineElement } from "./soknad/timeline";
+import { alertTextField } from "./soknad/common-fields";
 
 export default createSchema({
   name: "dagpenger-info",
@@ -30,9 +33,10 @@ export default createSchema({
     svaralternativ,
     landgruppe,
     apptekst,
-    startside,
+    infopage,
     timeline,
     timelineElement,
     navIconPicker,
+    alertTextField,
   ]),
 });

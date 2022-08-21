@@ -16,5 +16,10 @@ export default {
       type: "kortFortaltRichText",
       title: "Kort fortalt",
     },
+    {
+      name: "innhold",
+      type: "richText",
+      title: "Innhold",
+    },
   ],
 };

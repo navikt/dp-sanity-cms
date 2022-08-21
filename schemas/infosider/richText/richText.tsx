@@ -6,11 +6,14 @@ import visForAnnotation from "./annotations/visForAnnotation";
 import { GtilNOKIcon, GtilNOKPeview } from "./GtilNOKPreview";
 import { InlineStrykes, InlineStrykesIkon } from "./Strykes";
 import pasChildren from "../../../components/pasChildren";
+import { innholdsseksjonReferenceName } from "../../produktside/innholdsseksjon/innholdsseksjonReference";
 
 export const styles = {
   normal: { title: "Normal", value: "normal" },
   h2: { title: "Overskrift", value: "h2", blockEditor: { render: pasChildren(H2Header) } },
+  // eslint-disable-next-line
   h2_M_Meny: { title: "Overskrift - m/meny", value: "h2-m-meny", blockEditor: { render: pasChildren(H2HeaderMMeny) } },
+  // eslint-disable-next-line
   h2_no_background: {
     title: "Overskrift - u/bakgrunn",
     value: "h2-no-background",
@@ -34,6 +37,7 @@ export const decorators = {
   GtilNOK: {
     title: "Grunnbelløp til NOK",
     value: "GtilNOK",
+    // eslint-disable-next-line
     blockEditor: { icon: GtilNOKIcon, render: (props) => <GtilNOKPeview children={props.children} /> },
   },
   strong: { title: "Strong", value: "strong" },
@@ -62,5 +66,6 @@ export default {
     { type: "tileggsInformasjon" },
     { type: "deltTekstReference" },
     { type: "tidslinje" },
+    { type: innholdsseksjonReferenceName },
   ],
 };

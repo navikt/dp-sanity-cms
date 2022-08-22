@@ -1,4 +1,4 @@
-import { descriptionTextField, helpTextField, questionTextField, textIdField, unitField } from "./common-fields";
+import { descriptionTextField, helpTextField, questionTextField, textIdField } from "./common-fields";
 
 export const dokumentkrav = {
   type: "document",
@@ -9,7 +9,7 @@ export const dokumentkrav = {
     // eslint-disable-next-line camelcase
     __i18n_lang: "nb",
   },
-  fields: [textIdField, questionTextField, descriptionTextField, helpTextField, unitField],
+  fields: [textIdField, questionTextField, descriptionTextField, helpTextField],
   preview: {
     select: {
       title: questionTextField.name,

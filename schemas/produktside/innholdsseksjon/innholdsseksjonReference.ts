@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 // @ts-nocheck
-import innholdsseksjon from ".";
-import InnholdsseksjonPreview, { InnholdsseksjonIkon } from "./InnholdsseksjonPreview";
+import { innholdsseksjon } from "./innholdsseksjon";
+import { InnholdsseksjonPreview, InnholdsseksjonIkon } from "./InnholdsseksjonPreview";
 
 export const innholdsseksjonReferenceName = "innholdsseksjonReference";
 
-export default {
+export const innholdsseksjonReference = {
   name: innholdsseksjonReferenceName,
   type: "object",
   title: innholdsseksjon.title,

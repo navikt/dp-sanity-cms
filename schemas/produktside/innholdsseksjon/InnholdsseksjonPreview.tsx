@@ -14,7 +14,13 @@ interface Props {
   };
 }
 
-export function InnholdsseksjonPreview({ value: { title, innhold } }: Props) {
+export function InnholdsseksjonPreview(props: Props) {
+  if (!props.value) {
+    return null;
+  }
+
+  const { title, innhold } = props.value;
+
   return (
     <div className={styles.container}>
       <div className={styles.iconAndTitle}>

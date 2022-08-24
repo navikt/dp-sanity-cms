@@ -1,6 +1,6 @@
 import { MdWeb } from "react-icons/md";
 
-export default {
+export const innholdsseksjon = {
   name: "innholdsseksjon",
   type: "document",
   title: "Innholdsseksjon",

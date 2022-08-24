@@ -1,4 +1,4 @@
-export default {
+export const siteSettings = {
   name: "siteSettings",
   title: "Site Settings",
   type: "document",
@@ -15,6 +15,11 @@ export default {
       name: "kortFortalt",
       type: "kortFortaltRichText",
       title: "Kort fortalt",
+    },
+    {
+      name: "innhold",
+      type: "richText",
+      title: "Innhold",
     },
   ],
 };

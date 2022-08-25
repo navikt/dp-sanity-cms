@@ -91,7 +91,6 @@ export const alertTextField = {
       },
     },
     { type: "string", name: "title", title: "Tittel" },
-    { type: "string", name: "test", title: "Tittel" },
     {
       type: "array",
       name: "body",

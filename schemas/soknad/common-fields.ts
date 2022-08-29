@@ -136,7 +136,7 @@ export const readMoreField = {
     {
       type: "string",
       name: "size",
-      title: "Størrelse",
+      title: "Tekst størrelse",
       options: {
         list: [
           { value: "medium", title: "Medium" },
@@ -149,7 +149,7 @@ export const readMoreField = {
     {
       type: "boolean",
       name: "defaultOpen",
-      title: "Default åpnet",
+      title: "Default utvided",
     },
     {
       type: "array",

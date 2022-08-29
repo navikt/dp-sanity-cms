@@ -34,13 +34,11 @@ export function ReadMore(props: any) {
         />
         <span>{title}</span>
       </button>
-      {/* {isOpened && ( */}
       <AnimateHeight duration={250} height={isOpened ? "auto" : 0}>
         <div className={classNames([styles["navds-read-more__content"]])}>
           <PortableText value={body} />
         </div>
       </AnimateHeight>
-      {/* )} */}
     </div>
   );
 }

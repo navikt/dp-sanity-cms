@@ -128,7 +128,7 @@ export const valueTextField = {
 
 export const readMoreField = {
   type: "object",
-  name: "readMoreSection",
+  name: "readMore",
   title: "Les mer seksjon",
   icon: MdKeyboardArrowDown,
   fields: [

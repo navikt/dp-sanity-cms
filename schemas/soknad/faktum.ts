@@ -13,7 +13,7 @@ export const faktum = {
   preview: {
     select: {
       title: questionTextField.name,
-      // subtitle: textIdField.name,
+      subtitle: textIdField.name,
     },
   },
 };

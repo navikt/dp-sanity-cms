@@ -1,5 +1,5 @@
 import { timeline } from "./timeline";
-import { alertTextField } from "./common-fields";
+import { alertTextField, readMoreField } from "./common-fields";
 
 export const infopage = {
   type: "document",
@@ -26,6 +26,7 @@ export const infopage = {
         },
         { type: timeline.name },
         { type: alertTextField.name },
+        { type: readMoreField.name },
       ],
     },
   ],

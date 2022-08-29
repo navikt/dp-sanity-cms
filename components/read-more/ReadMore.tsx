@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { PortableText } from "@portabletext/react";
 import { Expand, ExpandFilled } from "@navikt/ds-icons";
+import AnimateHeight from "react-animate-height";
 import classNames from "classnames";
 
 // @ts-ignore
@@ -33,11 +34,13 @@ export function ReadMore(props: any) {
         />
         <span>{title}</span>
       </button>
-      {isOpened && (
+      {/* {isOpened && ( */}
+      <AnimateHeight duration={250} height={isOpened ? "auto" : 0}>
         <div className={classNames([styles["navds-read-more__content"]])}>
           <PortableText value={body} />
         </div>
-      )}
+      </AnimateHeight>
+      {/* )} */}
     </div>
   );
 }

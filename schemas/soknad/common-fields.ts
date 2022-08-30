@@ -1,6 +1,7 @@
 import { timeline } from "./timeline";
 import { AlertText } from "../../components/alert-text/AlertText";
-import { MdOutlineWarning } from "react-icons/md/";
+import { ReadMore } from "../../components/read-more/ReadMore";
+import { MdOutlineWarning, MdKeyboardArrowDown } from "react-icons/md/";
 
 export const textIdField = {
   type: "string",
@@ -123,4 +124,59 @@ export const valueTextField = {
   type: "string",
   name: "valueText",
   title: "Verdi",
+};
+
+export const readMoreField = {
+  type: "object",
+  name: "readMore",
+  title: "Les mer seksjon",
+  icon: MdKeyboardArrowDown,
+  fields: [
+    { type: "string", name: "title", title: "Tittel" },
+    {
+      type: "string",
+      name: "size",
+      title: "Tekst størrelse",
+      options: {
+        list: [
+          { value: "medium", title: "Medium" },
+          { value: "small", title: "Small" },
+        ],
+        layout: "radio",
+        direction: "horizontal",
+      },
+    },
+    {
+      type: "boolean",
+      name: "defaultOpen",
+      title: "Default utvided",
+    },
+    {
+      type: "array",
+      name: "body",
+      title: "Brødtekst",
+      of: [
+        {
+          type: "block",
+        },
+      ],
+    },
+  ],
+  preview: {
+    select: {
+      title: "title",
+      size: "size",
+      body: "body",
+      defaultOpen: "defaultOpen",
+    },
+    prepare: ({ title, size, body, defaultOpen }: never) => {
+      return {
+        title,
+        body,
+        size,
+        defaultOpen,
+      };
+    },
+    component: ReadMore,
+  },
 };

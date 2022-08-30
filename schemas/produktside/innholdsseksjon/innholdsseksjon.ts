@@ -26,11 +26,12 @@ export const innholdsseksjon = {
       title: "Ankerlenke for innholdsseksjon",
       description:
         "Velg en god ankerlenke. Hvis den må endres i ettertid vil dette knekke lenker som går til denne siden.",
-      validation: (Rule) => Rule.required().max(96).error("Ankerlenke er påkrevd med maks 96 tegn"),
+      validation: (Rule) => Rule.required().error("Ankerlenke er påkrevd med maks 96 tegn"),
       inputComponent: SlugInput,
       options: {
         source: "title",
         urlPrefix: "nav.no/dagpenger#",
+        maxLength: 96,
       },
     },
     {

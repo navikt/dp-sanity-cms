@@ -19,6 +19,7 @@ import { infopage } from "./schemas/soknad/infopage";
 import oppsett from "./schemas/infosider/oppsett/oppsett";
 import FaktasideSEOPreview from "./previews/FaktasideSEOPreview";
 import FaktasidePreview from "./previews/FaktasidePreview";
+import { ProduktsidePreview } from "./previews/ProduktsidePreview/ProduktsidePreview";
 import { innholdsseksjon, siteSettings } from "./schemas/produktside/schema";
 import { UnserializedListItem } from "@sanity/structure/src/ListItem";
 import { dokumentkrav } from "./schemas/soknad/dokumentkrav";
@@ -48,10 +49,6 @@ const isSoknadSchema = (listItem: UnserializedListItem) => soknadSchemaNames.inc
 const internationalizedSoknadTypeItems =
   InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isSoknadSchema);
 
-const isProduktsideSchema = (listItem: UnserializedListItem) => produktsideSchemaNames.includes(listItem.id);
-const internationalizedProduktsideTypeItems =
-  InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isProduktsideSchema);
-
 export default () =>
   S.list()
     .title("Innhold")
@@ -72,7 +69,39 @@ export default () =>
 
       S.listItem()
         .title("Produktside beta")
-        .child(S.list().title("Produktside beta").items(internationalizedProduktsideTypeItems)),
+        .child(
+          S.list()
+            .title("Produktside beta")
+            .items([
+              S.listItem()
+                .title("Oppsett")
+                .icon(MdSettings)
+                .child(
+                  S.editor()
+                    .schemaType(siteSettings.name)
+                    .documentId(siteSettings.name)
+                    .views([S.view.form(), S.view.component(ProduktsidePreview).title("Preview")])
+
+                  // eslint-disable-next-line no-warning-comments
+                  // TODO: Finn ut hvordan vi kan sette språk for dette elementet uten å måtte rendre en liste
+                ),
+
+              S.listItem()
+                .title("Innholdsseksjoner")
+                .child(
+                  S.documentList()
+                    .title("Innholdsseksjon")
+                    .schemaType(innholdsseksjon.name)
+                    .filter('_type == "innholdsseksjon" && __i18n_lang == $baseLanguage')
+                    .params({ baseLanguage: `nb` })
+                    .child(
+                      S.editor()
+                        .schemaType(innholdsseksjon.name)
+                        .views([S.view.form(), S.view.component(ProduktsidePreview).title("Preview")])
+                    )
+                ),
+            ])
+        ),
 
       S.listItem()
         .title("Gamle infosider")

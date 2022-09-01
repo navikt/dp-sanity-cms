@@ -1345,7 +1345,7 @@
   "resolved" "https://registry.npmjs.org/@sanity/asset-utils/-/asset-utils-1.2.3.tgz"
   "version" "1.2.3"
 
-"@sanity/base@^2.0", "@sanity/base@^2.0.0", "@sanity/base@^2.21.0", "@sanity/base@^2.30.5", "@sanity/base@2.30.5":
+"@sanity/base@^2.0", "@sanity/base@^2.0.0", "@sanity/base@^2.21.0", "@sanity/base@^2.30.5", "@sanity/base@>= 2.5.0", "@sanity/base@2.30.5":
   "integrity" "sha512-BFnDURVV29IcODUaj0ZJ4X1GuYxEO4UbSWMq6x0Ui5oLg+Yqrk2wIR4y4LSjhQq9cA5gKPNGOqSgAQC1yA9Rtg=="
   "resolved" "https://registry.npmjs.org/@sanity/base/-/base-2.30.5.tgz"
   "version" "2.30.5"
@@ -1981,7 +1981,7 @@
     "@types/react" "^17.0.42"
     "rxjs" "^6.5.3"
 
-"@sanity/ui@^0.37.0", "@sanity/ui@^0.37.9":
+"@sanity/ui@^0.37.0", "@sanity/ui@^0.37.9", "@sanity/ui@>= 0.33.9":
   "integrity" "sha512-Gyj7tC/0jKLYwJY/s1I7pU6fhzgP/jB7u2Xi20ZxLukWUioS95ccZ1bRcOBNk4aBqmroRs9IPT97fsRiiFhe2Q=="
   "resolved" "https://registry.npmjs.org/@sanity/ui/-/ui-0.37.9.tgz"
   "version" "0.37.9"
@@ -1997,7 +1997,7 @@
     "react-popper" "^2.2.5"
     "react-refractor" "^2.1.7"
 
-"@sanity/util@2.30.5":
+"@sanity/util@>= 2.5.0", "@sanity/util@2.30.5":
   "integrity" "sha512-2KIArSNKsnA8A4U52jpaswMvKVRPaq8a9bQBF3uanbEeh/fuadegVgmRzYEgC07sGSDfP4jD3PfzrLnRXQrlfg=="
   "resolved" "https://registry.npmjs.org/@sanity/util/-/util-2.30.5.tgz"
   "version" "2.30.5"
@@ -10656,7 +10656,7 @@
   dependencies:
     "debounce" "^1.2.1"
 
-"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0 ", "react@^15.3.0 || ^16.0.0 || ^17.0.0", "react@^15.3.0 || 16 || 17 || 18", "react@^16.0.0 || ^17.0.0", "react@^16.11.0 || ^17.0.0 || ^18.0.0", "react@^16.14.0", "react@^16.2.0 || ^17", "react@^16.8.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || 17.x", "react@^16.9 || ^17", "react@^16.9 || ^17 || ^18", "react@^17 || ^18", "react@^17.0.0 || ^18.0.0", "react@^17.0.2", "react@>= 16.8.0", "react@>=15", "react@>=15.0.0", "react@>=16.13", "react@>=16.4.2", "react@>=16.8 || ^17.0.0", "react@>=16.8 || ^17.0.0 || ^18.0.0", "react@>=16.8.0", "react@0.14 || 15 || 16 || 17 || 18":
+"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0 ", "react@^15.3.0 || ^16.0.0 || ^17.0.0", "react@^15.3.0 || 16 || 17 || 18", "react@^16.0.0 || ^17.0.0", "react@^16.11.0 || ^17.0.0 || ^18.0.0", "react@^16.14.0", "react@^16.2.0 || ^17", "react@^16.8.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || 17.x", "react@^16.9 || ^17", "react@^16.9 || ^17 || ^18", "react@^17 || ^18", "react@^17.0.0", "react@^17.0.0 || ^18.0.0", "react@^17.0.2", "react@>= 16.8.0", "react@>=15", "react@>=15.0.0", "react@>=16.13", "react@>=16.4.2", "react@>=16.8 || ^17.0.0", "react@>=16.8 || ^17.0.0 || ^18.0.0", "react@>=16.8.0", "react@0.14 || 15 || 16 || 17 || 18":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
@@ -11331,6 +11331,16 @@
   dependencies:
     "diff-match-patch" "^1.0.5"
 
+"sanity-plugin-prefixed-slug@^1.0.1":
+  "integrity" "sha512-u3RdktLyJd5NoIaPd1IBqfH33a/W+s8WvpuQ4QlQQo5MHxnQTwBkeA2tM+PadWG0idAeq08BqqbaZrhIuTk0Fg=="
+  "resolved" "https://registry.npmjs.org/sanity-plugin-prefixed-slug/-/sanity-plugin-prefixed-slug-1.0.1.tgz"
+  "version" "1.0.1"
+  dependencies:
+    "@sanity/base" ">= 2.5.0"
+    "@sanity/ui" ">= 0.33.9"
+    "@sanity/util" ">= 2.5.0"
+    "speakingurl" "^14.0.1"
+
 "sax@~1.2.4":
   "integrity" "sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw=="
   "resolved" "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz"
@@ -11799,6 +11809,11 @@
   "resolved" "https://registry.npmjs.org/speakingurl/-/speakingurl-13.0.0.tgz"
   "version" "13.0.0"
 
+"speakingurl@^14.0.1":
+  "integrity" "sha512-1POYv7uv2gXoyGFpBCmpDVSNV74IfsWlDW216UPjbWufNf+bSU6GdbDsxdcxtfwb4xlI3yxzOTKClUosxARYrQ=="
+  "resolved" "https://registry.npmjs.org/speakingurl/-/speakingurl-14.0.1.tgz"
+  "version" "14.0.1"
+
 "speedometer@~1.0.0":
   "integrity" "sha512-lgxErLl/7A5+vgIIXsh9MbeukOaCb2axgQ+bKCdIE+ibNT4XNYGNCR1qFEGq6F+YDASXK3Fh/c5FgtZchFolxw=="
   "resolved" "https://registry.npmjs.org/speedometer/-/speedometer-1.0.0.tgz"
@@ -12093,7 +12108,7 @@
     "hey-listen" "^1.0.8"
     "tslib" "^2.1.0"
 
-"styled-components@^5.0.0", "styled-components@^5.2", "styled-components@^5.2.0", "styled-components@^5.3.5":
+"styled-components@^5.0.0", "styled-components@^5.2", "styled-components@^5.2.0", "styled-components@^5.3.5", "styled-components@>= 5.0.0":
   "integrity" "sha512-ndETJ9RKaaL6q41B69WudeqLzOpY1A/ET/glXkNZ2T7dPjPqpPCXXQjDFYZWwNnE5co0wX+gTCqx9mfxTmSIPg=="
   "resolved" "https://registry.npmjs.org/styled-components/-/styled-components-5.3.5.tgz"
   "version" "5.3.5"

@@ -23,9 +23,10 @@ export const innholdsseksjonReference = {
             .map(({ innholdsseksjon }) => innholdsseksjon?._ref);
 
           return {
-            filter: '!(_id in path("drafts.**")) && !(_id in $usedReferences)',
+            filter: '!(_id in path("drafts.**")) && !(_id in $usedReferences) && (__i18n_lang == $baseLanguage)',
             params: {
               usedReferences,
+              baseLanguage: document?.__i18n_lang,
             },
           };
         },

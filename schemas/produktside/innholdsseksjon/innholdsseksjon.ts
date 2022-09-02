@@ -1,5 +1,6 @@
 import SlugInput from "sanity-plugin-prefixed-slug";
 import { MdWeb } from "react-icons/md";
+import { produktsideRichText } from "../produktsideRichText";
 
 export const innholdsseksjon = {
   name: "innholdsseksjon",
@@ -36,7 +37,7 @@ export const innholdsseksjon = {
     },
     {
       name: "innhold",
-      type: "richText",
+      type: produktsideRichText.name,
       title: "Innhold",
     },
   ],

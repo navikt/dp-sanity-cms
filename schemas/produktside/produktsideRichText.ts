@@ -12,5 +12,5 @@ export const produktsideRichText = {
   title: "Produktside Rich Text",
   name: "produktsideRichText",
   type: "array",
-  of: [...commonBlocks],
+  of: [{ type: innholdsseksjonReferenceName }],
 };

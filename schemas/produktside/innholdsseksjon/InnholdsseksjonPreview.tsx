@@ -1,9 +1,9 @@
 import React from "react";
 import { MdWeb } from "react-icons/md";
-import { PortableText } from "@portabletext/react";
 import { TypedObject } from "@portabletext/types";
 // @ts-ignore
 import styles from "./InnholdsseksjonPreview.module.css";
+import BlockContentPreview from "../../../components/BlockContentPreview";
 
 export const InnholdsseksjonIkon = MdWeb;
 
@@ -27,7 +27,7 @@ export function InnholdsseksjonPreview(props: Props) {
         <InnholdsseksjonIkon />
         <h5>{title}</h5>
       </div>
-      <PortableText value={innhold} />
+      <BlockContentPreview blocks={innhold} color={"lightblue"} label={"Innholdsseksjon"} />
     </div>
   );
 }

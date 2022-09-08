@@ -36,7 +36,6 @@ export const innholdsseksjonReference = {
   preview: {
     select: {
       title: "innholdsseksjon.title",
-      innhold: "innholdsseksjon.innhold",
     },
     prepare: (selection) => selection,
     component: InnholdsseksjonPreview,

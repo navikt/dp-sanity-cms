@@ -6,7 +6,6 @@ import visForAnnotation from "./annotations/visForAnnotation";
 import { GtilNOKIcon, GtilNOKPeview } from "./GtilNOKPreview";
 import { InlineStrykes, InlineStrykesIkon } from "./Strykes";
 import pasChildren from "../../../components/pasChildren";
-import { innholdsseksjonReferenceName } from "../../produktside/innholdsseksjon/innholdsseksjonReference";
 
 export const styles = {
   normal: { title: "Normal", value: "normal" },
@@ -66,6 +65,5 @@ export default {
     { type: "tileggsInformasjon" },
     { type: "deltTekstReference" },
     { type: "tidslinje" },
-    { type: innholdsseksjonReferenceName },
   ],
 };

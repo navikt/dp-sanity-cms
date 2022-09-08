@@ -1,21 +1,21 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 // @ts-nocheck
-import { innholdsseksjon } from "./innholdsseksjon";
 import { InnholdsseksjonPreview, InnholdsseksjonIkon } from "./InnholdsseksjonPreview";
 
 export const innholdsseksjonReferenceName = "innholdsseksjonReference";
+const innholdsseksjonName = "innholdsseksjon";
 
 export const innholdsseksjonReference = {
   name: innholdsseksjonReferenceName,
   type: "object",
-  title: innholdsseksjon.title,
+  title: "Innholdsseksjon",
   icon: InnholdsseksjonIkon,
   fields: [
     {
-      name: innholdsseksjon.name,
+      name: innholdsseksjonName,
       type: "reference",
       description: 'Innholdsseksjon må være "Published" for å dukke opp i denne lista',
-      to: [{ type: innholdsseksjon.name }],
+      to: [{ type: innholdsseksjonName }],
       options: {
         filter: ({ document }) => {
           const usedReferences = document?.innhold
@@ -36,7 +36,6 @@ export const innholdsseksjonReference = {
   preview: {
     select: {
       title: "innholdsseksjon.title",
-      innhold: "innholdsseksjon.innhold",
     },
     prepare: (selection) => selection,
     component: InnholdsseksjonPreview,

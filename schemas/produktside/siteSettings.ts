@@ -1,3 +1,5 @@
+import { produktsideRichText } from "./produktsideRichText";
+
 export const siteSettings = {
   name: "siteSettings",
   title: "Site Settings",
@@ -22,7 +24,7 @@ export const siteSettings = {
     },
     {
       name: "innhold",
-      type: "richText",
+      type: produktsideRichText.name,
       title: "Innhold",
     },
   ],

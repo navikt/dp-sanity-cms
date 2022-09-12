@@ -1,8 +1,8 @@
-import { innholdsseksjonReferenceName } from "./innholdsseksjon/innholdsseksjonReference";
+import { produktsideSectionReferenceName } from "./produktsideSection/produktsideSectionReference";
 
 export const produktsideRichText = {
   title: "Produktside Rich Text",
   name: "produktsideRichText",
   type: "array",
-  of: [{ type: innholdsseksjonReferenceName }],
+  of: [{ type: produktsideSectionReferenceName }],
 };

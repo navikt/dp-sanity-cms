@@ -1,18 +1,17 @@
-import SlugInput from "sanity-plugin-prefixed-slug";
 import { MdWeb } from "react-icons/md";
-import { innholdsseksjonRichText } from "./innholdsseksjonRichText";
+import { produktsideSectionRichText } from "./produktsideSection/produktsideSectionRichText";
 
-export const innholdsseksjon = {
-  name: "innholdsseksjon",
+export const produktsideKortFortalt = {
+  name: "produktsideKortFortalt",
   type: "document",
-  title: "Innholdsseksjon",
+  title: "Kort Fortalt",
   i18n: true,
   initialValue: {
     // eslint-disable-next-line camelcase
     __i18n_lang: "nb",
   },
   // eslint-disable-next-line camelcase
-  //__experimental_actions: ["update", "publish"], // Har du laget et nytt datasett må du midlertidig fjerne denne for å kunne lage et nytt oppsett-dokument
+  __experimental_actions: ["update", "publish"], // Har du laget et nytt datasett må du midlertidig fjerne denne for å kunne lage et nytt dokument
   icon: MdWeb,
   fields: [
     {
@@ -24,21 +23,19 @@ export const innholdsseksjon = {
     {
       name: "slug",
       type: "slug",
-      title: "Ankerlenke for innholdsseksjon",
+      title: "Ankerlenke for innholdsseksjonen",
       description:
         "Velg en god ankerlenke. Hvis den må endres i ettertid vil dette knekke lenker som går til denne siden.",
       validation: (Rule) => Rule.required().error("Ankerlenke er påkrevd med maks 96 tegn"),
-      inputComponent: SlugInput,
       options: {
         source: "title",
-        urlPrefix: "nav.no/dagpenger#",
         maxLength: 96,
       },
     },
     {
-      name: "innhold",
-      type: innholdsseksjonRichText.name,
       title: "Innhold",
+      name: "content",
+      type: produktsideSectionRichText.name,
     },
   ],
 };

@@ -1,8 +1,8 @@
 import { produktsideRichText } from "./produktsideRichText";
 
-export const siteSettings = {
-  name: "siteSettings",
-  title: "Site Settings",
+export const produktsideSettings = {
+  name: "produktsideSettings",
+  title: "Oppsett for Produktside Dagpenger",
   type: "document",
   i18n: true,
   initialValue: {
@@ -18,12 +18,7 @@ export const siteSettings = {
       title: "Tittel",
     },
     {
-      name: "kortFortalt",
-      type: "kortFortaltRichText",
-      title: "Kort fortalt",
-    },
-    {
-      name: "innhold",
+      name: "content",
       type: produktsideRichText.name,
       title: "Innhold",
     },

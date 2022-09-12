@@ -1,14 +1,23 @@
-import { innholdsseksjon } from "./innholdsseksjon/innholdsseksjon";
-import { innholdsseksjonReference } from "./innholdsseksjon/innholdsseksjonReference";
-import { innholdsseksjonRichText } from "./innholdsseksjon/innholdsseksjonRichText";
+import { produktsideKortFortalt } from "./produktsideKortFortalt";
 import { produktsideRichText } from "./produktsideRichText";
-import { siteSettings } from "./siteSettings";
+import { produktsideSection } from "./produktsideSection/produktsideSection";
+import { produktsideSectionReference } from "./produktsideSection/produktsideSectionReference";
+import { produktsideSectionRichText } from "./produktsideSection/produktsideSectionRichText";
+import { produktsideSettings } from "./produktsideSettings";
 
 export const produktsideSchemas = [
-  innholdsseksjon,
-  innholdsseksjonReference,
+  produktsideKortFortalt,
   produktsideRichText,
-  siteSettings,
-  innholdsseksjonRichText,
+  produktsideSection,
+  produktsideSectionReference,
+  produktsideSectionRichText,
+  produktsideSettings,
 ];
-export { innholdsseksjon, innholdsseksjonReference, produktsideRichText, siteSettings, innholdsseksjonRichText };
+export {
+  produktsideKortFortalt,
+  produktsideRichText,
+  produktsideSection,
+  produktsideSectionReference,
+  produktsideSectionRichText,
+  produktsideSettings,
+};

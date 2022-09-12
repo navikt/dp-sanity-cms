@@ -20,12 +20,12 @@ import oppsett from "./schemas/infosider/oppsett/oppsett";
 import FaktasideSEOPreview from "./previews/FaktasideSEOPreview";
 import FaktasidePreview from "./previews/FaktasidePreview";
 import { ProduktsidePreview } from "./previews/ProduktsidePreview/ProduktsidePreview";
-import { innholdsseksjon, siteSettings } from "./schemas/produktside/schema";
+import { produktsideKortFortalt, produktsideSection, produktsideSettings } from "./schemas/produktside/schema";
 import { UnserializedListItem } from "@sanity/structure/src/ListItem";
 import { dokumentkrav } from "./schemas/soknad/dokumentkrav";
 import { dokumentkravSvar } from "./schemas/soknad/dokumentkrav-svar";
 
-const produktsideSchemaNames = [innholdsseksjon.name, siteSettings.name];
+const produktsideSchemaNames = [produktsideKortFortalt.name, produktsideSection.name, produktsideSettings.name];
 const oldSchemaNames = [
   deltTekst.name,
   faktaSide.name,
@@ -77,26 +77,76 @@ export default () =>
                 .title("Oppsett")
                 .icon(MdSettings)
                 .child(
-                  S.editor()
-                    .schemaType(siteSettings.name)
-                    .documentId(siteSettings.name)
-                    .views([S.view.form(), S.view.component(ProduktsidePreview).title("Preview")])
-
-                  // eslint-disable-next-line no-warning-comments
-                  // TODO: Finn ut hvordan vi kan sette språk for dette elementet uten å måtte rendre en liste
+                  S.documentList()
+                    .title("Oppsett")
+                    .id(produktsideSettings.name)
+                    .schemaType(produktsideSettings.name)
+                    .filter("_id == $id && _type == $type")
+                    .params({
+                      id: produktsideSettings.name,
+                      type: produktsideSettings.name,
+                    })
+                    .menuItems([
+                      {
+                        title: "Lag et nytt oppsett",
+                        intent: {
+                          type: "create",
+                          params: {
+                            id: produktsideSettings.name,
+                            type: produktsideSettings.name,
+                          },
+                        },
+                        showAsAction: true,
+                      },
+                    ])
+                    .child(
+                      S.editor()
+                        .schemaType(produktsideSettings.name)
+                        .views([S.view.form(), S.view.component(ProduktsidePreview).title("Preview")])
+                    )
                 ),
-
+              S.listItem()
+                .title("Kort fortalt")
+                .child(
+                  S.documentList()
+                    .title("Kort fortalt")
+                    .id(produktsideKortFortalt.name)
+                    .schemaType(produktsideKortFortalt.name)
+                    .filter("_id == $id && _type == $type")
+                    .params({
+                      id: produktsideKortFortalt.name,
+                      type: produktsideKortFortalt.name,
+                    })
+                    .menuItems([
+                      {
+                        title: "Lag nytt dokument",
+                        intent: {
+                          type: "create",
+                          params: {
+                            id: produktsideKortFortalt.name,
+                            type: produktsideKortFortalt.name,
+                          },
+                        },
+                        showAsAction: true,
+                      },
+                    ])
+                    .child(
+                      S.editor()
+                        .schemaType(produktsideKortFortalt.name)
+                        .views([S.view.form(), S.view.component(ProduktsidePreview).title("Preview")])
+                    )
+                ),
               S.listItem()
                 .title("Innholdsseksjoner")
                 .child(
                   S.documentList()
                     .title("Innholdsseksjon")
-                    .schemaType(innholdsseksjon.name)
-                    .filter('_type == "innholdsseksjon" && __i18n_lang == $baseLanguage')
-                    .params({ baseLanguage: `nb` })
+                    .schemaType(produktsideSection.name)
+                    .filter("_type == $type && __i18n_lang == $baseLanguage && !(_id == $id)")
+                    .params({ baseLanguage: `nb`, id: "kort-fortalt", type: produktsideSection.name })
                     .child(
                       S.editor()
-                        .schemaType(innholdsseksjon.name)
+                        .schemaType(produktsideSection.name)
                         .views([S.view.form(), S.view.component(ProduktsidePreview).title("Preview")])
                     )
                 ),

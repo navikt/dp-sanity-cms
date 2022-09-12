@@ -142,8 +142,8 @@ export default () =>
                   S.documentList()
                     .title("Innholdsseksjon")
                     .schemaType(produktsideSection.name)
-                    .filter("_type == $type && __i18n_lang == $baseLanguage && !(_id == $id)")
-                    .params({ baseLanguage: `nb`, id: "kort-fortalt", type: produktsideSection.name })
+                    .filter("_type == $type && __i18n_lang == $baseLanguage")
+                    .params({ baseLanguage: `nb`, type: produktsideSection.name })
                     .child(
                       S.editor()
                         .schemaType(produktsideSection.name)

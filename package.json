@@ -27,7 +27,7 @@
     ]
   },
   "dependencies": {
-    "@navikt/ds-css": "^0.18.14",
+    "@navikt/ds-css": "^0.18.29",
     "@navikt/ds-icons": "^0.8.17",
     "@sanity/base": "^2.33.0",
     "@sanity/block-content-to-react": "^3.0.0",

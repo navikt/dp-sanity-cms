@@ -20,12 +20,22 @@ import oppsett from "./schemas/infosider/oppsett/oppsett";
 import FaktasideSEOPreview from "./previews/FaktasideSEOPreview";
 import FaktasidePreview from "./previews/FaktasidePreview";
 import { ProduktsidePreview } from "./previews/ProduktsidePreview/ProduktsidePreview";
-import { produktsideKortFortalt, produktsideSection, produktsideSettings } from "./schemas/produktside/schema";
+import {
+  produktsideKortFortalt,
+  produktsideSection,
+  produktsideSettings,
+  produktsideText,
+} from "./schemas/produktside/schema";
 import { UnserializedListItem } from "@sanity/structure/src/ListItem";
 import { dokumentkrav } from "./schemas/soknad/dokumentkrav";
 import { dokumentkravSvar } from "./schemas/soknad/dokumentkrav-svar";
 
-const produktsideSchemaNames = [produktsideKortFortalt.name, produktsideSection.name, produktsideSettings.name];
+const produktsideSchemaNames = [
+  produktsideKortFortalt.name,
+  produktsideSection.name,
+  produktsideSettings.name,
+  produktsideText.name,
+];
 const oldSchemaNames = [
   deltTekst.name,
   faktaSide.name,
@@ -147,6 +157,21 @@ export default () =>
                     .child(
                       S.editor()
                         .schemaType(produktsideSection.name)
+                        .views([S.view.form(), S.view.component(ProduktsidePreview).title("Preview")])
+                    )
+                ),
+
+              S.listItem()
+                .title("Generelle tekster")
+                .child(
+                  S.documentList()
+                    .title("Generelle tekster")
+                    .schemaType(produktsideText.name)
+                    .filter("_type == $type && __i18n_lang == $baseLanguage")
+                    .params({ baseLanguage: `nb`, type: produktsideText.name })
+                    .child(
+                      S.editor()
+                        .schemaType(produktsideText.name)
                         .views([S.view.form(), S.view.component(ProduktsidePreview).title("Preview")])
                     )
                 ),

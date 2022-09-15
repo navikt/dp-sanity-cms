@@ -4,6 +4,7 @@ import { produktsideSection } from "./produktsideSection/produktsideSection";
 import { produktsideSectionReference } from "./produktsideSection/produktsideSectionReference";
 import { produktsideSectionRichText } from "./produktsideSection/produktsideSectionRichText";
 import { produktsideSettings } from "./produktsideSettings";
+import { produktsideText } from "./produktsideText";
 
 export const produktsideSchemas = [
   produktsideKortFortalt,
@@ -12,6 +13,7 @@ export const produktsideSchemas = [
   produktsideSectionReference,
   produktsideSectionRichText,
   produktsideSettings,
+  produktsideText,
 ];
 export {
   produktsideKortFortalt,
@@ -20,4 +22,5 @@ export {
   produktsideSectionReference,
   produktsideSectionRichText,
   produktsideSettings,
+  produktsideText,
 };

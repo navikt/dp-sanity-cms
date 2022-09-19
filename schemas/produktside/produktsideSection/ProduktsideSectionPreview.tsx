@@ -1,9 +1,11 @@
-import React from "react";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
 import { MdWeb } from "react-icons/md";
 import { PortableText } from "@portabletext/react";
 import { TypedObject } from "@portabletext/types";
 // @ts-ignore
 import styles from "./ProduktsideSectionPreview.module.css";
+import InlinePreview from "../../../components/InlinePreview";
+import { GtilNOKIcon } from "../../infosider/richText/GtilNOKPreview";
 
 export const ProduktsideSectionIcon = MdWeb;
 
@@ -31,3 +33,24 @@ export function ProduktsideSectionPreview(props: Props) {
     </div>
   );
 }
+
+interface GtoNOKProps {
+  children: ReactNode;
+}
+
+export const GtoNOKPreview = (props: GtoNOKProps) => {
+  const [content, setContent] = useState<undefined | string>(undefined);
+  const notNumeric = isNaN(Number(content));
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    setContent(ref.current?.innerText);
+  }, [props.children]);
+
+  return (
+    <InlinePreview ref={ref} color={notNumeric ? "red" : "limegreen"} label={notNumeric ? "Ikke et tall!" : "G"}>
+      {props.children}
+      <GtilNOKIcon style={{ marginLeft: ".3rem" }} />
+    </InlinePreview>
+  );
+};

@@ -1,4 +1,11 @@
-import { descriptionTextField, helpTextField, questionTextField, textIdField, unitField } from "./common-fields";
+import {
+  descriptionTextField,
+  helpTextField,
+  questionTextField,
+  errorMessageTextField,
+  textIdField,
+  unitField,
+} from "./common-fields";
 
 export const faktum = {
   type: "document",
@@ -9,7 +16,7 @@ export const faktum = {
     // eslint-disable-next-line camelcase
     __i18n_lang: "nb",
   },
-  fields: [textIdField, questionTextField, descriptionTextField, helpTextField, unitField],
+  fields: [textIdField, questionTextField, descriptionTextField, errorMessageTextField, helpTextField, unitField],
   preview: {
     select: {
       title: questionTextField.name,

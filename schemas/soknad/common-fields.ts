@@ -31,6 +31,13 @@ export const answerTextField = {
   rows: 3,
 };
 
+export const errorMessageTextField = {
+  type: "text",
+  name: "errorMessage",
+  title: "Feilmelding",
+  rows: 3,
+};
+
 export const unitField = {
   type: "string",
   name: "unit",

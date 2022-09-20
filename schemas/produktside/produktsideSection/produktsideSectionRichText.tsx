@@ -1,32 +1,7 @@
-import React, { ReactNode, useEffect, useRef, useState } from "react";
-import { produktsideSectionReferenceName } from "./produktsideSectionReference";
+import React from "react";
 import { FaMoneyBill } from "react-icons/fa";
-
-interface Props {
-  children: ReactNode;
-}
-
-export const GtoNOKPreview = (props: Props) => {
-  const [content, setContent] = useState<undefined | string>(undefined);
-  const notNumeric = isNaN(Number(content));
-  const ref = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    setContent(ref.current?.innerText);
-  }, [props.children]);
-
-  return (
-    <>
-      <FaMoneyBill style={{ marginRight: ".1rem", marginLeft: ".2rem" }} />
-      <span ref={ref} style={{ color: notNumeric ? "red" : "limegreen" }}>
-        {props.children}
-      </span>
-      <span style={{ color: notNumeric ? "red" : "limegreen", marginLeft: ".1rem" }}>
-        {notNumeric ? "Ikke ett tall!" : "G"}
-      </span>
-    </>
-  );
-};
+import { produktsideSectionReferenceName } from "./produktsideSectionReference";
+import { GtoNOKPreview } from "./GtoNOKPreview";
 
 export const produktsideSectionRichText = {
   title: "Innholdsseksjon Rich Text",

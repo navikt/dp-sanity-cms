@@ -1,0 +1,15 @@
+.faMoneyBill {
+  margin: 0 0.4rem;
+}
+
+.validColor {
+  color: limegreen;
+}
+
+.invalidColor {
+  color: red;
+}
+
+.feedback {
+  margin-left: 0.1rem;
+}

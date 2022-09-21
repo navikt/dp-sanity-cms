@@ -20,6 +20,7 @@ export const produktsideText = {
         {
           type: "block",
           styles: [{ title: "Normal", value: "normal" }],
+          lists: [],
           marks: {
             annotations: [],
             decorators: [GtoNOKDecorator],

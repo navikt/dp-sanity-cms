@@ -1,4 +1,5 @@
-import { textIdField, valueTextField } from "../soknad/common-fields";
+import { textIdField } from "../soknad/common-fields";
+import { GtoNOKDecorator } from "./produktside-decorators/produktside-decorators";
 
 export const produktsideText = {
   type: "document",
@@ -9,11 +10,28 @@ export const produktsideText = {
     // eslint-disable-next-line camelcase
     __i18n_lang: "nb",
   },
-  fields: [textIdField, valueTextField],
+  fields: [
+    textIdField,
+    {
+      title: "Verdi",
+      type: "array",
+      name: "valueBlock",
+      of: [
+        {
+          type: "block",
+          styles: [{ title: "Normal", value: "normal" }],
+          marks: {
+            annotations: [],
+            decorators: [GtoNOKDecorator],
+          },
+        },
+      ],
+    },
+  ],
   preview: {
     select: {
       title: textIdField.name,
-      subtitle: valueTextField.name,
+      subtitle: "valueBlock.name",
     },
   },
 };

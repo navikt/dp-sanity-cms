@@ -31,7 +31,7 @@
     "@navikt/ds-icons": "^0.8.17",
     "@sanity/base": "^2.33.0",
     "@sanity/block-content-to-react": "^3.0.0",
-    "@sanity/client": "^3.3.6",
+    "@sanity/client": "^3.4.1",
     "@sanity/components": "^2.14.0",
     "@sanity/core": "^2.33.0",
     "@sanity/dashboard": "^2.33.0",

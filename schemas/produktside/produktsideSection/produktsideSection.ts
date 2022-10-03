@@ -15,6 +15,11 @@ export const produktsideSection = {
   icon: MdWeb,
   fields: [
     {
+      type: "navIconPicker",
+      name: "iconName",
+      title: "Ikon",
+    },
+    {
       name: "title",
       type: "string",
       title: "Tittel",

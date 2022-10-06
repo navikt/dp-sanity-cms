@@ -1,8 +1,8 @@
-import client from "part:@sanity/base/client";
-import { SanityClient } from "@sanity/client";
+import { useClient } from "sanity";
+
 import imageUrlBuilder from "@sanity/image-url";
 
-export const studioClient: SanityClient = client.withConfig({ apiVersion: "2021-07-30" });
+export const studioClient = useClient().withConfig({ apiVersion: "2021-07-30" });
 
 const builder = imageUrlBuilder(studioClient);
 

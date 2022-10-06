@@ -1,5 +1,5 @@
 import * as React from "react";
-import PatchEvent, { set, unset } from "part:@sanity/form-builder/patch-event";
+import { PatchEvent, set, unset } from "sanity/form";
 import styled from "styled-components";
 import CheckBox from "../../components/CheckBox";
 import { PopoverWorkarround } from "../../style/PopoverWorkarround";

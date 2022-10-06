@@ -1,8 +1,7 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import { Button, Dialog, Grid, Inline } from "@sanity/ui";
 import * as NavIcons from "@navikt/ds-icons";
-import { FormField } from "@sanity/base/components";
-import PatchEvent, { set, unset } from "@sanity/form-builder/PatchEvent";
+import { FormField, PatchEvent, set, unset } from "sanity/form";
 import { useId } from "@reach/auto-id";
 
 // @ts-ignore

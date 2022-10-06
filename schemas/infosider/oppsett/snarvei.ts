@@ -30,7 +30,9 @@ export default {
       title: "Vis på side:",
       type: "array",
       of: [{ type: "string" }],
-      inputComponent: VelgInfosider,
+      components: {
+        field: VelgInfosider,
+      },
     },
   ],
   preview: {

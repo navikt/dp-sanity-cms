@@ -31,6 +31,7 @@ export default {
         },
       ],
       inputComponent: ConditionalField,
+      
       options: {
         condition: (document) => document._type === "deltTekst",
       },

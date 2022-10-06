@@ -1,6 +1,6 @@
 import { FiAlertCircle } from "react-icons/fi";
-import getPreviewTextFromBlockContent from "../utils/getPreviewTextFromBlockContent";
 import VelgInfosider from "../infosider/oppsett/VelgInfosider";
+import getPreviewTextFromBlockContent from "../utils/getPreviewTextFromBlockContent";
 
 export default {
   type: "document",
@@ -37,7 +37,9 @@ export default {
       title: "Vis på Infoside",
       type: "array",
       of: [{ type: "string" }],
-      inputComponent: VelgInfosider,
+      components: {
+        field: VelgInfosider,
+      }, 
     },
   ],
   preview: {

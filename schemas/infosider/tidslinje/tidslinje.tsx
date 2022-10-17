@@ -18,6 +18,6 @@ export default {
       innhold: "innhold",
     },
     prepare: (selection) => selection,
-    component: (props) => <Tidslinje blocks={props.value.innhold} />,
+    component: (props) => <Tidslinje value={props.value.innhold} />,
   },
 };

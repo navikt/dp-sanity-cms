@@ -1,18 +1,20 @@
 import * as React from "react";
-import BlockContentPreview from "../../../components/BlockContentPreview";
+import PortableTextContentPreview from "../../../components/PortableTextContentPreview";
 
 export const FremhevetTekstIkon = () => <>❤️</>;
 
-const FremhevetTekstPreview = (props: { blocks }) => (
-  <BlockContentPreview
-    label={
-      <>
-        <FremhevetTekstIkon /> Fremhevet tekst
-      </>
-    }
-    color="lightblue"
-    blocks={props.blocks}
-  />
-);
+const FremhevetTekstPreview = ({ value }) => {
+  return (
+    <PortableTextContentPreview
+      label={
+        <>
+          <FremhevetTekstIkon /> Fremhevet tekst
+        </>
+      }
+      color="lightblue"
+      value={value}
+    />
+  );
+};
 
 export default FremhevetTekstPreview;

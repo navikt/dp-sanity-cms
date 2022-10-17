@@ -23,6 +23,6 @@ export default {
       innhold: "innhold",
     },
     prepare: (selection) => selection,
-    component: (props) => <TillegsInformasjonPreview blocks={props.value.innhold} title={props.value.title} />,
+    component: (props) => <TillegsInformasjonPreview value={props.value.innhold} title={props.value.title} />,
   },
 };

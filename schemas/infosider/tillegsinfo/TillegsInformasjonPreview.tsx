@@ -1,6 +1,7 @@
 import * as React from "react";
-import BlockContentPreview from "../../../components/BlockContentPreview";
+import PortableTextContentPreview from "../../../components/PortableTextContentPreview";
 import styled from "styled-components";
+import { TypedObject } from "@portabletext/types";
 
 export const TillegsInfoIkon = () => <>‍📎️</>;
 
@@ -10,19 +11,19 @@ const Tittel = styled.p`
 
 interface Props {
   title: string;
-  blocks: any;
+  value: TypedObject | TypedObject[];
 }
 
-const TillegsInformasjonPreview = (props: Props) => (
-  <BlockContentPreview
+const TillegsInformasjonPreview = ({ title, value }: Props) => (
+  <PortableTextContentPreview
     label={
       <>
         <TillegsInfoIkon /> Tilleggsinfo
       </>
     }
     color="mistyrose"
-    before={<Tittel>{props.title}</Tittel>}
-    blocks={props.blocks}
+    before={<Tittel>{title}</Tittel>}
+    value={value}
   />
 );
 

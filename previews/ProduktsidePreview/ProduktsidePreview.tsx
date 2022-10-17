@@ -10,7 +10,7 @@ export function ProduktsidePreview() {
   const url =
     dataset === "production"
       ? `https://arbeid.ekstern.dev.nav.no/dagpenger${path}`
-      : `https://arbeid.dev.nav.no/dagpenger${path}`;
+      : `https://arbeid.ekstern.dev.nav.no/dagpenger${path}`;
 
   return (
     <div className={styles.container}>

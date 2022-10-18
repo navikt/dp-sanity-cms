@@ -18,6 +18,6 @@ export default {
       innhold: "innhold",
     },
     prepare: (selection) => selection,
-    component: (selection) => <FremhevetTekstPreview blocks={selection.value.innhold} />,
+    component: (selection) => <FremhevetTekstPreview value={selection.value.innhold} />,
   },
 };

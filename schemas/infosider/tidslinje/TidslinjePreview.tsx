@@ -1,15 +1,16 @@
 import * as React from "react";
 import styled from "styled-components";
 import { headerMixin } from "../richText/HeaderPreviews";
-import BlockContentPreview from "../../../components/BlockContentPreview";
+import PortableTextContentPreview from "../../../components/PortableTextContentPreview";
 import { MdTimeline } from "react-icons/md/";
+import { TypedObject } from "@portabletext/types";
 
 export const TidslinjeIkon = MdTimeline;
 
 const color = "burlywood";
 
 interface Props {
-  blocks: any;
+  value: TypedObject | TypedObject[];
 }
 
 export const TidslinjePunkt = styled.div`
@@ -30,14 +31,14 @@ export const TidslinjePunkt = styled.div`
 `;
 
 const TidslinjePreview = (props: Props) => (
-  <BlockContentPreview
+  <PortableTextContentPreview
     label={
       <>
         <TidslinjeIkon /> Tidslinje
       </>
     }
     color={color}
-    blocks={props.blocks}
+    value={props.value}
   />
 );
 

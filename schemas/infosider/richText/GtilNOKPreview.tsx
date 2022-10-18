@@ -9,18 +9,18 @@ interface Props {
   children: ReactNode;
 }
 
-export const GtilNOKPeview = (props: Props) => {
+export const GtilNOKPreview = ({ children }: Props) => {
   const [content, setContent] = useState<undefined | string>(undefined);
   const notNumeric = isNaN(Number(content));
   const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     setContent(ref.current?.innerText);
-  }, [props.children]);
+  }, [children]);
 
   return (
     <InlinePreview ref={ref} color={notNumeric ? "red" : "limegreen"} label={notNumeric ? "Ikke et tall!" : "G"}>
-      {props.children}
+      {children}
       <GtilNOKIcon style={{ marginLeft: ".3rem" }} />
     </InlinePreview>
   );

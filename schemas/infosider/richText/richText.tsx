@@ -3,7 +3,7 @@ import link from "./annotations/link";
 import { H2Header, H2HeaderMMeny, H2NoBackround, H3Header, H4Header } from "./HeaderPreviews";
 import { InlineUtkast, InlineUtkastIkon } from "./Utkast";
 import visForAnnotation from "./annotations/visForAnnotation";
-import { GtilNOKIcon, GtilNOKPeview } from "./GtilNOKPreview";
+import { GtilNOKIcon, GtilNOKPreview } from "./GtilNOKPreview";
 import { InlineStrykes, InlineStrykesIkon } from "./Strykes";
 import pasChildren from "../../../components/pasChildren";
 
@@ -37,7 +37,7 @@ export const decorators = {
     title: "Grunnbelløp til NOK",
     value: "GtilNOK",
     // eslint-disable-next-line
-    blockEditor: { icon: GtilNOKIcon, render: (props) => <GtilNOKPeview children={props.children} /> },
+    blockEditor: { icon: GtilNOKIcon, render: (props) => <GtilNOKPreview children={props.children} /> },
   },
   strong: { title: "Strong", value: "strong" },
   em: { title: "Emphasis", value: "em" },

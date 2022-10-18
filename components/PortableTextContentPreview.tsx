@@ -1,13 +1,14 @@
+import { TypedObject } from "@portabletext/types";
 import * as React from "react";
 import { ReactNode } from "react";
 import styled from "styled-components";
-import BlockContent from "./BlockContent";
+import PortableTextContent from "./PortableTextContent";
 
 interface Props {
   color: string;
   label: ReactNode;
   before?: ReactNode;
-  blocks: any;
+  value: TypedObject | TypedObject[];
   className?: string;
 }
 
@@ -28,14 +29,14 @@ const Label = styled.div<{ color: string }>`
   font-size: 0.8rem;
 `;
 
-function BlockContentPreview(props: Props) {
+function PortableTextContentPreview(props: Props) {
   return (
     <Style color={props.color} className={`${props.className} block-content-preview`}>
       <Label color={props.color}>{props.label}</Label>
       {props.before}
-      <BlockContent blocks={props.blocks} />
+      <PortableTextContent value={props.value} />
     </Style>
   );
 }
 
-export default BlockContentPreview;
+export default PortableTextContentPreview;

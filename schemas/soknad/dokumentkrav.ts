@@ -12,7 +12,7 @@ export const dokumentkrav = {
   fields: [textIdField, titleTextField, descriptionTextField, helpTextField],
   preview: {
     select: {
-      title: questionTextField.name,
+      title: titleTextField.name,
       subtitle: textIdField.name,
     },
   },

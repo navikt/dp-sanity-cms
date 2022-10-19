@@ -24,6 +24,13 @@ export const questionTextField = {
   rows: 3,
 };
 
+export const titleTextField = {
+  type: "text",
+  name: "title",
+  title: "Tittel",
+  rows: 3,
+};
+
 export const answerTextField = {
   type: "text",
   name: "text",

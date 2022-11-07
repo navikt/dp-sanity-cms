@@ -2,6 +2,7 @@ import { produktsideSectionReferenceName } from "./produktsideSectionReference";
 import { GtoNOKDecorator } from "../produktside-decorators/produktside-decorators";
 import { produktsideAccordion } from "../produktside-component-schemas/produktsideAccordion";
 import { produktsideReadMore } from "../produktside-component-schemas/produktsideReadMore";
+import { produktsideBlockStyles } from "../produktside-styles/produktside-styles";
 
 export const produktsideSectionRichText = {
   title: "Innholdsseksjon Rich Text",
@@ -10,6 +11,7 @@ export const produktsideSectionRichText = {
   of: [
     {
       type: "block",
+      styles: produktsideBlockStyles,
       marks: {
         decorators: [{ title: "Strong", value: "strong" }, { title: "Emphasis", value: "em" }, GtoNOKDecorator],
       },

@@ -1,4 +1,6 @@
 import { produktsideAccordion } from "./produktside-component-schemas/produktsideAccordion";
+import { produktsideFilteredContent } from "./produktside-component-schemas/produktsideFilteredContent";
+import { produktsideFilterMenu } from "./produktside-component-schemas/produktsideFilterMenu";
 import { produktsideReadMore } from "./produktside-component-schemas/produktsideReadMore";
 import { produktsideKortFortalt } from "./produktsideKortFortalt";
 import { produktsideRichText } from "./produktsideRichText";
@@ -8,7 +10,7 @@ import { produktsideSectionRichText } from "./produktsideSection/produktsideSect
 import { produktsideSettings } from "./produktsideSettings";
 import { produktsideText } from "./produktsideText";
 
-const componentSchemas = [produktsideAccordion, produktsideReadMore];
+const componentSchemas = [produktsideAccordion, produktsideFilteredContent, produktsideFilterMenu, produktsideReadMore];
 
 export const produktsideSchemas = [
   ...componentSchemas,
@@ -23,6 +25,8 @@ export const produktsideSchemas = [
 
 export {
   produktsideAccordion,
+  produktsideFilteredContent,
+  produktsideFilterMenu,
   produktsideReadMore,
   produktsideKortFortalt,
   produktsideRichText,

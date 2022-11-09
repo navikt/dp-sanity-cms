@@ -3,6 +3,8 @@ import { GtoNOKDecorator } from "../produktside-decorators/produktside-decorator
 import { produktsideAccordion } from "../produktside-component-schemas/produktsideAccordion";
 import { produktsideReadMore } from "../produktside-component-schemas/produktsideReadMore";
 import { produktsideBlockStyles } from "../produktside-styles/produktside-styles";
+import { produktsideFilteredContent } from "../produktside-component-schemas/produktsideFilteredContent";
+import { produktsideFilterMenu } from "../produktside-component-schemas/produktsideFilterMenu";
 
 export const produktsideSectionRichText = {
   title: "Innholdsseksjon Rich Text",
@@ -20,5 +22,7 @@ export const produktsideSectionRichText = {
     { type: produktsideSectionReferenceName },
     { type: produktsideAccordion.name },
     { type: produktsideReadMore.name },
+    { type: produktsideFilteredContent.name },
+    { type: produktsideFilterMenu.name },
   ],
 };

@@ -1,4 +1,5 @@
 import { produktsideAccordion } from "./produktside-component-schemas/produktsideAccordion";
+import { produktsideButton } from "./produktside-component-schemas/produktsideButton";
 import { produktsideFilteredContent } from "./produktside-component-schemas/produktsideFilteredContent";
 import { produktsideFilterMenu } from "./produktside-component-schemas/produktsideFilterMenu";
 import { produktsideReadMore } from "./produktside-component-schemas/produktsideReadMore";
@@ -10,7 +11,13 @@ import { produktsideSectionRichText } from "./produktsideSection/produktsideSect
 import { produktsideSettings } from "./produktsideSettings";
 import { produktsideText } from "./produktsideText";
 
-const componentSchemas = [produktsideAccordion, produktsideFilteredContent, produktsideFilterMenu, produktsideReadMore];
+const componentSchemas = [
+  produktsideAccordion,
+  produktsideButton,
+  produktsideFilteredContent,
+  produktsideFilterMenu,
+  produktsideReadMore,
+];
 
 export const produktsideSchemas = [
   ...componentSchemas,
@@ -25,6 +32,7 @@ export const produktsideSchemas = [
 
 export {
   produktsideAccordion,
+  produktsideButton,
   produktsideFilteredContent,
   produktsideFilterMenu,
   produktsideReadMore,

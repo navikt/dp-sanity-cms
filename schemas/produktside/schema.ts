@@ -10,13 +10,19 @@ import { produktsideSectionReference } from "./produktsideSection/produktsideSec
 import { produktsideSectionRichText } from "./produktsideSection/produktsideSectionRichText";
 import { produktsideSettings } from "./produktsideSettings";
 import { produktsideText } from "./produktsideText";
+import { produktsideAccordionWithRichText } from "./produktside-component-schemas/produktsideAccordionWithRichText";
+import { produktsideReadMoreWithRichText } from "./produktside-component-schemas/produktsideReadMoreWithRichText";
+import { produktsideComponentRichText } from "./produktside-component-schemas/produktsideComponentRichText";
 
 const componentSchemas = [
   produktsideAccordion,
+  produktsideAccordionWithRichText,
   produktsideButton,
+  produktsideComponentRichText,
   produktsideFilteredContent,
   produktsideFilterMenu,
   produktsideReadMore,
+  produktsideReadMoreWithRichText,
 ];
 
 export const produktsideSchemas = [
@@ -32,10 +38,13 @@ export const produktsideSchemas = [
 
 export {
   produktsideAccordion,
+  produktsideAccordionWithRichText,
   produktsideButton,
+  produktsideComponentRichText,
   produktsideFilteredContent,
   produktsideFilterMenu,
   produktsideReadMore,
+  produktsideReadMoreWithRichText,
   produktsideKortFortalt,
   produktsideRichText,
   produktsideSection,

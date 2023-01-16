@@ -83,11 +83,11 @@ export default () =>
         .child(S.list().title("Dagpengesøknad").items(internationalizedSoknadTypeItems)),
 
       S.listItem()
-        .title("Dagpenger innsynn")
+        .title("Dagpenger innsyn")
         .icon(MdInsights)
         .child(
           S.list()
-            .title("Dagpenger innsynn")
+            .title("Dagpenger innsyn")
             .items(
               InternationalizationStructure.getFilteredDocumentTypeListItems().filter(
                 (listItem: UnserializedListItem) => innsynSchemaNames.includes(listItem.id)

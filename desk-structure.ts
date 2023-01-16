@@ -1,34 +1,35 @@
 import S from "@sanity/desk-tool/structure-builder";
 import * as InternationalizationStructure from "@sanity/document-internationalization/lib/structure";
-import { MdSettings, MdWeb } from "react-icons/md";
-import ForsideSEOPreview from "./previews/ForsideSEOPreview";
+import { UnserializedListItem } from "@sanity/structure/src/ListItem";
+import { MdSettings, MdWeb, MdInsights } from "react-icons/md";
+import FaktasidePreview from "./previews/FaktasidePreview";
+import FaktasideSEOPreview from "./previews/FaktasideSEOPreview";
 import ForsidePreview from "./previews/ForsidePreview";
-import { DagpengeKalkulatorIkon } from "./schemas/kalkulator/kalkulator";
-import historikkHjelpetekster, { HistorikkIkon } from "./schemas/infosider/historikk/historikkHjelpetekster";
+import ForsideSEOPreview from "./previews/ForsideSEOPreview";
 import KalkulatorPreview from "./previews/KalkulatorPreview";
+import { ProduktsidePreview } from "./previews/ProduktsidePreview/ProduktsidePreview";
 import deltTekst from "./schemas/infosider/deltTekst/deltTekst";
 import faktaSide from "./schemas/infosider/faktaside/faktaSide";
-import notifikasjon from "./schemas/notifikasjon/notifikasjon";
-import situasjon from "./schemas/infosider/richText/annotations/situasjon";
-import { seksjon } from "./schemas/soknad/seksjon";
-import { faktum } from "./schemas/soknad/faktum";
-import { svaralternativ } from "./schemas/soknad/svaralternativ";
-import { landgruppe } from "./schemas/soknad/landgruppe";
-import { apptekst } from "./schemas/soknad/apptekst";
-import { infopage } from "./schemas/soknad/infopage";
+import historikkHjelpetekster, { HistorikkIkon } from "./schemas/infosider/historikk/historikkHjelpetekster";
 import oppsett from "./schemas/infosider/oppsett/oppsett";
-import FaktasideSEOPreview from "./previews/FaktasideSEOPreview";
-import FaktasidePreview from "./previews/FaktasidePreview";
-import { ProduktsidePreview } from "./previews/ProduktsidePreview/ProduktsidePreview";
+import situasjon from "./schemas/infosider/richText/annotations/situasjon";
+import { innsynApptekst } from "./schemas/innsyn/innsynApptekst";
+import { DagpengeKalkulatorIkon } from "./schemas/kalkulator/kalkulator";
+import notifikasjon from "./schemas/notifikasjon/notifikasjon";
 import {
   produktsideKortFortalt,
   produktsideSection,
   produktsideSettings,
   produktsideText,
 } from "./schemas/produktside/schema";
-import { UnserializedListItem } from "@sanity/structure/src/ListItem";
+import { apptekst } from "./schemas/soknad/apptekst";
 import { dokumentkrav } from "./schemas/soknad/dokumentkrav";
 import { dokumentkravSvar } from "./schemas/soknad/dokumentkrav-svar";
+import { faktum } from "./schemas/soknad/faktum";
+import { infopage } from "./schemas/soknad/infopage";
+import { landgruppe } from "./schemas/soknad/landgruppe";
+import { seksjon } from "./schemas/soknad/seksjon";
+import { svaralternativ } from "./schemas/soknad/svaralternativ";
 
 const produktsideSchemaNames = [
   produktsideKortFortalt.name,
@@ -36,6 +37,7 @@ const produktsideSchemaNames = [
   produktsideSettings.name,
   produktsideText.name,
 ];
+
 const oldSchemaNames = [
   deltTekst.name,
   faktaSide.name,
@@ -44,6 +46,7 @@ const oldSchemaNames = [
   oppsett.name,
   historikkHjelpetekster.name,
 ];
+
 const soknadSchemaNames = [
   seksjon.name,
   faktum.name,
@@ -54,6 +57,8 @@ const soknadSchemaNames = [
   dokumentkrav.name,
   dokumentkravSvar.name,
 ];
+
+const innsynSchemaNames = [innsynApptekst.name];
 
 const isSoknadSchema = (listItem: UnserializedListItem) => soknadSchemaNames.includes(listItem.id);
 const internationalizedSoknadTypeItems =
@@ -76,6 +81,19 @@ export default () =>
       S.listItem()
         .title("Dagpengesøknad")
         .child(S.list().title("Dagpengesøknad").items(internationalizedSoknadTypeItems)),
+
+      S.listItem()
+        .title("Dagpenger innsynn")
+        .icon(MdInsights)
+        .child(
+          S.list()
+            .title("Dagpenger innsynn")
+            .items(
+              InternationalizationStructure.getFilteredDocumentTypeListItems().filter(
+                (listItem: UnserializedListItem) => innsynSchemaNames.includes(listItem.id)
+              )
+            )
+        ),
 
       S.listItem()
         .title("Produktside beta")
@@ -224,6 +242,7 @@ export default () =>
                     "dagpengekalkulator",
                     ...produktsideSchemaNames,
                     ...soknadSchemaNames,
+                    ...innsynSchemaNames,
                     oppsett.name,
                     historikkHjelpetekster.name,
                     faktaSide.name,
@@ -234,8 +253,12 @@ export default () =>
 
       ...S.documentTypeListItems().filter(
         (listItem) =>
-          !["dagpengekalkulator", ...produktsideSchemaNames, ...soknadSchemaNames, ...oldSchemaNames].includes(
-            <string>listItem.getId()
-          )
+          ![
+            "dagpengekalkulator",
+            ...produktsideSchemaNames,
+            ...soknadSchemaNames,
+            ...oldSchemaNames,
+            ...innsynSchemaNames,
+          ].includes(<string>listItem.getId())
       ),
     ]);

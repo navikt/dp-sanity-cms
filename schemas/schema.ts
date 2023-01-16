@@ -18,6 +18,7 @@ import { navIconPicker, timeline, timelineElement } from "./soknad/timeline";
 import { alertTextField, readMoreField } from "./soknad/common-fields";
 import { dokumentkrav } from "./soknad/dokumentkrav";
 import { dokumentkravSvar } from "./soknad/dokumentkrav-svar";
+import { innsynApptekst } from "./innsyn/innsynApptekst";
 
 export default createSchema({
   name: "dagpenger-info",
@@ -35,6 +36,7 @@ export default createSchema({
     svaralternativ,
     landgruppe,
     apptekst,
+    innsynApptekst,
     infopage,
     timeline,
     timelineElement,

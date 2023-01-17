@@ -1,7 +1,7 @@
 import S from "@sanity/desk-tool/structure-builder";
 import * as InternationalizationStructure from "@sanity/document-internationalization/lib/structure";
 import { UnserializedListItem } from "@sanity/structure/src/ListItem";
-import { MdSettings, MdWeb, MdInsights, MdWysiwyg, MdOutlinePages } from "react-icons/md";
+import { MdSettings, MdWeb, MdInsights, MdWysiwyg, MdOutlinePages, MdOutlineCalculate } from "react-icons/md";
 import FaktasidePreview from "./previews/FaktasidePreview";
 import FaktasideSEOPreview from "./previews/FaktasideSEOPreview";
 import ForsidePreview from "./previews/ForsidePreview";
@@ -14,7 +14,6 @@ import historikkHjelpetekster, { HistorikkIkon } from "./schemas/infosider/histo
 import oppsett from "./schemas/infosider/oppsett/oppsett";
 import situasjon from "./schemas/infosider/richText/annotations/situasjon";
 import { innsynApptekst } from "./schemas/innsyn/innsynApptekst";
-import { DagpengeKalkulatorIkon } from "./schemas/kalkulator/kalkulator";
 import notifikasjon from "./schemas/notifikasjon/notifikasjon";
 import {
   produktsideKortFortalt,
@@ -69,8 +68,8 @@ export default () =>
     .title("Innhold")
     .items([
       S.listItem()
-        .title("DagpengerKalkulator")
-        .icon(DagpengeKalkulatorIkon)
+        .title("Dagpenger kalkulator")
+        .icon(MdOutlineCalculate)
         .child(
           S.editor()
             .schemaType("dagpengekalkulator")
@@ -84,7 +83,7 @@ export default () =>
         .child(S.list().title("Dagpengesøknad").items(internationalizedSoknadTypeItems)),
 
       S.listItem()
-        .title("Dagpenge innsyn")
+        .title("Dagpenger innsyn")
         .icon(MdInsights)
         .child(
           S.list()

@@ -1,9 +1,9 @@
 import { textIdField, valueTextField } from "./common-fields";
 
-export const apptekst = {
+export const soknadApptekst = {
   type: "document",
   name: "apptekst",
-  title: "Generelle tekster",
+  title: "Søknad generelle tekster",
   i18n: true,
   initialValue: {
     // eslint-disable-next-line camelcase

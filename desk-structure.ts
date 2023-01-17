@@ -1,7 +1,7 @@
 import S from "@sanity/desk-tool/structure-builder";
 import * as InternationalizationStructure from "@sanity/document-internationalization/lib/structure";
 import { UnserializedListItem } from "@sanity/structure/src/ListItem";
-import { MdSettings, MdWeb, MdInsights } from "react-icons/md";
+import { MdSettings, MdWeb, MdInsights, MdWysiwyg, MdOutlinePages } from "react-icons/md";
 import FaktasidePreview from "./previews/FaktasidePreview";
 import FaktasideSEOPreview from "./previews/FaktasideSEOPreview";
 import ForsidePreview from "./previews/ForsidePreview";
@@ -22,7 +22,7 @@ import {
   produktsideSettings,
   produktsideText,
 } from "./schemas/produktside/schema";
-import { apptekst } from "./schemas/soknad/apptekst";
+import { soknadApptekst } from "./schemas/soknad/soknadApptekst";
 import { dokumentkrav } from "./schemas/soknad/dokumentkrav";
 import { dokumentkravSvar } from "./schemas/soknad/dokumentkrav-svar";
 import { faktum } from "./schemas/soknad/faktum";
@@ -52,7 +52,7 @@ const soknadSchemaNames = [
   faktum.name,
   svaralternativ.name,
   landgruppe.name,
-  apptekst.name,
+  soknadApptekst.name,
   infopage.name,
   dokumentkrav.name,
   dokumentkravSvar.name,
@@ -80,14 +80,15 @@ export default () =>
 
       S.listItem()
         .title("Dagpengesøknad")
+        .icon(MdWysiwyg)
         .child(S.list().title("Dagpengesøknad").items(internationalizedSoknadTypeItems)),
 
       S.listItem()
-        .title("Dagpenger innsyn")
+        .title("Dagpenge innsyn")
         .icon(MdInsights)
         .child(
           S.list()
-            .title("Dagpenger innsyn")
+            .title("Dagpenge innsyn")
             .items(
               InternationalizationStructure.getFilteredDocumentTypeListItems().filter(
                 (listItem: UnserializedListItem) => innsynSchemaNames.includes(listItem.id)
@@ -97,6 +98,7 @@ export default () =>
 
       S.listItem()
         .title("Produktside beta")
+        .icon(MdOutlinePages)
         .child(
           S.list()
             .title("Produktside beta")
@@ -180,10 +182,10 @@ export default () =>
                 ),
 
               S.listItem()
-                .title("Generelle tekster")
+                .title("Produktside generelle tekster")
                 .child(
                   S.documentList()
-                    .title("Generelle tekster")
+                    .title("Produktside generelle tekster")
                     .schemaType(produktsideText.name)
                     .filter("_type == $type && __i18n_lang == $baseLanguage")
                     .params({ baseLanguage: `nb`, type: produktsideText.name })

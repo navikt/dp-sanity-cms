@@ -13,7 +13,7 @@ import { faktum } from "./soknad/faktum";
 import { svaralternativ } from "./soknad/svaralternativ";
 import { landgruppe } from "./soknad/landgruppe";
 import { infopage } from "./soknad/infopage";
-import { apptekst } from "./soknad/apptekst";
+import { soknadApptekst } from "./soknad/soknadApptekst";
 import { navIconPicker, timeline, timelineElement } from "./soknad/timeline";
 import { alertTextField, readMoreField } from "./soknad/common-fields";
 import { dokumentkrav } from "./soknad/dokumentkrav";
@@ -35,7 +35,7 @@ export default createSchema({
     faktum,
     svaralternativ,
     landgruppe,
-    apptekst,
+    soknadApptekst,
     innsynApptekst,
     infopage,
     timeline,

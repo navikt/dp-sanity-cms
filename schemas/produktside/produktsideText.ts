@@ -4,7 +4,7 @@ import { GtoNOKDecorator } from "./produktside-decorators/produktside-decorators
 export const produktsideText = {
   type: "document",
   name: "produktsideText",
-  title: "Generelle tekster",
+  title: "Produktside generelle tekster",
   i18n: true,
   initialValue: {
     // eslint-disable-next-line camelcase

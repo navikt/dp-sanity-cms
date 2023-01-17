@@ -14,6 +14,7 @@ import historikkHjelpetekster, { HistorikkIkon } from "./schemas/infosider/histo
 import oppsett from "./schemas/infosider/oppsett/oppsett";
 import situasjon from "./schemas/infosider/richText/annotations/situasjon";
 import { innsynApptekst } from "./schemas/innsyn/innsynApptekst";
+import { innsynInfotekst } from "./schemas/innsyn/innsynInfotekst";
 import notifikasjon from "./schemas/notifikasjon/notifikasjon";
 import {
   produktsideKortFortalt,
@@ -57,11 +58,16 @@ const soknadSchemaNames = [
   dokumentkravSvar.name,
 ];
 
-const innsynSchemaNames = [innsynApptekst.name];
+const innsynSchemaNames = [innsynApptekst.name, innsynInfotekst.name];
 
 const isSoknadSchema = (listItem: UnserializedListItem) => soknadSchemaNames.includes(listItem.id);
+const isInnsynSchema = (listItem: UnserializedListItem) => innsynSchemaNames.includes(listItem.id);
+
 const internationalizedSoknadTypeItems =
   InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isSoknadSchema);
+
+const internationalizedInnsynTypeItems =
+  InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isInnsynSchema);
 
 export default () =>
   S.list()
@@ -85,15 +91,7 @@ export default () =>
       S.listItem()
         .title("Dagpenger innsyn")
         .icon(MdInsights)
-        .child(
-          S.list()
-            .title("Dagpenge innsyn")
-            .items(
-              InternationalizationStructure.getFilteredDocumentTypeListItems().filter(
-                (listItem: UnserializedListItem) => innsynSchemaNames.includes(listItem.id)
-              )
-            )
-        ),
+        .child(S.list().title("Dagpenge innsyn").items(internationalizedInnsynTypeItems)),
 
       S.listItem()
         .title("Produktside beta")

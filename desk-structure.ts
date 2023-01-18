@@ -13,8 +13,10 @@ import faktaSide from "./schemas/infosider/faktaside/faktaSide";
 import historikkHjelpetekster, { HistorikkIkon } from "./schemas/infosider/historikk/historikkHjelpetekster";
 import oppsett from "./schemas/infosider/oppsett/oppsett";
 import situasjon from "./schemas/infosider/richText/annotations/situasjon";
-import { innsynApptekst } from "./schemas/innsyn/innsynApptekst";
-import { innsynInfotekst } from "./schemas/innsyn/innsynInfotekst";
+import { innsynApptekst } from "./schemas/innsyn/innsynApptekst"; // Legacy
+import { innsynInfotekst } from "./schemas/innsyn/innsynInfotekst"; // Legacy
+import { innsynAppText } from "./schemas/innsyn/innsynAppText";
+import { innsynRichText } from "./schemas/innsyn/innsynRichText";
 import notifikasjon from "./schemas/notifikasjon/notifikasjon";
 import {
   produktsideKortFortalt,
@@ -58,7 +60,7 @@ const soknadSchemaNames = [
   dokumentkravSvar.name,
 ];
 
-const innsynSchemaNames = [innsynApptekst.name, innsynInfotekst.name];
+const innsynSchemaNames = [innsynApptekst.name, innsynInfotekst.name, innsynAppText.name, innsynRichText.name];
 
 const isSoknadSchema = (listItem: UnserializedListItem) => soknadSchemaNames.includes(listItem.id);
 const isInnsynSchema = (listItem: UnserializedListItem) => innsynSchemaNames.includes(listItem.id);

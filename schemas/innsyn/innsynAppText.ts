@@ -1,9 +1,9 @@
 import { textIdField, valueTextField } from "../soknad/common-fields";
 
-export const innsynApptekst = {
+export const innsynAppText = {
   type: "document",
-  name: "innsynApptekst",
-  title: "Innsyn generelle tekster - Legacy",
+  name: "innsynAppText",
+  title: "Innsyn generelle tekster",
   i18n: true,
   initialValue: {
     // eslint-disable-next-line camelcase

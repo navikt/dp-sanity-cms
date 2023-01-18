@@ -1,10 +1,10 @@
 import { timeline } from "../soknad/timeline";
 import { alertTextField, readMoreField } from "../soknad/common-fields";
 
-export const innsynInfotekst = {
+export const innsynRichText = {
   type: "document",
-  name: "innsynInfotekst",
-  title: "Innsyn info tekster - Legacy",
+  name: "innsynRichText",
+  title: "Innsyn rik tekster",
   i18n: true,
   initialValue: {
     // eslint-disable-next-line camelcase
@@ -12,7 +12,7 @@ export const innsynInfotekst = {
   },
   fields: [
     {
-      title: "Info tekst nøkkel",
+      title: "Rich tekst nøkkel",
       name: "slug",
       type: "slug",
     },

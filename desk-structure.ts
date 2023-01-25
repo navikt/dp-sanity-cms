@@ -22,7 +22,7 @@ import {
   produktsideKortFortalt,
   produktsideSection,
   produktsideSettings,
-  produktsideText,
+  produktsideGeneralText,
 } from "./schemas/produktside/schema";
 import { soknadApptekst } from "./schemas/soknad/soknadApptekst";
 import { dokumentkrav } from "./schemas/soknad/dokumentkrav";
@@ -37,7 +37,7 @@ const produktsideSchemaNames = [
   produktsideKortFortalt.name,
   produktsideSection.name,
   produktsideSettings.name,
-  produktsideText.name,
+  produktsideGeneralText.name,
 ];
 
 const oldSchemaNames = [
@@ -181,16 +181,16 @@ export default () =>
                 ),
 
               S.listItem()
-                .title("Produktside generelle tekster")
+                .title("Generelle tekster")
                 .child(
                   S.documentList()
                     .title("Produktside generelle tekster")
-                    .schemaType(produktsideText.name)
+                    .schemaType(produktsideGeneralText.name)
                     .filter("_type == $type && __i18n_lang == $baseLanguage")
-                    .params({ baseLanguage: `nb`, type: produktsideText.name })
+                    .params({ baseLanguage: `nb`, type: produktsideGeneralText.name })
                     .child(
                       S.editor()
-                        .schemaType(produktsideText.name)
+                        .schemaType(produktsideGeneralText.name)
                         .views([S.view.form(), S.view.component(ProduktsidePreview).title("Preview")])
                     )
                 ),

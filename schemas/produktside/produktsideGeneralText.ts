@@ -1,7 +1,7 @@
 export const produktsideGeneralText = {
   type: "document",
   name: "produktsideGeneralText",
-  title: "Generelle tekster",
+  title: "Produktside generelle tekster",
   i18n: true,
   initialValue: {
     // eslint-disable-next-line camelcase

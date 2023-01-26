@@ -1,3 +1,4 @@
+import { MdTextFields } from "react-icons/md";
 import { timeline } from "../soknad/timeline";
 import { alertTextField, readMoreField } from "../soknad/common-fields";
 
@@ -5,6 +6,7 @@ export const innsynRichText = {
   type: "document",
   name: "innsynRichText",
   title: "Innsyn rik tekster",
+  icon: MdTextFields,
   i18n: true,
   initialValue: {
     // eslint-disable-next-line camelcase

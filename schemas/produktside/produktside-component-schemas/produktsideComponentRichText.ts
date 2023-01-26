@@ -1,10 +1,8 @@
-import { produktsideBlockStyles } from "../produktside-styles/produktside-styles";
 import { produktsideBlockDecorators } from "../produktside-decorators/produktsideBlockDecorators";
-import { produktsideAccordion } from "./produktsideAccordion";
-import { produktsideButton } from "./produktsideButton";
-import { produktsideReadMore } from "./produktsideReadMore";
-import { produktsideReadMoreWithRichText } from "./produktsideReadMoreWithRichText";
+import { produktsideBlockStyles } from "../produktside-styles/produktside-styles";
 import { produktsideAccordionWithRichText } from "./produktsideAccordionWithRichText";
+import { produktsideButton } from "./produktsideButton";
+import { produktsideReadMoreWithRichText } from "./produktsideReadMoreWithRichText";
 
 export const produktsideComponentRichText = {
   title: "Komponent Rich Text",
@@ -18,10 +16,8 @@ export const produktsideComponentRichText = {
         decorators: produktsideBlockDecorators,
       },
     },
-    { type: produktsideAccordion.name },
     { type: produktsideAccordionWithRichText.name },
     { type: produktsideButton.name },
-    { type: produktsideReadMore.name },
     { type: produktsideReadMoreWithRichText.name },
   ],
 };

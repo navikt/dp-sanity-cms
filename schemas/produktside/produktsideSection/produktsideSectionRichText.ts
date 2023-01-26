@@ -1,6 +1,4 @@
 import { produktsideSectionReferenceName } from "./produktsideSectionReference";
-import { produktsideAccordion } from "../produktside-component-schemas/produktsideAccordion";
-import { produktsideReadMore } from "../produktside-component-schemas/produktsideReadMore";
 import { produktsideBlockStyles } from "../produktside-styles/produktside-styles";
 import { produktsideFilteredContent } from "../produktside-component-schemas/produktsideFilteredContent";
 import { produktsideFilterMenu } from "../produktside-component-schemas/produktsideFilterMenu";
@@ -23,10 +21,8 @@ export const produktsideSectionRichText = {
     },
     { type: "customComponent" },
     { type: produktsideSectionReferenceName },
-    { type: produktsideAccordion.name },
     { type: produktsideAccordionWithRichText.name },
     { type: produktsideButton.name },
-    { type: produktsideReadMore.name },
     { type: produktsideReadMoreWithRichText.name },
     { type: produktsideFilteredContent.name },
     { type: produktsideFilterMenu.name },

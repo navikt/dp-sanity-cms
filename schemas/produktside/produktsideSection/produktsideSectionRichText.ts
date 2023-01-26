@@ -6,6 +6,8 @@ import { produktsideButton } from "../schema";
 import { produktsideBlockDecorators } from "../produktside-decorators/produktsideBlockDecorators";
 import { produktsideAccordionWithRichText } from "../produktside-component-schemas/produktsideAccordionWithRichText";
 import { produktsideReadMoreWithRichText } from "../produktside-component-schemas/produktsideReadMoreWithRichText";
+import { produktsideAccordion } from "../produktside-component-schemas/produktsideAccordion";
+import { produktsideReadMore } from "../produktside-component-schemas/produktsideReadMore";
 
 export const produktsideSectionRichText = {
   title: "Innholdsseksjon Rich Text",
@@ -21,8 +23,10 @@ export const produktsideSectionRichText = {
     },
     { type: "customComponent" },
     { type: produktsideSectionReferenceName },
+    { type: produktsideAccordion.name },
     { type: produktsideAccordionWithRichText.name },
     { type: produktsideButton.name },
+    { type: produktsideReadMore.name },
     { type: produktsideReadMoreWithRichText.name },
     { type: produktsideFilteredContent.name },
     { type: produktsideFilterMenu.name },

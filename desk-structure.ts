@@ -13,8 +13,6 @@ import faktaSide from "./schemas/infosider/faktaside/faktaSide";
 import historikkHjelpetekster, { HistorikkIkon } from "./schemas/infosider/historikk/historikkHjelpetekster";
 import oppsett from "./schemas/infosider/oppsett/oppsett";
 import situasjon from "./schemas/infosider/richText/annotations/situasjon";
-import { innsynApptekst } from "./schemas/innsyn/innsynApptekst"; // Legacy
-import { innsynInfotekst } from "./schemas/innsyn/innsynInfotekst"; // Legacy
 import { innsynAppText } from "./schemas/innsyn/innsynAppText";
 import { innsynRichText } from "./schemas/innsyn/innsynRichText";
 import notifikasjon from "./schemas/notifikasjon/notifikasjon";
@@ -32,6 +30,7 @@ import { infopage } from "./schemas/soknad/infopage";
 import { landgruppe } from "./schemas/soknad/landgruppe";
 import { seksjon } from "./schemas/soknad/seksjon";
 import { svaralternativ } from "./schemas/soknad/svaralternativ";
+import { innsynLink } from "./schemas/innsyn/innsynLink";
 
 const produktsideSchemaNames = [
   produktsideKortFortalt.name,
@@ -60,7 +59,7 @@ const soknadSchemaNames = [
   dokumentkravSvar.name,
 ];
 
-const innsynSchemaNames = [innsynApptekst.name, innsynInfotekst.name, innsynAppText.name, innsynRichText.name];
+const innsynSchemaNames = [innsynAppText.name, innsynRichText.name, innsynLink.name];
 
 const isSoknadSchema = (listItem: UnserializedListItem) => soknadSchemaNames.includes(listItem.id);
 const isInnsynSchema = (listItem: UnserializedListItem) => innsynSchemaNames.includes(listItem.id);

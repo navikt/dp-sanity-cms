@@ -20,10 +20,7 @@ import { dokumentkrav } from "./soknad/dokumentkrav";
 import { dokumentkravSvar } from "./soknad/dokumentkrav-svar";
 import { innsynAppText } from "./innsyn/innsynAppText";
 import { innsynRichText } from "./innsyn/innsynRichText";
-
-// Legacy
-import { innsynApptekst } from "./innsyn/innsynApptekst";
-import { innsynInfotekst } from "./innsyn/innsynInfotekst";
+import { innsynLink } from "./innsyn/innsynLink";
 
 export default createSchema({
   name: "dagpenger-info",
@@ -41,8 +38,7 @@ export default createSchema({
     svaralternativ,
     landgruppe,
     soknadApptekst,
-    innsynApptekst, // Legacy
-    innsynInfotekst, // Legacy
+    innsynLink,
     innsynAppText,
     innsynRichText,
     infopage,

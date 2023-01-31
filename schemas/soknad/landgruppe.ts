@@ -12,8 +12,7 @@ export const landgruppe = {
   fields: [textIdField, alertTextField],
   preview: {
     select: {
-      title: alertTextField.title,
-      subtitle: textIdField.name,
+      title: textIdField.name,
     },
   },
 };

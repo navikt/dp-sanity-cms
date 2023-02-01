@@ -21,6 +21,7 @@ import {
   produktsideSection,
   produktsideSettings,
   produktsideGeneralText,
+  produktsideFilterSection,
 } from "./schemas/produktside/schema";
 import { soknadApptekst } from "./schemas/soknad/soknadApptekst";
 import { dokumentkrav } from "./schemas/soknad/dokumentkrav";
@@ -34,6 +35,7 @@ import { innsynLink } from "./schemas/innsyn/innsynLink";
 
 const produktsideSchemaNames = [
   produktsideKortFortalt.name,
+  produktsideFilterSection.name,
   produktsideSection.name,
   produktsideSettings.name,
   produktsideGeneralText.name,
@@ -161,6 +163,37 @@ export default () =>
                     .child(
                       S.editor()
                         .schemaType(produktsideKortFortalt.name)
+                        .views([S.view.form(), S.view.component(ProduktsidePreview).title("Preview")])
+                    )
+                ),
+              S.listItem()
+                .title("Filter seksjon")
+                .child(
+                  S.documentList()
+                    .title("Filter seksjon")
+                    .id(produktsideFilterSection.name)
+                    .schemaType(produktsideFilterSection.name)
+                    .filter("_id == $id && _type == $type")
+                    .params({
+                      id: produktsideFilterSection.name,
+                      type: produktsideFilterSection.name,
+                    })
+                    .menuItems([
+                      {
+                        title: "Lag nytt dokument",
+                        intent: {
+                          type: "create",
+                          params: {
+                            id: produktsideFilterSection.name,
+                            type: produktsideFilterSection.name,
+                          },
+                        },
+                        showAsAction: true,
+                      },
+                    ])
+                    .child(
+                      S.editor()
+                        .schemaType(produktsideFilterSection.name)
                         .views([S.view.form(), S.view.component(ProduktsidePreview).title("Preview")])
                     )
                 ),

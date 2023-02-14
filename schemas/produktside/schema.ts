@@ -14,6 +14,7 @@ import { produktsideComponentRichText } from "./produktside-component-schemas/pr
 import { produktsideReadMore } from "./produktside-component-schemas/produktsideReadMore";
 import { produktsideAccordion } from "./produktside-component-schemas/produktsideAccordion";
 import { produktsideFilterSection } from "./produktsideFilterSection";
+import { produktsideContactOptions } from "./produtktsideContactOptions";
 
 const componentSchemas = [
   produktsideAccordion,
@@ -28,6 +29,7 @@ const componentSchemas = [
 
 export const produktsideSchemas = [
   ...componentSchemas,
+  produktsideContactOptions,
   produktsideFilterSection,
   produktsideKortFortalt,
   produktsideGeneralText,
@@ -43,6 +45,7 @@ export {
   produktsideAccordionWithRichText,
   produktsideButton,
   produktsideComponentRichText,
+  produktsideContactOptions,
   produktsideFilterSection,
   produktsideFilteredContent,
   produktsideFilterMenu,

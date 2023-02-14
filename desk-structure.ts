@@ -32,10 +32,12 @@ import { landgruppe } from "./schemas/soknad/landgruppe";
 import { seksjon } from "./schemas/soknad/seksjon";
 import { svaralternativ } from "./schemas/soknad/svaralternativ";
 import { innsynLink } from "./schemas/innsyn/innsynLink";
+import { produktsideContactOptions } from "./schemas/produktside/produtktsideContactOptions";
 
 const produktsideSchemaNames = [
   produktsideKortFortalt.name,
   produktsideFilterSection.name,
+  produktsideContactOptions.name,
   produktsideSection.name,
   produktsideSettings.name,
   produktsideGeneralText.name,
@@ -194,6 +196,37 @@ export default () =>
                     .child(
                       S.editor()
                         .schemaType(produktsideFilterSection.name)
+                        .views([S.view.form(), S.view.component(ProduktsidePreview).title("Preview")])
+                    )
+                ),
+              S.listItem()
+                .title("Kontakt oss")
+                .child(
+                  S.documentList()
+                    .title("Kontakt oss")
+                    .id(produktsideContactOptions.name)
+                    .schemaType(produktsideContactOptions.name)
+                    .filter("_id == $id && _type == $type")
+                    .params({
+                      id: produktsideContactOptions.name,
+                      type: produktsideContactOptions.name,
+                    })
+                    .menuItems([
+                      {
+                        title: "Lag nytt dokument",
+                        intent: {
+                          type: "create",
+                          params: {
+                            id: produktsideContactOptions.name,
+                            type: produktsideContactOptions.name,
+                          },
+                        },
+                        showAsAction: true,
+                      },
+                    ])
+                    .child(
+                      S.editor()
+                        .schemaType(produktsideContactOptions.name)
                         .views([S.view.form(), S.view.component(ProduktsidePreview).title("Preview")])
                     )
                 ),

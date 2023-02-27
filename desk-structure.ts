@@ -30,12 +30,6 @@ import { landgruppe } from "./schemas/soknad/landgruppe";
 import { seksjon } from "./schemas/soknad/seksjon";
 import { svaralternativ } from "./schemas/soknad/svaralternativ";
 import { produktsideContactOptions } from "./schemas/produktside/produtktsideContactOptions";
-
-// Legacy
-import { innsynLink } from "./schemas/innsyn/innsynLink";
-import { innsynAppText } from "./schemas/innsyn/innsynAppText";
-import { innsynRichText } from "./schemas/innsyn/innsynRichText";
-
 import { mineDagpengerAppText } from "./schemas/mine-dagpenger/mineDagpengerAppText";
 import { mineDagpengerRichText } from "./schemas/mine-dagpenger/mineDagpengerRichText";
 import { mineDagpengerLink } from "./schemas/mine-dagpenger/mineDagpengerLink";
@@ -69,12 +63,6 @@ const soknadSchemaNames = [
   dokumentkravSvar.name,
 ];
 
-// Legacy
-const innsynSchemaNames = [innsynAppText.name, innsynRichText.name, innsynLink.name];
-const isInnsynSchema = (listItem: UnserializedListItem) => innsynSchemaNames.includes(listItem.id);
-const internationalizedInnsynTypeItems =
-  InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isInnsynSchema);
-
 const mineDagpengerSchemaNames = [mineDagpengerAppText.name, mineDagpengerRichText.name, mineDagpengerLink.name];
 
 const isSoknadSchema = (listItem: UnserializedListItem) => soknadSchemaNames.includes(listItem.id);
@@ -104,12 +92,6 @@ export default () =>
         .title("Dagpengesøknad")
         .icon(MdWysiwyg)
         .child(S.list().title("Dagpengesøknad").items(internationalizedSoknadTypeItems)),
-
-      // Legacy
-      S.listItem()
-        .title("Dagpenger innsyn")
-        .icon(MdInsights)
-        .child(S.list().title("Dagpenge innsyn").items(internationalizedInnsynTypeItems)),
 
       S.listItem()
         .title("Mine dagpenger")
@@ -326,7 +308,6 @@ export default () =>
                     "dagpengekalkulator",
                     ...produktsideSchemaNames,
                     ...soknadSchemaNames,
-                    ...innsynSchemaNames, // Legacy
                     ...mineDagpengerSchemaNames,
                     oppsett.name,
                     historikkHjelpetekster.name,
@@ -343,7 +324,6 @@ export default () =>
             ...produktsideSchemaNames,
             ...soknadSchemaNames,
             ...oldSchemaNames,
-            ...innsynSchemaNames,
             ...mineDagpengerSchemaNames,
           ].includes(<string>listItem.getId())
       ),

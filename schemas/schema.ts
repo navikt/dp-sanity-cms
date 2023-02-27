@@ -18,6 +18,11 @@ import { navIconPicker, timeline, timelineElement } from "./soknad/timeline";
 import { alertTextField, readMoreField } from "./soknad/common-fields";
 import { dokumentkrav } from "./soknad/dokumentkrav";
 import { dokumentkravSvar } from "./soknad/dokumentkrav-svar";
+import { mineDagpengerAppText } from "./mine-dagpenger/mineDagpengerAppText";
+import { mineDagpengerRichText } from "./mine-dagpenger/mineDagpengerRichText";
+import { mineDagpengerLink } from "./mine-dagpenger/mineDagpengerLink";
+
+//Legacy
 import { innsynAppText } from "./innsyn/innsynAppText";
 import { innsynRichText } from "./innsyn/innsynRichText";
 import { innsynLink } from "./innsyn/innsynLink";
@@ -38,9 +43,12 @@ export default createSchema({
     svaralternativ,
     landgruppe,
     soknadApptekst,
-    innsynLink,
-    innsynAppText,
-    innsynRichText,
+    innsynLink, // Legacy
+    innsynAppText, // Legacy
+    innsynRichText, // Legacy
+    mineDagpengerLink,
+    mineDagpengerAppText,
+    mineDagpengerRichText,
     infopage,
     timeline,
     timelineElement,

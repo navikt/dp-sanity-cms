@@ -13,7 +13,6 @@ import faktaSide from "./schemas/infosider/faktaside/faktaSide";
 import historikkHjelpetekster, { HistorikkIkon } from "./schemas/infosider/historikk/historikkHjelpetekster";
 import oppsett from "./schemas/infosider/oppsett/oppsett";
 import situasjon from "./schemas/infosider/richText/annotations/situasjon";
-
 import notifikasjon from "./schemas/notifikasjon/notifikasjon";
 import {
   produktsideKortFortalt,
@@ -70,21 +69,19 @@ const soknadSchemaNames = [
   dokumentkravSvar.name,
 ];
 
-const mineDagpengerSchemaNames = [mineDagpengerAppText.name, mineDagpengerRichText.name, mineDagpengerLink.name];
-
 // Legacy
 const innsynSchemaNames = [innsynAppText.name, innsynRichText.name, innsynLink.name];
 const isInnsynSchema = (listItem: UnserializedListItem) => innsynSchemaNames.includes(listItem.id);
+const internationalizedInnsynTypeItems =
+  InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isInnsynSchema);
+
+const mineDagpengerSchemaNames = [mineDagpengerAppText.name, mineDagpengerRichText.name, mineDagpengerLink.name];
 
 const isSoknadSchema = (listItem: UnserializedListItem) => soknadSchemaNames.includes(listItem.id);
 const isMineDagpengerSchema = (listItem: UnserializedListItem) => mineDagpengerSchemaNames.includes(listItem.id);
 
 const internationalizedSoknadTypeItems =
   InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isSoknadSchema);
-
-// Legacy
-const internationalizedInnsynTypeItems =
-  InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isInnsynSchema);
 
 const internationalizedMineDagpengerTypeItems =
   InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isMineDagpengerSchema);

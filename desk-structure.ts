@@ -13,8 +13,7 @@ import faktaSide from "./schemas/infosider/faktaside/faktaSide";
 import historikkHjelpetekster, { HistorikkIkon } from "./schemas/infosider/historikk/historikkHjelpetekster";
 import oppsett from "./schemas/infosider/oppsett/oppsett";
 import situasjon from "./schemas/infosider/richText/annotations/situasjon";
-import { innsynAppText } from "./schemas/innsyn/innsynAppText";
-import { innsynRichText } from "./schemas/innsyn/innsynRichText";
+
 import notifikasjon from "./schemas/notifikasjon/notifikasjon";
 import {
   produktsideKortFortalt,
@@ -31,8 +30,16 @@ import { infopage } from "./schemas/soknad/infopage";
 import { landgruppe } from "./schemas/soknad/landgruppe";
 import { seksjon } from "./schemas/soknad/seksjon";
 import { svaralternativ } from "./schemas/soknad/svaralternativ";
-import { innsynLink } from "./schemas/innsyn/innsynLink";
 import { produktsideContactOptions } from "./schemas/produktside/produtktsideContactOptions";
+
+// Legacy
+import { innsynLink } from "./schemas/innsyn/innsynLink";
+import { innsynAppText } from "./schemas/innsyn/innsynAppText";
+import { innsynRichText } from "./schemas/innsyn/innsynRichText";
+
+import { mineDagpengerAppText } from "./schemas/mine-dagpenger/mineDagpengerAppText";
+import { mineDagpengerRichText } from "./schemas/mine-dagpenger/mineDagpengerRichText";
+import { mineDagpengerLink } from "./schemas/mine-dagpenger/mineDagpengerLink";
 
 const produktsideSchemaNames = [
   produktsideKortFortalt.name,
@@ -63,16 +70,24 @@ const soknadSchemaNames = [
   dokumentkravSvar.name,
 ];
 
+const mineDagpengerSchemaNames = [mineDagpengerAppText.name, mineDagpengerRichText.name, mineDagpengerLink.name];
+
+// Legacy
 const innsynSchemaNames = [innsynAppText.name, innsynRichText.name, innsynLink.name];
+const isInnsynSchema = (listItem: UnserializedListItem) => innsynSchemaNames.includes(listItem.id);
 
 const isSoknadSchema = (listItem: UnserializedListItem) => soknadSchemaNames.includes(listItem.id);
-const isInnsynSchema = (listItem: UnserializedListItem) => innsynSchemaNames.includes(listItem.id);
+const isMineDagpengerSchema = (listItem: UnserializedListItem) => mineDagpengerSchemaNames.includes(listItem.id);
 
 const internationalizedSoknadTypeItems =
   InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isSoknadSchema);
 
+// Legacy
 const internationalizedInnsynTypeItems =
   InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isInnsynSchema);
+
+const internationalizedMineDagpengerTypeItems =
+  InternationalizationStructure.getFilteredDocumentTypeListItems().filter(isMineDagpengerSchema);
 
 export default () =>
   S.list()
@@ -93,10 +108,16 @@ export default () =>
         .icon(MdWysiwyg)
         .child(S.list().title("Dagpengesøknad").items(internationalizedSoknadTypeItems)),
 
+      // Legacy
       S.listItem()
         .title("Dagpenger innsyn")
         .icon(MdInsights)
         .child(S.list().title("Dagpenge innsyn").items(internationalizedInnsynTypeItems)),
+
+      S.listItem()
+        .title("Mine dagpenger")
+        .icon(MdInsights)
+        .child(S.list().title("Mine dagpenger").items(internationalizedMineDagpengerTypeItems)),
 
       S.listItem()
         .title("Produktside beta")
@@ -308,7 +329,8 @@ export default () =>
                     "dagpengekalkulator",
                     ...produktsideSchemaNames,
                     ...soknadSchemaNames,
-                    ...innsynSchemaNames,
+                    ...innsynSchemaNames, // Legacy
+                    ...mineDagpengerSchemaNames,
                     oppsett.name,
                     historikkHjelpetekster.name,
                     faktaSide.name,

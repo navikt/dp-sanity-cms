@@ -344,6 +344,7 @@ export default () =>
             ...soknadSchemaNames,
             ...oldSchemaNames,
             ...innsynSchemaNames,
+            ...mineDagpengerSchemaNames,
           ].includes(<string>listItem.getId())
       ),
     ]);
